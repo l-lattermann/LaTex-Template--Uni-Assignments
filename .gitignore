@@ -1,0 +1,64 @@
+# =============================================================================
+# This repository is a LaTeX TEMPLATE only.
+# Everything belonging to an actual assignment stays out of version control:
+# source literature, drafts, compiled documents and per-project notes.
+# =============================================================================
+
+# --- Literature and any other copyrighted source material ---
+literature/
+sources/
+*.epub
+*.mobi
+*.djvu
+
+# --- Compiled documents and per-assignment files ---
+*.pdf
+!images/**/*.pdf
+sections/
+references.bib
+*.bib
+!template.bib
+
+# Per-assignment writing notes / scaffolding
+PROJECT_FACTS.md
+CHECKLIST.md
+REFERENCES.md
+CLAUDE.md
+
+# Submission files, named after the matriculation-number convention
+lattermann-*
+*_4239646_*
+
+# Assignment-specific main documents (template.tex is the tracked one)
+*.tex
+!template.tex
+
+# Generated README previews of a submitted document
+images/pdf_images/
+
+# Code that belongs to a specific assignment, not to the template
+code/
+
+# --- Environment ---
+.venv
+venv/
+__pycache__/
+.DS_Store
+
+# --- LaTeX build artifacts ---
+build/
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex
+*.synctex.gz
+*.toc
+*.xdv
