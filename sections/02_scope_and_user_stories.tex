@@ -1,0 +1,637 @@
+% =============================================================================
+% 2 PRODUCT SCOPE AND USER STORIES                        budget: 2.25 pages
+% Answers TASK QUESTION 1, verbatim:
+%   "First describe the scope of the product. Discuss user stories as a form of
+%    requirements representation and then define user stories for the app
+%    yourself. This is where you can get creative. At least ten user stories
+%    should be formulated."
+%
+% ORDER IS THE TUTOR'S OWN RECOMMENDED NUMBERING [G-Jun26]:
+%   x.1 scope of the product / x.2 short summary of what a user story is /
+%   x.3 the ten user stories.
+% =============================================================================
+
+\section{Produktscope und Anforderungen als User Stories}
+
+% =============================================================================
+% 2.1 SCOPE                          budget: max. 0.75 pages, 4-5 paragraphs
+% -----------------------------------------------------------------------------
+% LITERATURE: ESSENTIALLY NONE  ->  0-1 citations
+%   This section is invented on purpose - "You can make it up" [G-Mar25].
+%   Citing sources for a fictitious product's user numbers or business model
+%   would be wrong, not diligent.
+%   The ONE place a citation pays: the sentence distinguishing PRODUCT scope
+%   from PROJECT scope. Take the definitions from PMBOK 7 or Kerzner and give
+%   the page number - it converts a throwaway sentence into a Transfer point.
+%   Do NOT: build a market analysis or cite competitor apps.
+%
+% WHAT YOU WANT TO SAY HERE, IN SHORT
+%   - "This is what the product is, for whom, on which platform, at what scale,
+%      and how it earns money (or does not)."
+%   - "Users can enter their own recipes; this is what they can do with them."
+%   - "These things are explicitly NOT part of the product."
+%   - "Product scope means the features and characteristics of the product;
+%      project scope means the work required to deliver it. This report defines
+%      the product scope." [the one citation]
+% -----------------------------------------------------------------------------
+% LENGTH: the guidance has grown over the sessions; the newest wins - "maybe in
+% four or five paragraphs, maybe even in one page" [G-Jun26]; "three or four
+% paragraphs" [G-Jan26]. Older sessions said 2-3 paragraphs.
+%
+% ALTITUDE: high level, "as if telling this to the board of the company paying
+% for it" [G-Nov25]. Above feature level: "The only features in the app are
+% those described by user stories" [T-25.02.2025] - so do NOT write a separate
+% feature list here that competes with 2.3.
+%
+% CONTENT CHECKLIST [G-Jun26, G-Feb25]:
+%   - what the product does, at a coarse level
+%   - who the users are (target groups)
+%   - how many users - SCALE IS FREE. He has used ~100k users in one session
+%     and "purely for members of my extended family... at most 100 users" in
+%     another [G-Feb25]. Any consistent figure passes.
+%   - platform
+%   - entry of the user's own recipes / user-generated content, and output or
+%     printing [G-Feb25]
+%   - COMMERCIAL SCOPE - "Are you going to give it away for free? Are you going
+%     to charge for it?" [G-Jun26]
+%   A student's scope of "target users + platform limits (iOS/Android) + the
+%   non-commercial/internal nature of the app" was answered with "this is fine"
+%   [T-20.05.2026]. That is a safe template.
+%
+% OUT OF SCOPE - state it explicitly. His own recipe-app examples: no recipes
+% for allergy sufferers [G-Nov25]; "It does not provide medical advice"
+% [G-Mar25]; a platform exclusion - "I will not include the scope of the
+% product as a desktop app" [G-Feb25].
+%
+% PRODUCT vs PROJECT SCOPE - a resolved conflict, worth one Transfer point:
+% product scope is mandatory and must be clearly labelled; project scope is
+% optional but allowed. "If you include the project scope, define what work
+% you're going to do, but make sure that you describe the product scope
+% because that's specifically asked for" [G-Feb25]. One sentence distinguishing
+% the two is the cheap version.
+%
+% INVENT FREELY: "You can make it up" [G-Mar25].
+%
+% DO NOT: market analysis [G-Sep25]; epics or user stories in this section
+% [G-Dec25]; app-specific description or technical detail [T-20.05.2026];
+% any figure.
+% =============================================================================
+% #############################################################################
+% WRITING PLAN - 2.1, PARAGRAPH BY PARAGRAPH
+% Budget: 0.75 pages = ~525 WORDS. 4-5 paragraphs => ~110-130 words each.
+% EXACTLY ONE CITATION.
+%
+% The one citation is the product-scope / project-scope definition pair. It is
+% the only sentence in this subsection that a source can improve; everything
+% else is invented on purpose ("You can make it up" [G-Mar25]).
+% #############################################################################
+\subsection{Scope der Rezept-App}
+
+% --- P1: what kind of scope this is --------------------------------------
+% THE ONE CITATION. Open with it, then never cite again in 2.1.
+%   \textcite[p.~52]{kerzner2022}
+%   "Project scope defines the work that must be accomplished to produce a
+%    deliverable with specified features or functions."
+%   "Product scope defines the features or functions that characterize the
+%    deliverable."
+%   -> Two adjacent parallel bullets in Kerzner, under the heading "There is
+%      also a difference between project and product scope:". Quote or
+%      paraphrase both, then say in one sentence which one this report defines
+%      (the PRODUCT scope, because that is what the task asks for) and add one
+%      clause sketching the project scope. That one clause is a Transfer point.
+%
+% WHY KERZNER AND NOT PMBOK: \parencite[PMBOK Guide, Section~2.4.2.1]{pmbok2021}
+% says substantively the same thing, but (a) Kerzner is crisper - 30 words
+% against 39 - (b) Kerzner's pair is presented as an explicit contrast whereas
+% PMBOK's is buried mid-paragraph inside a *planning* subsection, and decisively
+% (c) Kerzner has a real printed page number and PMBOK 7 has none. On the
+% page-number criterion Kerzner wins.
+%
+% ALSO REJECTED HERE: Beck et al. (2001b, para. 10), "Simplicity--the art of
+% maximizing the amount of work not done--is essential." It is a tempting
+% warrant for the out-of-scope list, but 2.1 allows only one citation, the
+% scope pair discharges an outline requirement and the Manifesto does not, and
+% the out-of-scope list reads perfectly well uncited. That quote has been moved
+% to chapter 5, where it does the same work in a slot that wants it.
+Der Begriff Scope hat im Projektmanagement zwei Bedeutungen, und dieser Abschnitt beschreibt nur eine davon. \textcite[p.~52]{kerzner2022} trennt sie: Der Projektscope \enquote{defines the work that must be accomplished to produce a deliverable with specified features or functions}, der Produktscope dagegen \enquote{defines the features or functions that characterize the deliverable}. Es folgt der Produktscope von Cookbox, denn daran wird das Backlog in Kapitel~3 gemessen. Der Projektscope wird über die bereits genannten Annahmen hinaus nicht ausgeführt: ein Scrum Team, das ein erstes öffentliches Release über zwölf zweiwöchige Sprints innerhalb eines festen Budgets liefert. Beide treffen in Kapitel~4 aufeinander, wo ein festes Budget und ein fester Termin den Produktscope als einzige verbleibende Variable übrig lassen.
+
+Cookbox ist eine mobile Anwendung zur Organisation von Rezepten, entwickelt von einem unabhängigen Softwarestudio mit rund fünfundzwanzig Mitarbeitenden auf eigene Rechnung und nicht für einen Auftraggeber. Das Produktziel ist bewusst eng gefasst: Wer kocht, soll ein Rezept in die App bekommen, es wiederfinden und ihm beim Kochen folgen können. Die Nutzer sind gewöhnliche Hobbyköche und keine Profis; sie unterscheiden sich vor allem darin, was ihnen das Kochen erschwert. Die Stories in Abschnitt~\ref{subsec:stories} sprechen unter anderem für einen Hobbykoch, einen Elternteil unter Zeitdruck, einen Anfänger, eine ältere Person, die ohne Brille liest, und jemanden, dessen Schichtdienst regelmäßiges Kochen erschwert. Eine weitere Rolle ist studiointern: die Moderation, die das mit der App ausgelieferte Material brauchbar hält.
+
+Das erste Release zielt auf fünfzigtausend registrierte Nutzer binnen zwölf Monaten nach Markteinführung: ein Konsumentenprodukt, aber kein großes, und nichts in der Planung setzt mehr voraus. Cookbox läuft ausschließlich auf iOS und Android; einen Desktop- oder Browser-Client gibt es nicht, und das ist eine Entscheidung und keine Vertagung, denn in der Küche hält man ein Telefon in der Hand. Die App ist zum Start kostenlos und enthält keine Werbung. Die Monetarisierung ist bewusst einer späteren Entscheidung vorbehalten, sodass das erste Release nichts einbringt und das Budget dieses Projekts tatsächlich und nicht nur nominell feststeht.
+
+Fast alle Inhalte in Cookbox stammen von den Nutzern selbst. Wer kocht, tippt ein Rezept mit Zutaten und Arbeitsschritten ein; es wird dem Konto dieses Nutzers zugeordnet und nicht nur auf dem Gerät gehalten und lässt sich anschließend wiederfinden, beim Kochen lesen, auf eine andere Portionszahl umrechnen, in eine Woche einplanen, in eine Einkaufsliste für diese Woche überführen und auf Wunsch löschen. Die einzige Ausnahme ist eine kleine kuratierte Startsammlung, die mit der App ausgeliefert wird, damit der erste Start nicht auf einen leeren Bildschirm führt. Cookbox ist damit eine private Sammlung, die zufällig in einem Konto liegt, und keine Veröffentlichungsplattform.
+
+Vier weitere Grenzen werden ausdrücklich benannt, und jede ist eine Entscheidung und keine Auslassung. Cookbox führt keine Nährwertanalyse durch und gibt keine Ernährungs- oder medizinischen Empfehlungen, weil dies verantwortungsvoll nur mit einer Datenqualität möglich wäre, die das Studio nicht eingeplant hat; aus demselben Grund kuratiert die App nichts für Allergiker. Sie bindet keinen Lebensmittelhandel und keinen Lieferdienst an, sodass die Einkaufsliste auf dem Telefon endet. Es gibt keinen öffentlichen Rezept-Feed, keine Follower und keine Nachrichten zwischen Nutzern, weshalb sich die Moderations-Story in Abschnitt~\ref{subsec:stories} allein auf die kuratierte Startsammlung bezieht. Jede dieser Grenzen kann in einem späteren Release neu bewertet werden; keine steht derzeit im Backlog.
+
+
+% --- P2: what the product is, and for whom --------------------------------
+% NO CITATION. High level - "as if telling this to the board of the company
+% paying for it" [G-Nov25]. Stay ABOVE feature level: the only features in the
+% app are the ones described by the ten user stories in 2.3, so do not write a
+% competing feature list here.
+% Cover: what it does at a coarse level; the target user groups (they must match
+% the personas used in 2.3 - check this when 2.3 is written).
+
+
+% --- P3: scale, platform, commercial model --------------------------------
+% NO CITATION. Scale is free; any consistent figure passes.
+% Cover: number of users; platform (iOS and Android, explicitly not desktop);
+% the commercial model - free, paid, freemium? The tutor asks for this
+% explicitly. A student's scope of "target users + platform limits + the
+% non-commercial nature of the app" was answered "this is fine".
+
+
+% --- P4: user-generated content -------------------------------------------
+% NO CITATION. Users enter their own recipes; say what they can then do with
+% them at a coarse level (store, retrieve, print/export). Keep it one short
+% paragraph - it must not turn into 2.3's story list.
+
+
+% --- P5: what is explicitly OUT of scope ----------------------------------
+% NO CITATION. This paragraph is cheap and scores well; state exclusions as
+% deliberate decisions, not omissions.
+% Candidates (pick three or four, and keep them consistent with 2.3):
+%   - no nutritional or medical advice
+%   - no allergy-specific recipe curation
+%   - no desktop application
+%   - no grocery-delivery integration, no social network
+% CROSS-CHECK when 2.3 is written: every out-of-scope item must NOT appear as a
+% user story, and every story must fall inside this scope.
+
+
+% =============================================================================
+% 2.2 USER STORIES AS A FORM OF REQUIREMENTS REPRESENTATION
+%                                       budget: 3-4 paragraphs [G-Sep25],
+%                                       maximum 5 [G-Dec25]
+% -----------------------------------------------------------------------------
+% LITERATURE: HEAVY  ->  the most citation-dense passage of the report,
+%                        roughly one source per claim, every one with a page
+%                        number. This is where "did you actually read
+%                        something?" is decided [G-Mar25: students who read
+%                        widely get the higher marks].
+%   Cite here:
+%     - the definition of a user story (Cohn is the canonical source; the
+%       "user-stories-applied" book already sits in literature/)
+%     - the three-layer definition: card, conversation, confirmation (Cohn)
+%     - the story format itself
+%     - the Scrum Guide for how PBIs relate to the product backlog
+%     - Kelly (2019) for the product-ownership view of requirements
+%     - the Agile Manifesto principles when linking stories to agile values -
+%       cite it, but do not lean on it alone, it is "rather short and not very
+%       descriptive" [S2]
+%     - INVEST, if used, needs its own source and the acronym spelled out
+%   Research, best case:
+%     - one PEER-REVIEWED paper on user-story quality or on requirements
+%       engineering in agile projects, to back the "bridges the language gap"
+%       claim with evidence rather than a textbook assertion. The
+%       "scope_user_stories__*" and "lucassen*" PDFs in literature/ are exactly
+%       this kind of source.
+%     - anything empirical on why requirement misunderstandings cause project
+%       failure - it turns his own favourite argument into a cited one.
+%   Do NOT: cite blogs, Atlassian/Jira marketing pages or agile consultancies.
+%
+% WHAT YOU WANT TO SAY HERE, IN SHORT
+%   - "A user story is X." [cite, with page]
+%   - "It has three layers: the written card, the conversation it triggers, and
+%      the confirmation that it is done." [cite]
+%   - "Stories are used because they speak the business's language rather than
+%      the developers', they force the requirement to be stated from a user's
+%      point of view, and the 'so that' clause forces the value to be named."
+%      [cite the first, argue the rest]
+%   - "This is who writes them and how that fits the agile principles." [cite]
+%   - optional: "INVEST summarises what a good story looks like." [cite]
+% -----------------------------------------------------------------------------
+% This is the only theory passage of the report, and it exists to open the
+% applied section that follows - not as a theory chapter [SCH]. Describe
+% artefacts "at a high level... not just a scientific definition" [SCH].
+%
+% WHAT TO COVER
+%   - What a user story is, with a CITED definition [S2] - page number included.
+%   - The THREE-LAYER DEFINITION after Cohn, taught by both tutors
+%     [G-Mar25, S4]: a written description, the conversations about it, and the
+%     tests that show when it is complete. (Note the tension: the tests belong
+%     to the DEFINITION, but written acceptance criteria are explicitly banned
+%     in 2.3. Mention them as part of the concept, do not produce any.)
+%   - WHY stories are used - the arguments he names himself [G-Nov25]:
+%       * they bridge the language gap between business and developers, "one of
+%         the main reasons IT projects have failed in the past"
+%       * user first: the requirement is stated from the user's point of view
+%       * the benefit clause forces a value justification - "If you can't
+%         articulate what the benefit is, why would you do it?"
+%   - The mandatory format, introduced here and applied in 2.3.
+%   - Who writes stories, and how that fits the agile principles.
+%   - INVEST is an optional bonus, belongs ONLY here, and the acronym must be
+%     spelled out if used [G-Sep25, G-Dec25].
+%
+% SOURCES: the Agile Manifesto may be cited but not relied on alone - it is
+% "rather short and not very descriptive" [S2]. Cohn, the Scrum Guide, Kelly
+% and the Agile Practice Guide are the natural sources here.
+% =============================================================================
+% #############################################################################
+% WRITING PLAN - 2.2, PARAGRAPH BY PARAGRAPH
+% Budget: 0.75 pages = ~525 WORDS. HEAVY - about 10-12 citations.
+% ***** DRAFTED AND MEASURED: 536 words, 0.77 pages, 12 citations. *****
+% This section is the calibration source and the style exemplar for the rest
+% of the report - match its paragraph length and its source-clustering.
+% This is the densest passage of the report and the place where "did the student
+% actually read something?" is decided.
+%
+% Sources that own this subsection: cohn2004 (the backbone), lucassen2016 (the
+% peer-reviewed anchor the outline explicitly wants), schoen2017 (one critical
+% sentence). The Scrum Guide is SILENT here - "user story" occurs 0 times in it.
+% #############################################################################
+\subsection{User Stories als Form der Anforderungsdarstellung}
+
+% --- P1: what a user story is, and its three levels -----------------------
+% THREE CITATIONS, all Cohn, all p. 4. Cite the page once per claim, not once
+% per sentence - three \parencite calls on the same page is acceptable and
+% precise; five would be padding.
+%
+%   \parencite[p.~4]{cohn2004}
+%   "A user story describes functionality that will be valuable to either a user
+%    or purchaser of a system or software."
+%   -> The definition the report leads with.
+%
+%   \parencite[p.~4]{cohn2004}
+%   "User stories are composed of three aspects: a written description of the
+%    story used for planning and as a reminder; conversations about the story
+%    that serve to flesh out the details of the story; tests that convey and
+%    document details and that can be used to determine when a story is
+%    complete"
+%   -> In the book these three are a BULLETED LIST after the colon. Introduce
+%      them as a list rather than joining with semicolons.
+%
+%   \parencite[p.~4]{cohn2004}
+%   "Ron Jeffries has named these three aspects with the wonderful alliteration
+%    of Card, Conversation, and Confirmation"
+%   -> Cite this rather than crediting the three Cs to Cohn himself.
+%
+% !! THE TENSION TO HANDLE IN ONE CLAUSE: the third level is tests, but the
+%    report produces no acceptance criteria (banned, confirmed five times).
+%    Do NOT quietly drop the third level - name it as part of the CONCEPT and
+%    say the report does not elaborate it because it stops at planning. Then
+%    pick that thread up again in chapter 5 as a declared simplification. That
+%    turns a prohibition into a Transfer point instead of a hole.
+%
+%   \parencite[p.~4]{cohn2004} "The Card may be the most visible manifestation
+%   of a user story, but it is not the most important." - optional, only if the
+%   conversation point needs reinforcing.
+%
+% ----- DRAFT (pilot section, written first to calibrate the page budget) -----
+Eine User Story beschreibt \enquote{functionality that will be valuable to either a
+user or purchaser of a system or software} \parencite[p.~4]{cohn2004}. Die
+Definition ist kurz, weil der geschriebene Satz nur einer von drei Bestandteilen
+ist. \textcite[p.~4]{cohn2004} unterscheidet eine schriftliche Beschreibung, die
+der Planung dient, die Gespräche, die die Einzelheiten liefern, und die Tests,
+die zeigen, wann die Story fertig ist; Jeffries benennt dieselben drei
+Bestandteile als Card, Conversation und Confirmation \parencite[p.~4]{cohn2004}. Die für Cookbox gesammelten Stories arbeiten die
+ersten beiden Ebenen aus. Die dritte gehört in den Sprint, in dem eine Story
+gebaut wird, und weil dieses Projekt am Ende der Planung endet, werden keine
+Akzeptanzkriterien geschrieben; das Schlusskapitel kommt auf diese Auslassung
+zurück.
+
+
+% --- P2: the template, and why one template ------------------------------
+% TWO CITATIONS, both Lucassen. This is the paragraph that most needs the
+% peer-reviewed anchor.
+%
+%   \parencite[p.~383]{lucassen2016}
+%   "The most widespread format and de facto standard [36], popularized by
+%    Cohn [10] is: 'As a <type of user>, I want <goal>, [so that <some
+%    reason>].'"
+%   -> !! CITE LUCASSEN FOR THE TEMPLATE, NOT COHN. Cohn (2004, p. 81) prints
+%      the Connextra original, "I as a (role) want (function) so that (business
+%      value)", and a search of his whole book returns ZERO occurrences of the
+%      modern form. Attributing the modern template to Cohn is a checkable
+%      error. Trim the "[36]"/"[10]" reference markers with an ellipsis.
+%   -> The square brackets around the "so that" clause are IN THE ORIGINAL and
+%      mark the benefit clause as formally OPTIONAL.
+%
+%   ** THE TRANSFER MOVE IN THIS SUBSECTION ** - build one sentence on that
+%   optionality: the template permits the benefit clause to be dropped; this
+%   report nevertheless requires it in all ten stories, because it forces a
+%   value justification. That is an explicit, citable modification of a model,
+%   which is exactly what the 15 % Transfer criterion rewards.
+%   Reserve wording if the bracket typography is a risk in the compiled PDF:
+%   \parencite[p.~383]{lucassen2016} "captures only the essential elements of a
+%   requirement: who it is for, what is expected from the system, and,
+%   optionally, why it is important."
+%
+%   \parencite[p.~384]{lucassen2016}
+%   "There are over 80 syntactic variants of user stories"
+%   -> Justifies fixing ONE template for all ten stories - a decision, not a
+%      default. Phrase as "as reported by Lucassen et al." (the count is
+%      Wautelet et al., 2014).
+%
+% ----- DRAFT -----
+Alle zehn Stories in Abschnitt~\ref{subsec:stories} verwenden ein einziges
+Format, das \textcite[p.~383]{lucassen2016} als De-facto-Standard bezeichnen:
+\enquote{As a \textless type of user\textgreater, I want \textless
+goal\textgreater, [so that \textless some reason\textgreater].} Ein einziges
+Format festzulegen ist eine Entscheidung und keine Voreinstellung.
+\textcite[p.~384]{lucassen2016}
+berichten unter Verweis auf Wautelet et al., dass über achtzig syntaktische
+Varianten von User Stories existieren, und in ihrer eigenen Stichprobe von mehr
+als tausend Stories \parencite[p.~383]{lucassen2016} war der häufigste Mangel,
+den eine automatisierte Prüfung fand, gerade die Abweichung von dem Format, auf
+das sich das Team geeinigt hatte
+\parencite[p.~397]{lucassen2016}. In einem Punkt weicht dieses Projekt bewusst
+von der abgedruckten Vorlage ab. Die eckigen Klammern weisen den abschließenden
+Teilsatz als optional aus \parencite[p.~383]{lucassen2016}; in diesem Projekt ist
+er verpflichtend, denn eine Story ohne ausgewiesenen Nutzen lässt sich nicht gegen
+die übrigen abwägen, wenn das Backlog in Abschnitt~\ref{subsec:backlog} geordnet
+wird.
+
+
+% --- P3: why stories are used --------------------------------------------
+% THREE CITATIONS. This is the argumentative core; the three claims are the
+% ones the tutor names himself.
+%
+% (a) the language bridge:
+%   \parencite[p.~148]{cohn2004}
+%   "Because stories are terse and are always written to show customer or user
+%    value, they are always readily comprehensible by business people and
+%    developers."
+%   -> Note it ties comprehensibility to the value clause, which sets up (b).
+%
+% (b) the benefit clause forces a value justification, and makes ordering
+%     possible - this is the bridge sentence into chapter 3:
+%   \parencite[p.~21]{cohn2004}
+%   "It is very possible that the ideas behind these stories are good ones but
+%    they should instead be written so that the benefits to the customers or the
+%    user are apparent. This will allow the customer to intelligently prioritize
+%    these stories into the development schedule."
+%
+% (c) ** the critical sentence that lifts this paragraph above textbook level **
+%   \parencite[p.~49]{schoen2017}
+%   "In agile software development it is a challenge to justify the benefits of
+%    the requirements in order to make the added value of the implementation
+%    clear as well as decisions for a specific requirement comprehensible"
+%   -> Empirical evidence that the benefit half of the template is the part
+%      practitioners actually fail at. Turns a descriptive sentence into a
+%      critical one.
+%   !! REPORT THE DENOMINATOR CORRECTLY: 11 of the 21 experts who answered that
+%      item, not "52.4 % of experts" and not "of 26 experts". The N column sits
+%      next to the percentage in the paper's Table 6.
+%   !! Do NOT use the C19 "clarity is not what practitioners find hard" point.
+%      It rests on 7 of 22 respondents and C19 is not even the lowest score
+%      (C20 is, at 29.4 %), so the intuitive phrasing of it is false.
+%
+% (d) user-first - own voice, no citation needed; it follows from the template.
+%
+% ----- DRAFT -----
+Drei Eigenschaften machen das Format für ein Produkt wie Cookbox geeignet. Es ist
+für beide Seiten des Projekts lesbar, denn Stories sind knapp und darauf angelegt,
+den Nutzen für den Anwender zu zeigen, und damit \enquote{readily comprehensible
+by business people and developers} \parencite[p.~148]{cohn2004}. Es zwingt die Anforderung
+dazu, jemanden zu benennen: Der einleitende Teilsatz bezeichnet einen Nutzertyp
+und nicht das System, weshalb die zehn Cookbox-Stories neun verschiedene Rollen
+nennen statt eines einzigen undifferenzierten Nutzers. Und der abschließende
+Teilsatz zwingt dazu, den Wert einer Anforderung zu begründen: Ein erkennbarer
+Nutzen \enquote{will allow the customer to intelligently prioritize
+these stories into the development schedule} \parencite[p.~21]{cohn2004}. Gerade
+diese letzte Eigenschaft ist in der Praxis am schwersten einzulösen. In einer
+Befragung von Fachleuten aus der Industrie stuften elf der einundzwanzig
+Personen, die diesen Punkt beantworteten, die Begründung des Nutzens einer
+Anforderung als Herausforderung der agilen Entwicklung ein
+\parencite[p.~49]{schoen2017}. Der Nutzen-Teilsatz wurde deshalb als derjenige
+Bestandteil jeder Cookbox-Story behandelt, der die meiste Aufmerksamkeit
+verlangt, und nicht als Formalie, die man nachträglich ergänzt.
+
+
+% --- P4: who writes stories, and optionally INVEST ------------------------
+% ONE CITATION, plus one optional.
+%
+%   \parencite[p.~81]{cohn2004}
+%   "Ideally the customer writes the stories. On many projects the developers
+%    help out... But, responsibility for writing stories resides with the
+%    customer and cannot be passed to the developers."
+%   -> Then, in the report's own voice, say who that is in THIS project: the
+%      Product Owner, drawing on the user conversations named in chapter 1.
+%      This is the hand-off into 3.1.
+%
+% ***** DECIDED: INVEST is OUT. *****
+% 2.2 already carries ten citations in 0.75 pages, and INVEST costs a sentence
+% plus the spelled-out acronym for a point the section does not need. It is the
+% FIRST thing to add back if 2.2 runs short after the first compile - so the
+% material is kept below rather than deleted.
+%
+% OPTIONAL - INVEST. Only if the page budget survives, and only here.
+%   \parencite[p.~17]{cohn2004}
+%   "To create good stories we focus on six attributes. A good story is:
+%    Independent / Negotiable / Valuable to users or customers / Estimatable /
+%    Small / Testable" and, on the same page, "Bill Wake... has suggested the
+%    acronym INVEST for these six attributes".
+%   -> Cite BOTH sentences together so INVEST is attributed to Wake, not Cohn.
+%   -> Spell the acronym out if it is used at all.
+%   !! DO NOT take INVEST from Lucassen - that paper misstates it TWICE,
+%      "Scalable" for Small and "Estimatable" for Estimable (2016, p. 383).
+%
+% AGILE PRINCIPLES: the outline mentions aligning stories with agile principles.
+% Resist citing the Manifesto here - its principle 11 is about "architectures,
+% requirements, and designs" emerging from self-organizing teams, which is a
+% forced fit for authorship, and the Manifesto's three citations are already
+% committed to chapters 4 and 5. One uncited sentence of your own is better.
+%
+% ----- DRAFT -----
+Die Verantwortung für die Formulierung liegt auf der Geschäftsseite des Projekts.
+\textcite[p.~81]{cohn2004} hält fest, dass Entwickler dabei mitwirken können, dass
+aber \enquote{responsibility for writing stories resides with the customer and
+cannot be passed to the developers}. In diesem Projekt hat der Product Owner die zehn
+Stories aus den in Kapitel~1 beschriebenen Nutzergesprächen entworfen und trägt
+weiterhin die Verantwortung dafür. Die Entwickler wirken während des Refinements
+an der Formulierung mit, das Abschnitt~\ref{subsec:refinement} beschreibt, aber
+das Backlog gehört ihnen nicht.
+
+
+% --- P5: the empirical grounding ------------------------------------------
+% ***** DECIDED: IN - but folded into P3 as ONE compressed sentence, not
+% written as a fifth paragraph. *****
+% Reason: the 56 % figure is the strongest evidence available in chapter 2 and
+% handling its caveat visibly is itself a Quality point - but 2.2 has 0.75 pages
+% and a fifth paragraph would push the section over. One sentence at the end of
+% P3, carrying all three qualifiers, gets the value at a fifth of the cost.
+%
+% This is the single most impressive citation available in the chapter, but it
+% needs its caveat in the same sentence or it becomes a liability.
+%
+%   \parencite[p.~395]{lucassen2016}
+%   "The average number of user stories with at least one defect as detected by
+%    AQUSA is 56 %."
+%   -> MANDATORY QUALIFIERS, all in half a sentence: these are TOOL-detected
+%      defects; the tool's precision was 72.2 % micro / 77.4 % macro
+%      \parencite[p.~397]{lucassen2016}; and all the story sets came from
+%      independent software vendors, mostly Dutch \parencite[p.~397]{lucassen2016}.
+%      Report it as "at least one story in two was flagged by a tool as
+%      defective". Handling the caveat visibly is worth more marks than the
+%      number itself - it demonstrates source criticism rather than
+%      number-grabbing.
+%   !! QUOTE, NEVER PARAPHRASE, the sample description. The paper says 18
+%      organisations in four places but its own Table 3 and p. 394 give 17
+%      companies plus a university set explicitly excluded from the statistics.
+%      Safest wording is the paper's own conclusion: "over 1000 user stories
+%      from 18 organizations" \parencite[p.~401]{lucassen2016}.
+
+
+% =============================================================================
+% 2.3 THE TEN USER STORIES
+% -----------------------------------------------------------------------------
+% LITERATURE: NONE  ->  zero citations, by explicit instruction
+%   "Your ten stories need no citations - just make it up yourself" [G-Dec25].
+%   This is a pure CREATIVITY section (15 % of the grade). A citation here
+%   would only signal that the stories were borrowed - and reusing a documented
+%   case study is explicitly penalised [SCH, 21.08.23].
+%   The only research worth doing is non-academic: think about who actually
+%   cooks and what frustrates them, so the personas are plausible.
+%
+% WHAT YOU WANT TO SAY HERE, IN SHORT
+%   - One lead-in sentence: "The following ten stories were collected from
+%      conversations with prospective users. They are deliberately unordered;
+%      prioritisation follows in section 3.2."
+%   - Then the table. Nothing else. No commentary per story, no criteria.
+% -----------------------------------------------------------------------------
+% PLACEMENT: in the BODY, never in the appendix. "User stories are the central
+% part of this assignment. It is best to include them in the body of the
+% report" [T-20.05.2026]. Presenting them as a table is explicitly sanctioned:
+% "So you can present that as a table" [G-Jun26].
+%
+% HOW MANY: at least ten [TASK]. 12-15 is fine [G-Nov25] and the page limit is
+% the only real cap - but every extra story costs budget twice, because it
+% reappears in the prioritised table in 3.2. Ten is the efficient choice.
+%
+% FORMAT IS MANDATORY: "As a [type of user], I want [function], so that
+% [benefit]". The word order may vary and the benefit may be negative - "so
+% that I don't lose my entries" - as long as all three parts are present
+% [G-Mar25].
+%
+% UNORDERED HERE. "They're not prioritised. They're not in any order. In the
+% second question, you come up with the same ten user stories, but you've got
+% them all prioritised" [G-Jun26]. Say so in the lead-in sentence.
+%
+% THE BIGGEST NAMED CONTENT MISTAKE: "As a user". It is "too vague, you need to
+% categorise the different types of user" [G-Mar25]; varying the personas
+% "will gain you more marks" [G-Nov25].
+%   - Persona ideas he names: busy mom, busy professional, beginner cook,
+%     elderly user.
+%   - A NON-END-USER role is legitimate and shows range - his own example:
+%     "as a compliance officer, I want to ensure data protection regulation
+%     functionality in order to be compliant with the law" [G-Jan25].
+%   - His house-style examples, NOT to be copied verbatim: "As a busy mom, I
+%     would like to save my favourite recipes so that I save time" [G, all
+%     sessions]; "As an experienced cook, I want recipes from different
+%     countries so I can expand my repertoire" [G-Feb25]; "As a frequent user
+%     of the tool, I would like
+%     to save my favourites so that I can quickly find them again" [S3/S4].
+%
+% CREATIVITY (15 % of the grade) IS SCORED HERE, and no citations are needed -
+% "just make it up yourself" [G-Dec25]. Keep the personas and benefits varied
+% and plausible for the scope defined in 2.1; every story must be traceable to
+% that scope.
+%
+% KEEP THEM SIMPLE - confirmed at least five times: NO acceptance criteria, no
+% test criteria, no commentary. "Remember that they should be simple - follow
+% the format, and no need to include acceptance tests or any other commentary"
+% [T-20.05.2026]; "You don't need to define test criteria or anything else"
+% [G-Jan26]. Also excluded: story mapping, persona journeys, technical
+% sub-stories, epics [G-Sep25].
+% =============================================================================
+% #############################################################################
+% WRITING PLAN - 2.3
+% Budget: 0.75 pages allocated, but only ~0.30 will be used: one lead-in
+% sentence (~40 words) plus the table, which measures 0.26 pages.
+% => ~0.45 PAGES OF SLACK LIVE HERE. It is the report's only reserve; spend it
+%    on 3.1 or 3.3 if they run long, not on padding this section.
+% ZERO CITATIONS, by explicit instruction.
+% "Your ten stories need no citations - just make it up yourself" [G-Dec25].
+% A citation here would only signal that the stories were borrowed, and reusing
+% a documented case study is explicitly penalised.
+%
+% This is where CREATIVITY (15 % of the grade) is scored. The only preparation
+% worth doing is non-academic: think about who actually cooks and what
+% frustrates them.
+%
+% -----------------------------------------------------------------------------
+% ONE FINDING FROM THE LITERATURE THAT SHAPES THE WORDING (but is NOT cited):
+% Herwanto et al. (2024) generates privacy requirements as user stories and puts
+% the DATA SUBJECT in the role slot every time ("As a parent, I want to be able
+% to delete the child data..."). That looked at first like an argument against
+% the compliance-officer persona the tutor himself suggested.
+% On re-reading, the evidence does NOT support that conclusion: it is a design
+% choice of one automated generator, and the paper's own input corpus has an
+% ADMINISTRATOR in the role slot of 35 of its 54 stories.
+% => DO NOT rewrite the story set around this. The safe, cheap resolution:
+%      - keep a compliance/operations persona, but give it an OPERATIONAL duty
+%        (e.g. moderating user-submitted recipes), not a data-protection right;
+%      - add ONE data-subject-framed story beside it, e.g. "As a registered
+%        user, I want to delete my account and all my uploaded recipes, so
+%        that ...".
+%    Both framings then appear, and neither is cited, so this costs nothing.
+% -----------------------------------------------------------------------------
+%
+% CHECKS TO RUN ONCE THE TEN STORIES EXIST:
+%   1. Never "As a user" - the single biggest named content mistake. Vary the
+%      persona in every row.
+%   2. Every story uses the ONE template fixed in 2.2, in the same word order.
+%      (Template uniformity was the most frequent defect in Lucassen et al.'s
+%      1023-story sample - relevant as a check, not as a citation here.)
+%   3. All three parts present in every story. The benefit may be negative
+%      ("so that I don't lose my entries").
+%   4. Every story falls inside the scope defined in 2.1, and none of them
+%      touches the out-of-scope list.
+%   5. CRUD completeness: for every "edit", "delete" or "share" story, is there
+%      a corresponding "create" story? A user cannot scale or share a recipe
+%      before one can be entered. This check also feeds the dependency argument
+%      in 3.2 - keep a note of which pairs are dependent.
+%   6. Personas here must match the target groups named in 2.1.
+%   7. No acceptance criteria, no test criteria, no commentary, no epics, no
+%      story mapping, no technical sub-stories. Confirmed five times.
+% #############################################################################
+\subsection{Zehn User Stories für die Rezept-App}
+\label{subsec:stories}
+
+Die zehn Stories stammen aus den in Kapitel~1 beschriebenen Gesprächen mit potenziellen Nutzern. Tabelle~\ref{tab:user-stories} führt sie in keiner bestimmten Reihenfolge auf; priorisiert werden sie in Abschnitt~\ref{subsec:backlog}.
+
+% [!ht] rather than [htbp]: the table must stay in the running text of 2.3,
+% not float to the end of the chapter.
+\begin{table}[H]
+  \centering
+  \caption{User Stories für die Rezept-App, in keiner bestimmten Reihenfolge}
+  \label{tab:user-stories}
+  \tablefontsize
+  \begin{tabular}{@{}p{1.2cm}p{13.5cm}@{}}
+    \toprule
+    \textbf{ID} & \textbf{User story} \\
+    \midrule
+    % Keep the IDs stable - Table 2 in section 3.2 refers back to them, and so
+    % do 3.3 (triggers), 3.4 (sprint selection) and every axis in chapter 4.
+    % Full rationale, dependency chains and persona spread: PROJECT_FACTS.md.
+    % Nine distinct personas across ten stories; no story says "As a user".
+    US-01 & As a hobby cook, I want to enter my own recipes with their
+            ingredients and steps, so that my handwritten collection is in one
+            place. \\
+    US-02 & As a busy parent, I want to search my saved recipes by ingredient,
+            so that I can cook with what is already in the fridge. \\
+    US-03 & As an elderly user, I want to read the cooking steps one at a time
+            in large type, so that I can follow a recipe without my reading
+            glasses. \\
+    US-04 & As a registered user, I want my collection stored in my account and
+            restored on a new phone, so that I do not lose it when I change
+            device. \\
+    US-05 & As a shift worker, I want to plan which recipes I will cook on which
+            days, so that my cooking fits around an irregular roster. \\
+    US-06 & As a busy parent, I want a shopping list generated from the recipes
+            I have planned, so that I do not write the list out by hand. \\
+    US-07 & As a beginner cook, I want to scale a recipe to a different number
+            of servings, so that I do not have to recalculate the quantities
+            myself. \\
+    US-08 & As a privacy-conscious user, I want to delete my account together
+            with everything I have uploaded, so that I can leave the service
+            without a trace. \\
+    US-09 & As a content moderator, I want to correct and approve the recipes in
+            the curated starter collection, so that new users find usable
+            content on first launch. \\
+    US-10 & As an experienced cook, I want to import a recipe from a website
+            link, so that I do not have to retype recipes I found online. \\
+    \bottomrule
+  \end{tabular}
+\end{table}

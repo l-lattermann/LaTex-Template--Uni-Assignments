@@ -1,0 +1,615 @@
+% =============================================================================
+% 4 SEQUENTIAL VS. AGILE PLANNING            budget: 1.25 pages - the SHORTEST
+%                                            main chapter
+% Answers TASK QUESTION 3, verbatim:
+%   "Compare how the further planning of the project would take place in a
+%    sequential approach and an agile approach. In doing so, refer to the
+%    specific project and do not describe the procedure in general terms."
+%
+% -----------------------------------------------------------------------------
+% LITERATURE: MIXED, and the best place in the report to show OWN RESEARCH
+%   The structure to aim for in every paragraph: one cited sentence describing
+%   how the two paradigms differ on this axis, then two or three uncited
+%   sentences playing it out on a named recipe-app feature. The citation
+%   carries the claim, the example carries the marks.
+%   Cite here:
+%     - the SEQUENTIAL side, which is the half you have not written about
+%       anywhere else: PMBOK 7 and Kerzner (2009) are the named sources -
+%       "you can find more about sequential projects or waterfall projects in
+%       the project management body of knowledge" [G-Jun26]. A tutor pointed
+%       explicitly at Kerzner 12th ed., section 8.12 "Agile Project
+%       Management", p. 287 - CAUTION: the task PDF lists Kerzner (2009), the
+%       10th edition. If that locator is used, cite the 12th edition as its own
+%       entry; do not hang p. 287 on the 2009 edition
+%     - Wysocki, "Effective Project Management: Traditional, Agile, Extreme,
+%       Hybrid" (8th ed., 2019) - named by a tutor among the extra literature,
+%       and the obvious fit for this comparison; it also underwrites the hybrid
+%       ending of chapter 5
+%     - the iron triangle and its inversion - find a proper source for the
+%       constraint model rather than asserting it; this is the sharpest
+%       argument of the chapter and should not stand uncited
+%     - the Scrum events you describe here (review, retrospective, daily):
+%       Scrum Guide, one citation covering all three
+%   Research, best case - this is where reading is visibly rewarded:
+%     - one or two PEER-REVIEWED comparisons of sequential and agile
+%       development, ideally empirical rather than opinion. The
+%       "sequential_vs_agile__*" and "evidence__*" PDFs in literature/ are
+%       exactly this. Two solid papers here do more for the grade than ten
+%       textbook citations elsewhere
+%     - anything measuring requirements volatility or the cost of late change
+%       supports axes 1, 2 and 5 at once
+%   NOT cited: which recipe feature would be cut before the deadline, how your
+%   fictitious project would have run under waterfall.
+%   Do NOT: cite consultancy websites or "waterfall vs agile" blog posts - a
+%   commercial web basis is explicitly warned against [G-Jun26].
+%
+% WHAT YOU WANT TO SAY HERE, IN SHORT
+%   - "Under a sequential approach this project would have frozen its
+%      requirements in a specification; under agile the backlog keeps
+%      changing - and here is what that means for THIS feature." [cite + own]
+%   - "The sequential plan claims to know the whole project up front; the agile
+%      plan only claims accuracy for the next few weeks." [cite + own]
+%   - "There, the manager estimates; here, the people doing the work do."
+%      [cite + own]
+%   - "There, one delivery at the end; here, a usable increment every sprint -
+%      and users see it at the sprint review." [cite the events + own]
+%   - "The constraints invert: sequential fixes scope and lets time and cost
+%      move, agile fixes time and cost and lets scope move. Concretely: this
+%      feature is the one that gets dropped." [cite + own - strongest point]
+%   - "Agile is the right choice for this product because requirements will
+%      change and time to market decides; for a safety-critical system it
+%      would not be." [own, one source if available]
+% -----------------------------------------------------------------------------
+% THE MOST-REPEATED WARNING OF THE ENTIRE MODULE - DO NOT GO GENERIC
+%   "Don't just put in a generic comparison" [G-Mar25]
+%   "Describe specifically how you would have done THIS project if you had
+%    followed a sequential approach" [G-Sep25]
+%   Repeated in [G-Nov25], [G-Dec25], [G-Jan26] and [S4], and restated in the
+%   task PDF itself. A Schlömer-era ruling that allowed a "more general"
+%   comparison [SCH, 20.03.23] belonged to the OLD task set and is void.
+%   => Every axis below must be played through on a NAMED recipe-app feature
+%      from Table~\ref{tab:user-stories}. The axes are free - "you've got
+%      plenty of leeway in how you compare and contrast" [G-Jan26] - the
+%      concreteness is not.
+%
+% KEEP IT SHORT: "this third sub sub task can definitely be shorter, so focus
+% more on the first and the second" [S4]. It is an OUTLOOK on how the sprints
+% after the first one would be planned. Do NOT build a second complete
+% sequential project plan [S1] - no Gantt chart, no phase schedule, no WBS.
+%
+% THIS IS THE ONLY PLACE to describe the Scrum ceremonies in detail [G-Dec25]:
+% sprint review, retrospective, daily scrum. Refinement and sprint planning
+% were covered in chapter 3 - do not describe them twice; refer back instead.
+% -----------------------------------------------------------------------------
+% AXES - pick 4 or 5, each applied to a named feature:
+%   1. REQUIREMENTS: months of analysis ending in a frozen functional
+%      specification, which "is out of date within a year or two years"
+%      [G-Jan26], versus a backlog that keeps changing. Notation contrast:
+%      use cases and UML versus user stories [G-Dec25].
+%   2. PLANNING HORIZON: everything planned up front versus a plan that is
+%      "only accurate for the first maybe three months" [G-Nov25].
+%   3. ESTIMATION: the project manager estimates end-to-end versus the
+%      developers who will do the work estimating it themselves.
+%   4. DELIVERY CADENCE: one deliverable after up to two years versus working
+%      software every few weeks, each increment usable - "not a prototype that
+%      you throw away".
+%   5. THE INVERTED IRON TRIANGLE [S2] - the sharpest single argument:
+%      sequential fixes SCOPE and lets time and cost vary; agile fixes TIME and
+%      COST and lets scope vary. Apply it concretely: as the deadline nears, a
+%      minor recipe feature is dropped while the core ships.
+%   6. FEEDBACK AND RISK: sequential verifies only at the end [S2]; stakeholders
+%      are "not actively involved, so we don't get any feedback" [S3]. The
+%      sprint review is open to everyone, so "at the end of the development,
+%      the solution is not something that they've never seen before" [G-Feb25].
+%      IMPORTANT DISTINCTION: the retrospective is NOT for users - team and PO
+%      only [G-Feb25].
+%   7. COMMUNICATION: agile makes everything public and transparent; in
+%      waterfall "there was scope for miscommunication, misinterpretation, and
+%      not that much scope for active feedback" [G-Feb25].
+%
+% WHY AGILE FITS THIS PROJECT - close the chapter with this:
+%   consumer apps "all change"; speed to market and first-mover advantage
+%   dominate. Pre-internet "the cost and the time were less important than the
+%   quality", post-internet "there was only one thing that mattered... how
+%   quickly can you get it out into the market" [G-Jan26].
+%   COUNTER-EXAMPLE he uses himself: an AIR TRAFFIC CONTROL system - fixed
+%   requirements, safety-critical, regulated - is where sequential wins.
+%   Naming a case where the chosen method would be wrong is a Transfer point
+%   and prepares the balanced ending of chapter 5.
+%
+% TERMINOLOGY - he corrects these:
+%   - "Waterfall" and "sequential" are synonyms [G-Dec25].
+%   - "Systems engineering" and "SDLC" are UMBRELLA terms covering BOTH
+%     paradigms, not a third method and not synonyms for waterfall [G-Feb25].
+%   - [S1] vocabulary may be used SPARINGLY as vocabulary only: phase gates,
+%     V-model, WBS, Gantt, and the classic role set (client, steering
+%     committee, project manager, team, project office, suppliers).
+%
+% SOURCES: PMBOK is the natural source for the sequential side - "you can find
+% more about sequential projects or waterfall projects in the project
+% management body of knowledge" [G-Jun26]. Kerzner (2009) and Wysocki,
+% "Effective Project Management: Traditional, Agile, Extreme, Hybrid" (8th ed.,
+% 2019) were both named by tutors for exactly this chapter; Kerzner 12th ed.
+% section 8.12 "Agile Project Management", p. 287, was pointed at explicitly.
+% Citing an IU course book from another module is tolerated - "Not generally
+% cited, but I think it is ok! It's better if you can find an original source"
+% [G, 18.04.25].
+%
+% DO NOT: draw conclusions here - the overall reflection belongs to chapter 5,
+% which must not duplicate this comparison.
+% =============================================================================
+
+% #############################################################################
+% WRITING PLAN - CHAPTER 4
+% Budget: 1.25 pages = ~875 WORDS across 7 blocks (opening + 5 axes +
+% closing) => ~125 WORDS EACH. About 12-13 citations.
+%
+% ** THE FORMAT IS FIXED, AND IT IS WHAT MAKES THIS CHAPTER WORK: **
+%   per axis - ONE cited sentence on how the two paradigms differ,
+%              then 2-3 UNCITED sentences playing it out on a NAMED recipe-app
+%              feature from Table~\ref{tab:user-stories}.
+%   The citation carries the claim; the example carries the marks.
+%
+% ***** DECIDED: WRITE AXES 1, 2, 3, 5 AND 6. DELETE THE STUBS FOR 4 AND 7. *****
+% Axes 1, 3, 5 and 6 are the core; 5 is the sharpest single argument in the
+% report. Axis 2 is the chosen fifth because the task sheet's own background
+% paragraph is about exactly this - "The planning horizon shifts so that only
+% the foreseeable future is planned in detail and planning is therefore
+% iterative rather than a one-time process." Answering the assignment's own
+% framing is worth more than the delivery-cadence or communication axis.
+%
+% THE NAMED FEATURE FOR EACH AXIS IS ALREADY FIXED - see PROJECT_FACTS.md, s. 9:
+%   axis 1 -> US-06   axis 2 -> US-08   axis 3 -> US-07
+%   axis 5 -> US-09 (the feature that gets dropped)   axis 6 -> US-03
+%
+% Sources for the SEQUENTIAL half - this is the half with no coverage anywhere
+% else in the report: kerzner2022 (5 of the 7 axes), pmbok2021, pmi2017.
+% Sources for the AGILE half: scrumguide2020, kelly2019, beck2001*.
+% Peer-reviewed comparison and counter-evidence: mishra2023.
+%
+% -----------------------------------------------------------------------------
+% !! FOUR SOURCE-LEVEL TRAPS IN THIS CHAPTER - all verified:
+%
+% 1. mishra2023 ARGUES THE OPPOSITE OF AXIS 5, twice. Its Table 4 (p. 1515) and
+%    p. 1517 both say AGILE's cost is the adaptable one and that waterfall suits
+%    limited budgets. NEVER cite it near the inverted triangle, and never put
+%    its 42.62 % cost-overrun figure in the same chapter as the inversion.
+% 2. kerzner2022 Table 2-13 (p. 86) is "Traditional versus LEAN", not versus
+%    agile. Use Table 8-9 (p. 307), which is explicitly the agile comparison.
+% 3. The whole indented block on kerzner2022 p. 308 is Charles Cobb (2015,
+%    p. 115), per footnote 7 - four paragraphs, not three lines. Kerzner's own
+%    adjacent sentences are safe and are the ones used below.
+% 4. mishra2023 must NEVER be used for anything Scrum: it lists five Scrum roles
+%    and has "weekly sprint reviews" inside multi-week sprints.
+%
+% !! EDITION FOOTNOTE: add one line noting that the task sheet lists Kerzner
+%    (2009, 10th ed.) while the edition read and cited here is the 13th (2022).
+%    Honest, costless, and it protects the page-number criterion.
+%
+% !! MANIFESTO FOOTNOTE: the first Beck citation needs the locator footnote -
+%    see the wording in 05_reflection_and_conclusion.tex.
+% #############################################################################
+
+\section{Sequenzielle vs. agile Planung der Rezept-App}
+
+% --- OPENING PARAGRAPH: framing and terminology --------------------------
+% ONE CITATION. Two or three sentences, no more.
+%
+%   \parencite[PMBOK Guide, Section~2.3.3]{pmbok2021}
+%   "A predictive approach is useful when the project and product requirements
+%    can be defined, collected, and analyzed at the start of the project. This
+%    may also be referred to as a waterfall approach."
+%   -> Does two jobs: it establishes that "sequential", "predictive" and
+%      "waterfall" name the same thing (the task says "sequential", most sources
+%      say "waterfall"), and it states the sequential precondition neutrally
+%      before the chapter argues against it.
+%
+% OWN VOICE: say what this chapter does - it compares how the planning of THIS
+% project would have continued under each approach. It is an OUTLOOK on the
+% sprints after the first one, not a second complete project plan. No Gantt
+% chart, no phase schedule, no WBS.
+Kapitel~3 führt die Planung von Cookbox bis zum Ende des ersten Sprints; dieses
+Kapitel vergleicht, wie sie unter einem sequenziellen und unter einem agilen
+Vorgehen weiterliefe. Was das Project Management Institute (PMI) einen predictive
+approach nennt, \enquote{is useful when the project and product requirements can be
+defined, collected, and analyzed at the start of the project} und kann
+\enquote{also be referred to as a waterfall
+approach} \parencite[PMBOK Guide, Section~2.3.3]{pmbok2021}. Es folgt ein
+Ausblick auf die Sprints nach dem ersten und kein zweiter Projektplan, und jede
+der fünf nachstehenden Achsen wird an einer Story aus
+Tabelle~\ref{tab:user-stories} durchgespielt.
+
+Traditionelles Projektmanagement ist vorschreibend, mit klar definiertem Scope und
+sequenziellen Lebenszyklusphasen, und \enquote{The intent is to prevent changes in
+the deliverables} \parencite[p.~308]{kerzner2022}.\footnote{Die Aufgabenstellung
+nennt Kerzner (2009, 10. Aufl.); gelesen und zitiert wird hier die 13. Auflage
+(2022).}
+Die agile Position ist die entgegengesetzte, und sie wird auf beiden Ebenen
+formuliert: Das Manifest
+schätzt \enquote{Responding to change over following a plan}
+\parencite[para.~2]{beck2001manifesto}, was das zweite Prinzip zu
+\enquote{Welcome changing requirements, even late in development} ausführt
+\parencite[para.~2]{beck2001principles}.\footnote{Das Agile Manifest und die
+zugehörigen Prinzipien sind ausschließlich als Webseiten ohne Seitenzählung
+veröffentlicht, weshalb APA~7 eine Zitation nach Absatz statt nach Seite
+verlangt; die vier Werte und zwölf Prinzipien erscheinen in der Quelle
+unnummeriert, und die hier verwendete Zählung stammt vom Verfasser und beginnt
+beim ersten Prinzip.} Unter einem sequenziellen Vorgehen wäre US-06, die
+Einkaufsliste, in einer Spezifikation festgeschrieben worden, die Monate vor der
+ersten Codezeile abgenommen wurde, samt ihrer Abhängigkeit von US-05. Im Backlog
+wurde sie umformuliert, nachdem Folgegespräche gezeigt hatten, dass die meisten
+Teilnehmer ohnehin auf Papier planen und nur die Liste wollten, und die
+Abhängigkeit löste sich damit auf. Eine abgenommene Spezifikation hätte dieselbe
+Information als Änderungsantrag verarbeitet.
+
+Sequenzielle Planung beansprucht, das ganze Projekt von Anfang an zu kennen.
+\textcite[p.~378]{kerzner2022} hält fest, dass eine vollständige Programmplanung
+\enquote{cannot be accomplished unless all of the necessary information becomes
+available at project initiation}, wozu der Statement of Work und der
+Projektstrukturplan gehören, obwohl er an anderer Stelle die Planung als iterativ
+und fortlaufend bezeichnet
+\parencite[p.~367]{kerzner2022}. Kelly beziffert den agilen Horizont:
+\enquote{prioritizing into the far future (e.g., more than 12 weeks out)}
+verringert die Agilität \parencite[ch.~8, pp.~57--62]{kelly2019}. Keines dieser
+Dokumente existierte bei Cookbox zu Projektbeginn, und nichts in einer
+Sechsmonatsspezifikation hätte die datenschutzrechtliche Prüfung vorweggenommen,
+die US-08, die Kontolöschung, vom Could-have zum Must-have machte. Der Plan war
+etwa zwei Sprints lang belastbar.
+
+Im traditionellen Projektmanagement kommen die Zahlen von Managern: Um die
+verstrichene Zeit zwischen zwei Ereignissen zu bestimmen, müssen
+\enquote{responsible functional managers evaluate the situation and submit their
+best estimates} \parencite[p.~455]{kerzner2022}. In Scrum schätzen die Entwickler, die einen
+Eintrag bauen werden, ihn selbst, und diese Umkehrung hat dieses Backlog
+verändert. Ein Manager, der US-07, die Umrechnung der Portionszahl, nach ihrer
+einzeiligen Beschreibung bepreist hätte, hätte sie niedrig angesetzt. Die vier
+Entwickler schätzten die Einheitenumrechnung über Gramm, Milliliter, Tassen und
+ganze Eier deutlich über der ursprünglichen Annahme, und die Story rückte an das
+Ende der Should-haves (Abschnitt~\ref{subsec:refinement}). Die Schätzung hat die
+Reihenfolge verändert und nicht umgekehrt.
+
+Anschließend kehren sich die Randbedingungen um, und am schärfsten formuliert das
+eine traditionelle Autorität. \textcite[p.~78]{kerzner2022} stellt die beiden
+Fälle nebeneinander: Der Wasserfallansatz \enquote{begins with well-defined requirements from
+which we must determine the budget and schedule to produce the deliverables},
+während es zum anderen heißt: \enquote{we may start out with a fixed budget and schedule,
+and then have to decide how much work can be done within the time and cost
+constraints. The requirements can evolve over the life of the project.} Seine
+Tabelle der Randbedingungskategorien benennt beide \parencite[p.~609]{kerzner2022}: Ein
+sequenzielles Cookbox entspricht Situation A-3, in der die Leistung feststeht,
+während Zeit und Kosten variieren; das Scrum-Projekt ist B-1, wo stattdessen
+Zeit und Kosten feststehen. Kelly leitet dieselbe Umkehrung aus den Kosten als
+Produkt aus Personen und Zeit ab: Personen lassen sich kurzfristig nicht
+hinzufügen, die Qualität muss hoch bleiben, und der Sprint legt die Zeit fest,
+also gilt: \enquote{That leaves scope} \parencite[ch.~1, pp.~5--10]{kelly2019}. Sechs Monate
+und 240.000~EUR stehen hier fest, und das erste Release bringt nichts ein, also
+gibt der Scope nach: Gestrichen wird US-09, das Moderationswerkzeug, ein
+Could-have aus Tabelle~\ref{tab:initial-backlog}, das das Support-Team bei den
+Startvolumina von Hand bewältigen kann, während die Must-haves --- US-08 nun
+darunter --- zum Termin ausgeliefert werden.
+
+\textcite[p.~307]{kerzner2022} verzeichnet das Kundenfeedback im traditionellen
+Projektmanagement als \enquote{Minimal, perhaps only at project termination} und im
+agilen als \enquote{Throughout the project}. Drei der Prüfpunkte, die Scrum in
+jeden Sprint einbaut, berühren diesen Unterschied: ein fünfzehnminütiger Daily
+Scrum für die Entwickler, ein Sprint
+Review, in dem \enquote{The Scrum Team presents the results of their work to
+key stakeholders} \parencite[p.~9]{scrumguide2020}, und eine Retrospektive, für
+die der Guide allein das Scrum Team als Teilnehmende benennt
+\parencite[p.~10]{scrumguide2020}. US-03 gewinnt am meisten: Eine Kochansicht,
+die jeweils einen Schritt in großer Schrift zeigt, ist diejenige Story, die sich
+aus einer schriftlichen Beschreibung am ehesten falsch bauen lässt, und ein
+Stakeholder, der sie im Review auf einem Telefon in der Hand hält, lernt mehr,
+als jede Spezifikation vermittelt. Unter einem sequenziellen Plan fällt dieser
+erste Blick von außen erst bei der Abnahme nach fünf Monaten, und fünf Monate
+sind zugleich die Arbeit, die ungeprüft in die falsche Richtung laufen kann.
+
+PMI benennt vier Arten von Projekten, für die iterative und agile Vorgehensweisen
+gut geeignet sind: solche, die \enquote{Require research and development; Have high rates of
+change; Have unclear or unknown requirements, uncertainty, or risk; or Have a
+final goal that is hard to describe} \parencite[p.~16]{pmi2017}. Cookbox erfüllt
+die mittleren beiden klar: Drei Refinement-Entscheidungen haben allein im ersten
+Sprint Band, Formulierung oder Reihenfolge einer Story verändert. Die vierte
+erfüllt es nur locker und die erste gar nicht. Zu PMIs eigenen ausgearbeiteten
+Fällen gehört ein militärisches Nachrichtensystem, bei dem \enquote{Many lives
+were potentially at risk} und die Anforderungen über Zulieferorganisationen
+hinweg festgeschrieben waren
+\parencite[p.~138]{pmi2017}; Cookbox ist das entgegengesetzte Projekt. Agilität
+ist zudem nicht kostenlos: \textcite[p.~1516]{mishra2023} geben in einem
+narrativen Review den Befund einer anderen Studie wieder, wonach agile Projekte
+ihre Terminpläne um 22,4\% überschreiten gegenüber 13,65\% beim Wasserfallmodell.
+
+
+% --- Axis 1 [CORE]: frozen specification vs. changing backlog ------------
+% TWO CITATIONS, one per side.
+%
+% SEQUENTIAL:
+%   \parencite[p.~308]{kerzner2022}
+%   "Traditional project management is viewed as prescriptive with well-defined
+%    scope and life-cycle phases where work is performed sequentially. The
+%    intent is to prevent changes in the deliverables."
+%   -> The cleanest one-sentence definition available. "The intent is to prevent
+%      changes" is the phrase to build the contrast on.
+%
+% AGILE:
+%   \parencite[para.~2]{beck2001principles}
+%   "Welcome changing requirements, even late in development. Agile processes
+%    harness change for the customer's competitive advantage."
+%
+% OPTIONAL third, and it is a strong one - the traditional authority conceding
+% the agile premise and naming Scrum himself:
+%   \parencite[p.~379]{kerzner2022}
+%   "In traditional project management, we often do not use scope freeze
+%    milestones because it is assumed that the scope is well-defined at project
+%    initiation. But on other projects, especially in IT, the project may begin
+%    based on just an idea and the project's scope must evolve as the project is
+%    being implemented. This is quite common with techniques such as Agile and
+%    Scrum."
+%   !! Do not over-run into the indented block that follows on p. 379 - it is
+%      Rudolf Melik (2007), not Kerzner.
+%
+% OWN VOICE, 2-3 sentences: take ONE named story and show it both ways. Under a
+% sequential approach it would have been fixed in a functional specification
+% signed off months before any code; in the backlog it was reworded twice and
+% re-ordered once after user feedback.
+%
+% ***** DECIDED: SUB-AXIS 1b IS OUT. *****
+% The two Cohn page numbers are unverified, and this is the chapter carrying the
+% report's sharpest argument - an unverifiable locator here is the worst possible
+% place to take a risk on the one named point-loser. The chapter has five solid
+% axes without it, and the outline lists the notation contrast as an "incl.",
+% not a requirement.
+% TO REINSTATE: verify both pages against a paginated copy of Cohn first. The
+% quotes are in the chapter "User Stories Are Not Use Cases" - findable by
+% section heading in seconds. If the pages check out, this is a good addition.
+%
+% OPTIONAL SUB-AXIS (1b) - the notation contrast, use cases/UML vs user stories.
+% THE ONLY SOURCE IN THE CORPUS THAT COVERS IT IS COHN:
+%   "Use cases are often permanent artifacts that continue to exist as long as
+%    the product is under active development or maintenance. Stories, on the
+%    other hand, are not intended to outlive the iteration in which they are
+%    added to the software."
+%   and "use cases are generally written as the result of an analysis activity,
+%    while user stories are written as notes that can be used to initiate
+%    analysis conversations."
+%   !! ******* PAGE NUMBERS NOT VERIFIED (approx. pp. 137-141). *******
+%      Check both against a paginated copy of Cohn BEFORE using them, or drop
+%      the sub-axis. Kerzner, PMI and Mishra & Alzoubi have ZERO coverage of
+%      use cases as a notation, so there is no fallback source.
+
+
+% --- Axis 2 [CORE - the chosen fifth]: planning horizon ------------------
+% TWO CITATIONS.
+%
+% SEQUENTIAL:
+%   \parencite[p.~378]{kerzner2022}
+%   "Finally, effective total program planning cannot be accomplished unless all
+%    of the necessary information becomes available at project initiation. These
+%    information requirements are: the statement of work (SOW); the project
+%    specifications; the milestone schedule; the work breakdown structure (WBS)."
+%   -> The load-bearing quote for "plan the entire project up front". Then argue,
+%      uncited, that none of the four could honestly have been produced at the
+%      start of this project.
+%
+% AGILE:
+%   \parencite[ch.~8, pp.~57--62]{kelly2019}
+%   "holding rigid priorities, prioritizing into the far future (e.g., more than
+%    12 weeks out), and not being prepared to fast-track new valuable work are
+%    all behaviors which will cause problems. Such behaviors while appearing to
+%    offer certainty and predictability will reduce agility."
+%   -> Puts a NUMBER on the horizon, which is what stops this axis being generic.
+%
+% !! HONEST QUALIFIER, one clause - concede it rather than let it be found:
+%    Kerzner says in three separate places that traditional planning is not a
+%    single up-front act (rolling wave on p. 305; "project planning is an
+%    iterative process and must be performed throughout the life of the project"
+%    on p. 367). A reader who checks p. 378 lands three lines below "Stay
+%    flexible". Acknowledging this in half a sentence is a Quality point and
+%    costs almost nothing; being caught by it is expensive.
+%
+% OWN VOICE: which parts of this project's plan were genuinely reliable beyond
+% the first two sprints, and which were not.
+
+
+% --- Axis 3 [CORE]: who estimates ----------------------------------------
+% TWO CITATIONS - the sharpest inversion in the chapter after axis 5, and the
+% one most easily made concrete.
+%
+% SEQUENTIAL:
+%   \parencite[p.~455]{kerzner2022}
+%   "Determining the elapsed time between events requires that responsible
+%    functional managers evaluate the situation and submit their best estimates."
+%   -> In traditional project management the numbers come from MANAGERS, not
+%      from the people who will do the work.
+%   OPTIONAL reinforcement: \parencite[p.~628]{kerzner2022} "the cost estimates
+%   are based on the figures supplied to the project manager by the functional
+%   managers."
+%   OPTIONAL, sharper still, on who writes the requirements document:
+%   \parencite[p.~385]{kerzner2022} "the SOW is prepared by the project office
+%   with input from the user groups" - users merely "input".
+%
+% AGILE:
+%   \parencite[p.~11]{scrumguide2020}
+%   "The Developers who will be doing the work are responsible for the sizing."
+%   -> One sentence, normative, exactly the axis.
+%   !! If this sentence was already spent in 3.3 or 3.4, do not spend it a third
+%      time - make the agile half in your own words and let the Kerzner citation
+%      carry the paragraph.
+%
+% !! Schwaber (2004) adds NOTHING usable to this axis - his material is
+%    narrative and drags in "done" and estimation depth, both out of scope.
+%
+% OWN VOICE: keep it to the planning consequence, not to estimation technique.
+% Effort estimation and planning poker belong to Task 3 - a passing mention at
+% most.
+
+
+% --- Axis 4: NOT USED -----------------------------------------
+% Axis 4 (delivery cadence) was considered and dropped; see the decision block at the
+% top of this file. The material was removed so it cannot be written by
+% mistake. It is preserved in task/Literature review.md and in the
+% chapter-4 axis table of PROJECT_FACTS.md if it is ever reinstated.
+
+
+% --- Axis 5 [CORE - the strongest argument in the report] ----------------
+% --- the inverted iron triangle ------------------------------------------
+% THREE CITATIONS, and this axis may take slightly more than its share.
+%
+% SEQUENTIAL, and this is the best material in the corpus because it comes from
+% a TRADITIONAL authority rather than an agile advocate:
+%   \parencite[p.~78]{kerzner2022}
+%   "The waterfall approach, where almost all work is done sequentially, begins
+%    with well-defined requirements from which we must determine the budget and
+%    schedule to produce the deliverables."
+%   immediately followed by
+%   "In this case, we may start out with a fixed budget and schedule, and then
+%    have to decide how much work can be done within the time and cost
+%    constraints. The requirements can evolve over the life of the project."
+%   -> ** QUOTE THESE TWO CONSECUTIVELY. ** Together they state the inversion.
+%
+% ** THE HIGHEST-TRANSFER MOVE AVAILABLE IN THE WHOLE REPORT: **
+%   \parencite[p.~609]{kerzner2022} Table 16-1 "Categories of Constraints"
+%   enumerates every fixed/variable combination. State that a sequential
+%   recipe-app project is Kerzner's A-3 (performance fixed, time and cost float)
+%   and a Scrum recipe-app project is his B-1 (time and cost fixed, performance
+%   floats). Mapping your own argument onto the source author's taxonomy is
+%   exactly what "transfer of theories/models" means.
+%   REINFORCEMENT - Kerzner instantiating A-3 himself, so the mapping reads as
+%   using his taxonomy rather than inventing a use for it:
+%   \parencite[pp.~607--608]{kerzner2022} "situation A-3 portrays most research
+%   and development projects. The performance of an R&D project is usually well
+%   defined, and it is cost and time that may be allowed to go beyond budget and
+%   schedule."
+%
+% AGILE - only Kelly DERIVES the inversion; Kerzner has 0 occurrences of "iron
+% triangle" and PMBOK 0 of "triple constraint":
+%   \parencite[ch.~1, pp.~5--10]{kelly2019}
+%   The five-step derivation - Cost = People x Time; quality must stay high;
+%   time is fixed by the sprint; people are fixed in the short run; therefore
+%   "So, people are fixed, costs are fixed, quality needs to be fixed at a high
+%   point, long-run deadlines have always been fixed, and short-run deadlines are
+%   fixed in agile. That leaves scope."
+%   and "If there is one difference between agile working and traditional, it is
+%   this: agile constantly flexes scope."
+%   -> ONE locator covers the whole derivation, because it is all in chapter 1.
+%   !! Include the FIRST step (Cost = People x Time). Without it the chain from
+%      "costs are fixed" to "people are fixed" has a hole.
+%
+% OPTIONAL fourth, PMI's own version, useful because it is not an agile advocacy
+% document:
+%   \parencite[PMBOK Guide, Section~2.5.7]{pmbok2021}
+%   "If the schedule or budget is constrained, the product owner may consider the
+%    project done when the highest priority items are delivered."
+%
+% OWN VOICE, and this is where the axis becomes concrete: name the ONE recipe-app
+% feature that gets dropped as the deadline approaches while the core ships. Tie
+% it back to the "Could have" band in Table~\ref{tab:initial-backlog} - Cohn's
+% definition of "could" ("left out of the release if time runs out", 2004, p. 98)
+% was planted in 3.2 exactly so it can be collected here.
+
+
+% --- Axis 6 [CORE]: feedback and risk ------------------------------------
+% --- THIS IS THE ONLY PLACE THE SCRUM CEREMONIES ARE DESCRIBED -----------
+% THREE CITATIONS. Refinement and sprint planning were covered in chapter 3 -
+% refer back, do not describe them twice.
+%
+% SEQUENTIAL:
+%   \parencite[p.~307]{kerzner2022}
+%   Table 8-9, row "Customer feedback": Traditional "Minimal, perhaps only at
+%   project termination" / Agile "Throughout the project".
+%   OPTIONAL: the phase-gate mechanism, \parencite[pp.~378--379]{kerzner2022} -
+%   the end-of-phase meeting with sponsor and senior management, "often called
+%   critical design reviews, 'on-off ramps,' and 'gates.'"
+%
+% AGILE - the Sprint Review, and note WHO attends:
+%   \parencite[p.~9]{scrumguide2020}
+%   "The Scrum Team presents the results of their work to key stakeholders and
+%    progress toward the Product Goal is discussed."
+%   -> This is the explicit stakeholder-facing sentence; rest the audience
+%      contrast on it.
+%
+% AGILE - the Retrospective, and note who does NOT attend:
+%   \parencite[p.~10]{scrumguide2020}
+%   "The Scrum Team inspects how the last Sprint went with regards to
+%    individuals, interactions, processes, tools, and their Definition of Done."
+%   !! ***** WORD THIS CAREFULLY. ***** The Guide NEVER says stakeholders are
+%      excluded. It names only "The Scrum Team". Write "the Guide names only the
+%      Scrum Team as participants", NOT "stakeholders are not invited" - the
+%      second puts words in the source's mouth.
+%
+% THE DAILY, one sentence:
+%   \parencite[p.~9]{scrumguide2020}
+%   "The Daily Scrum is a 15-minute event for the Developers of the Scrum Team."
+%
+% OWN VOICE: the risk argument - the maximum amount of work that can go in the
+% wrong direction is bounded by the review interval. Under a sequential plan,
+% the first time a user of the recipe app sees anything is at acceptance.
+
+
+% --- Axis 7: NOT USED -----------------------------------------
+% Axis 7 (communication and transparency) was considered and dropped; see the decision block at the
+% top of this file. The material was removed so it cannot be written by
+% mistake. It is preserved in task/Literature review.md and in the
+% chapter-4 axis table of PROJECT_FACTS.md if it is ever reinstated.
+
+
+% --- CLOSING: why agile fits THIS product, and where it would not --------
+% THREE CITATIONS. This paragraph prepares the balanced ending of chapter 5 -
+% do not draw the overall conclusions here, they belong to chapter 5.
+%
+% WHY AGILE FITS - argue it against a checklist rather than asserting it:
+%   \parencite[p.~16]{pmi2017}
+%   Projects for which iterative, incremental and agile approaches work well
+%   "Require research and development; Have high rates of change; Have unclear or
+%    unknown requirements, uncertainty, or risk; or Have a final goal that is
+%    hard to describe."
+%   -> Apply the four point by point to the recipe app. This is the cleanest way
+%      to ARGUE the choice of approach instead of asserting it.
+% OWN VOICE: consumer app, evolving user tastes, time to market and first-mover
+% advantage.
+%
+% WHERE SEQUENTIAL WINS - the counter-example. Naming a case where the chosen
+% method would be WRONG is a Transfer point.
+%   BEST OPTION - PMI's own worked case, so the counter-example is cited rather
+%   than asserted:
+%   \parencite[p.~138]{pmi2017}
+%   "Many lives were potentially at risk, so criticality was very high.
+%    Requirements were locked down because changes impacted so many subcontractor
+%    organizations."
+%   ** AND ITS PAIRED CASE ** - \parencite[p.~136]{pmi2017} describes an online
+%   drug store with "extremely volatile requirements with major changes week on
+%   week" and very short iterations: a consumer product almost exactly analogous
+%   to the recipe app. Citing the PAIR lets the chapter argue both directions
+%   from one authority's own examples.
+%   ALTERNATIVES:
+%     \parencite[p.~1517]{mishra2023} "since safety is a concern, the Department
+%     of Defense and the aerospace sector are two industries that would probably
+%     choose to employ waterfall over agile." (peer-reviewed backing for the
+%     air-traffic-control style example)
+%     \parencite[p.~9]{kerzner2022} the Disney case - safety, aesthetic value and
+%     quality locked in, all trade-offs made on time, cost and scope.
+%   !! Kerzner has NO air-traffic-control or safety-critical example (0 hits) -
+%      do not attribute one to him.
+%
+% BALANCE - one sentence of counter-evidence, and it is worth its space because
+% the Quality criterion rewards non-cheerleading:
+%   \parencite[p.~1516]{mishra2023}
+%   "Agile software development projects take 22.4% longer than anticipated
+%    compared to 13.65% longer than the estimated time for the waterfall method"
+%   !! Attribute as reported - the figure is Khoza and Marnewick (2020), relayed
+%      by Mishra and Alzoubi. This is a narrative review, not an empirical study.
+%   !! Take the SCHEDULE figure only. The cost figure from the same passage
+%      collides with axis 5 - see trap 1 in the header.
+%   !! Be aware the same page credits the same study with 88.2 % vs 47 % success
+%      rates in agile's favour. Quoting only the unfavourable half is defensible
+%      as balance, but do not pretend the page says only one thing.
+%
+% OPTIONAL, if the Manifesto's chapter-4 citation has not yet been spent:
+%   \parencite[paras.~2--3]{beck2001manifesto}
+%   "Responding to change over following a plan" TOGETHER WITH the qualifier
+%   "That is, while there is value in the items on the right, we value the items
+%    on the left more."
+%   -> ** QUOTE THE PAIR. ** The qualifier is what prevents the naive reading
+%      "agile means no planning", and handling it explicitly reads as depth. It
+%      is also the natural bridge into the hybrid argument in chapter 5.
+%      Suggested framing: the Manifesto does not reject planning, it reweights it.

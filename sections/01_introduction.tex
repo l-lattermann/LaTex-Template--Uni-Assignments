@@ -1,0 +1,237 @@
+% =============================================================================
+% 1 INTRODUCTION                      budget: 1.00 page (10-15 % of the report)
+% Source tags are explained in the header of the main .tex file.
+% -----------------------------------------------------------------------------
+% LITERATURE: LIGHT MIX  ->  roughly 1-3 citations in the whole chapter
+%   Most of this chapter is the project's own narrative and its assumptions,
+%   which are invented and therefore uncitable. Literature appears only where a
+%   method is NAMED for the first time.
+%   Cite here:  the framework itself (Scrum Guide) when Scrum is introduced;
+%               one source for "agile suits products whose requirements change"
+%               when the method choice is justified.
+%   Research:   a short, quotable justification for iterative planning under
+%               uncertainty - the Agile Practice Guide and PMBOK 7 principles
+%               are the obvious places; one empirical paper on why agile is
+%               chosen for consumer software would be stronger.
+%   Do NOT cite: the invented team, sprint length, budget, user numbers.
+%   Save the deep argument for chapter 4 - one sentence with one source here.
+%
+% WHAT YOU WANT TO SAY HERE, IN SHORT
+%   - "There is a recipe app to be built, this is the situation and the problem
+%      it addresses, and this is what the project set out to achieve."
+%   - "Agile, specifically Scrum, was chosen, and here is the one-sentence
+%      reason why it fits a product like this." [cite]
+%   - "These are the assumptions the whole report rests on: team, sprint
+%      length, time frame, budget, people."
+%   - "The report is structured as follows, chapter by chapter."
+% -----------------------------------------------------------------------------
+% WHAT THIS CHAPTER IS FOR
+% [GL] The introduction defines the problem, analyses the initial conditions
+% and establishes the objectives. It presents the project idea, gives context
+% for the environment and the motivation, explains the approach briefly, and
+% ends with a summary of the individual chapters.
+%
+% [GL] KEY QUESTIONS TO ANSWER - the chapter is largely written by answering
+% them in continuous text:
+%   - What and how is/was the environment? What is/was the situation?
+%     What is the task or issue/problem?
+%   - What was the objective of the project?
+%   - What procedures were planned and why? Which methodology and tools were
+%     chosen, based on which theoretical approaches or models?
+%   - What preparatory work (data collection, analysis, evaluation) was needed?
+%   - What is the structure of the project report?
+%
+% -----------------------------------------------------------------------------
+% HOW TO SHAPE IT
+%   - Combine introduction and background into ONE chapter [S2]. There is no
+%     separate theory chapter and no agile-history chapter anywhere in this
+%     report - he lectures on the history only because "in understanding the
+%     origins... it'll make some of the techniques much more understandable"
+%     [G-Jan26], not because he wants it written up.
+%   - One page. A student asked whether two pages of introduction is too much
+%     [T-02.07.24] and was never answered - on a 7-10 page report it plainly
+%     is. Every line spent here is a line missing in chapter 3.
+%   - Write it as a project that WAS carried out, not one being proposed
+%     [SCH]. Fictitious is fine, "but still write the report as if you had
+%     actually implemented the project"; "The project does not have to be
+%     real, but realistic."
+%   - End with the structure overview - a cheap Documentation point that also
+%     creates the "common thread" the task PDF asks for [S2, TASK].
+%
+% -----------------------------------------------------------------------------
+% ASSUMPTIONS TO FIX HERE (and then never contradict)
+%   - Team: role labels are enough, no invented personal names [SCH].
+%     Scrum team = PO + developers + Scrum Master; state the size.
+%   - Sprint length: his default is FOUR weeks, range "two to six weeks"
+%     [G-Jan25]; "two weeks or four weeks, it doesn't really matter"
+%     [G-Dec25]; [S3] says 1-4 weeks, equal length throughout, shorter =
+%     more learning cycles. Pick one and justify it in one sentence.
+%     CAUTION: his "every six weeks" figure means a 4-week sprint plus ~2
+%     weeks of surrounding activity [G-Feb25] - do not quote it if 2-week
+%     sprints are chosen.
+%   - Time frame, budget and people: needed because Resources is a graded
+%     criterion (10 %) and the task PDF asks that "resources such as time,
+%     budget and people are used efficiently".
+%   - Number of users, platform and commercial model are fixed in 2.1, not
+%     here - do not state them twice.
+%
+% -----------------------------------------------------------------------------
+% WHY AGILE - one paragraph, not a chapter
+%   - Consumer apps "all change"; speed to market and first-mover advantage
+%     dominate [G-Jan26]. Keep the full argument for chapter 4 and only signal
+%     it here.
+%   - The Stacey Matrix belonged to the OLD task set and is not required, but
+%     one sentence justifying agile for a volatile consumer app is cheap and
+%     feeds the Transfer criterion [SCH, 02.06.23].
+%
+% -----------------------------------------------------------------------------
+% DO NOT INCLUDE HERE
+%   agile history, market analysis, technical environment, app description,
+%   stakeholder analysis, risk analysis, WBS, cost plan, epics, user stories,
+%   an abstract, or any figure.
+% =============================================================================
+
+% #############################################################################
+% WRITING PLAN - CHAPTER 1, PARAGRAPH BY PARAGRAPH
+% Derived from task/Literature review.md, Section 0.3 (the slot map).
+% Budget: 1.00 page = ~700 WORDS (measured, see the main .tex header).
+% LIGHT literature - 3 in-text citations for the whole chapter, and that is
+% the CEILING, not a target. Five paragraphs => ~140 words each.
+%
+% Why so few: this chapter is the project's own narrative. Team, sprint length,
+% budget, user numbers and the problem statement are invented, and citing an
+% invented thing is wrong, not diligent. Literature appears only where a method
+% is NAMED for the first time.
+%
+% The three citations, and nothing else:
+%   C1  the framework, when Scrum is first named   -> scrumguide2020, p. 3
+%   C2  ONE "why agile fits a changing product"    -> kelly2019 (recommended)
+%   C3  ONE citable team size                      -> scrumguide2020, p. 5
+%
+% NOTE: the literature review's first pass had NO chapter-1 material at all.
+% The three quotes below already existed in it, but were filed under other
+% slots. Nothing new needs to be read.
+%
+% DO NOT open this chapter with the Agile Manifesto. It is the module's classic
+% failure mode; it is the one source in the report that cannot carry a page
+% number, so it would make the examiner's first impression of the citation
+% mechanics a locator-less one; and principle 2 is needed at full strength in
+% chapter 4.
+% #############################################################################
+
+\section{Einleitung}
+
+% --- P1: Initial situation, environment and problem -----------------------
+% NO CITATION. Own narrative.
+% Say: home cooks keep recipes scattered across screenshots, bookmarked pages,
+% handwritten cards and printouts; nothing is searchable, nothing scales to a
+% different number of servings, and the shopping list is rebuilt by hand every
+% time. Name the client/company context in one sentence (fictitious but
+% realistic) and the initial motivation for commissioning the project.
+% Keep it at board level - this is not an app description.
+
+The source from which recipes reach a household nowadays are manifold compared to times before broad digitalization: a screenshot taken while queuing in a supermarket line, a saved blog entry, a photo of a sticky note. The collection grows from day to day, but nothing is adjustable, one can not search through it and manually writing all of it to a word or excel file is tididous. It is not possible to automatically recalculate quatities when the person count changes, it is not posssible to extract a shopping list automatically eigther. Each of theese annyances is small in its own right, which is the reason why the problem persists and solutions for it are still sparse. Cookbox is a mobile app which aims to solve this issue. It was developed by a independet software company with around 25 employees as a intern project, not for an external customer. 
+
+The goal of this project was not to build Cookbox but rather to plan it. The project had four deliverables: a defined product scope, a defined set of user stories, which formulate the requirements from a user perspective, a initial product backlog and a first sprint planning on which the team could agree upon. This report therefore documents sprint zero, so the prelimniary preparation work before the first increment, with the first revision of the plan after the first sprint has already been completed. This project is limited to sprint planning and sprint refinement only. So there is no finished increment, no measured velocity, and no multi-sprint history.  Chapter ~5 discusses what remains unanswered and how further steps could look like.
+
+The chosen framework for this project is Scrum, 
+
+Rezepte erreichen einen Haushalt heute aus mehr Quellen als früher: ein Screenshot, aufgenommen in der Schlange an der Supermarktkasse, ein gespeicherter Blogeintrag, eine handschriftlich abgeschriebene Karte, ein Ausdruck, der innen an die Schranktür geklebt ist. Die Sammlung wächst, aber kaum etwas davon lässt sich durchsuchen, nichts passt sich an, wenn aus vier Personen am Tisch sechs werden, und die Einkaufsliste wird vor jedem Einkauf wieder von Grund auf neu geschrieben. Jedes dieser Ärgernisse ist für sich genommen klein, weshalb das Problem fortbesteht und leicht unterschätzt wird. Cookbox ist eine mobile Anwendung, die sie beseitigen soll. Sie wurde intern von einem unabhängigen Softwarestudio mit rund fünfundzwanzig Mitarbeitenden beauftragt, das die Anwendung auf eigene Rechnung und nicht für einen externen Kunden entwickelt und die Organisation von Rezepten als Alltagsproblem betrachtet, das keines der von ihm genutzten Produkte gut löst.
+
+Ziel des Projekts war es nicht, Cookbox zu bauen, sondern es zu planen. Das Projekt sollte vier Ergebnisse hervorbringen: einen definierten Produktscope, eine Menge von User Stories, die die Anforderungen aus Nutzersicht formulieren, ein priorisiertes initiales Product Backlog und einen ersten Sprint, auf den sich das Team verpflichten konnte. Dieser Bericht dokumentiert damit Sprint Zero, also die vorbereitende Arbeit vor dem ersten Increment, zusammen mit der ersten Überarbeitung des Plans, nachdem der erste Sprint bereits lief. Er behandelt Planung und Refinement; er behandelt nicht die Auslieferung. Es gibt kein fertiges Increment, keine gemessene Velocity und keine Historie über mehrere Sprints, und ihr Fehlen markiert die Grenze des Projekts und keine Lücke des Berichts. Kapitel~5 kommt darauf zurück, was diese Grenze kostet und was ihretwegen bewusst unbeantwortet bleibt.
+
+Das für die Planung verwendete Framework ist Scrum, das seine Autoren als \enquote{a lightweight framework that helps people, teams and organizations generate value through adaptive solutions for complex problems} definieren \parencite[p.~3]{scrumguide2020}. Diese Wahl beruht auf einem Argument und nicht auf Konvention. \textcite[ch.~4, pp.~31--38]{kelly2019} wägt die beiden Annahmen gegeneinander ab, die ein Team über seine Anforderungen treffen kann: Sie als bekannt und unveränderlich zu betrachten, erzeugt in dem Moment erhebliche Probleme, in dem sie sich doch ändern, während die Annahme, sie seien noch offen, wenig kostet, falls sie sich als stabil erweisen, sodass \enquote{the agile approach is valid whether the assumption (of stable requirements) is right or wrong}. Cookbox ist ein Produkt der zweiten Art, denn seine Nutzer können zwar die Rezepte beschreiben, die sie aufbewahren, aber nicht die Anwendung, die sie sich wünschen, solange sie keine Version davon in der Hand hatten. Die Anforderungen stammen aus Gesprächen mit potenziellen Nutzern, die vor Beginn der Planung geführt wurden; aus ihnen sind die zehn Stories in Abschnitt~\ref{subsec:stories} hervorgegangen. Das Backlog wurde in einem gewöhnlichen Issue Tracker geführt und nicht in einem spezialisierten Agile-Werkzeug, was für ein einzelnes Team und ein Backlog dieser Größe ausreicht.
+
+Mehrere im Bericht durchgängig verwendete Kennzahlen sind Annahmen; sie werden hier festgelegt, damit die späteren Kapitel einander nicht widersprechen können. Das Scrum Team besteht aus sechs Personen: einem Product Owner, einem Scrum Master und vier Entwicklern, bezeichnet nach Rolle und nicht nach Namen. Diese Größe bleibt innerhalb der Vorgabe, dass ein Scrum Team \enquote{typically 10 or fewer people} umfasst \parencite[p.~5]{scrumguide2020}. Die Sprints dauern zwei Wochen, gewählt am kurzen Ende der üblichen Spanne, weil ein Team, das sowohl die Domäne als auch einander neu kennenlernt, aus zwölf kurzen Feedbackzyklen mehr lernt als aus sechs langen. Das erste öffentliche Release ist für sechs Monate nach Projektbeginn angesetzt, also nach zwölf dieser Sprints, bei einem festen Budget von 240.000 EUR und ohne erwartete Einnahmen in diesem Zeitraum. Zeit, Geld und Personal sind festgelegt; der Scope ist die einzige Variable, die das Projekt bewegen kann.
+
+Der Bericht folgt in seinem Aufbau den drei Fragen der Aufgabenstellung. Kapitel~2 definiert den Produktscope von Cookbox, behandelt User Stories als Form der Anforderungsdarstellung und stellt die zehn Stories in Tabelle~\ref{tab:user-stories} vor. Kapitel~3 überführt diese Stories in einen Plan: was der Product Owner in diesem Projekt getan hat, das priorisierte initiale Backlog in Tabelle~\ref{tab:initial-backlog}, die Refinement-Arbeit in Abschnitt~\ref{subsec:refinement}, die drei dieser Einträge noch vor Ende des ersten Sprints neu geordnet hat, und die Planung des ersten Sprints selbst. Kapitel~4 stellt dieser Planungsweise eine sequenzielle gegenüber und spielt jeden Unterschied an einer namentlich genannten Story aus dem Backlog durch statt im Allgemeinen. Kapitel~5 bilanziert, was die Planung erreicht hat, was sie bewusst ausgelassen hat und was beim zweiten Mal anders gemacht würde.
+
+
+% --- P2: Project objective ------------------------------------------------
+% NO CITATION. Own narrative.
+% Say: the project set out to PLAN the development of a mobile recipe-organising
+% app up to the end of the first sprint - a scoped product, a set of user
+% stories, a prioritised initial product backlog and a planned first sprint.
+% State explicitly that the report documents planning, not execution: the
+% project ends at sprint zero. This sentence protects the whole report against
+% the "where are the later sprints?" question.
+
+
+% --- P3: Methodology, and why agile fits ----------------------------------
+% TWO CITATIONS - C1 and C2. This is the only paragraph in the chapter that
+% carries literature.
+%
+% C1 - introduce the framework when Scrum is first named:
+%   \parencite[p.~3]{scrumguide2020}
+%   "Scrum is a lightweight framework that helps people, teams and
+%    organizations generate value through adaptive solutions for complex
+%    problems."
+%   -> The Guide's own one-sentence definition. Paraphrase it or quote it; if
+%      quoted, mark it as a direct quotation.
+%
+% C2 - ONE sentence on why an adaptive approach suits THIS product.
+%   ***** DECIDED: use Kelly. The two alternatives below are recorded only so
+%   the choice is auditable - do not use them here. *****
+%   \parencite[ch.~4, pp.~31--38]{kelly2019}
+%   Kelly's asymmetric-risk argument: if a team assumes requirements are known
+%   and they change, the project is in trouble; if a team assumes they are vague
+%   and they turn out stable, the team still succeeds - "the agile approach is
+%   valid whether the assumption (of stable requirements) is right or wrong".
+%   -> Preferred because it is a REASON, not a fashion claim, and it works even
+%      if the premise fails. That reflective step is what Quality rewards.
+%   NOT USED (recorded for the audit trail only):
+%     \parencite[PMBOK Guide, Section~2.3.3]{pmbok2021}
+%     "Adaptive approaches are useful when requirements are subject to a high
+%      level of uncertainty and volatility and are likely to change throughout
+%      the project."
+%     -> Tier-1 and one-sided, which is right for chapter 1. But note PMBOK has
+%        no page numbers, so it costs a section locator here.
+%     \parencite[p.~16]{pmi2017}
+%     The four-item checklist of when agile works well ("Have high rates of
+%     change; Have unclear or unknown requirements, uncertainty, or risk").
+%
+% CAUTION: whichever is chosen, do NOT reuse it in chapter 4. Chapter 4 gets
+% the two-sided \parencite[PMBOK Guide, Section~2.3.4.1]{pmbok2021} instead.
+%
+% Then, uncited: name the tools (a backlog in Jira or an equivalent board) in
+% half a sentence. Tools may be mentioned in text, never as a figure.
+% Then, uncited: one sentence of preparatory work - conversations with
+% prospective users, from which the ten stories in 2.3 were collected. This
+% discharges the [GL] key question "what preparatory work was necessary?" and
+% sets up the single provenance sentence in 3.2.
+
+
+% --- P4: Assumptions ------------------------------------------------------
+% ONE CITATION - C3. Everything else here is invented and must stay uncited.
+%
+% C3 - the team size, so the assumption is anchored rather than asserted:
+%   \parencite[p.~5]{scrumguide2020}
+%   "The Scrum Team is small enough to remain nimble and large enough to
+%    complete significant work within a Sprint, typically 10 or fewer people."
+%
+% !! PICK ONE TEAM-SIZE FIGURE AND NEVER MENTION A SECOND. Three incompatible
+%    figures exist in the corpus: 10 or fewer (Scrum Guide, p. 5), three to nine
+%    (PMI, 2017, p. 39), six to ten (SBOK - dropped). Quoting two is a
+%    self-inflicted inconsistency.
+%
+% State, all uncited:
+%   - Team: one Product Owner, one Scrum Master, four developers. Role labels
+%     only, no invented personal names.
+%   - Sprint length: two weeks. Justify in one clause (shorter sprints give more
+%     feedback cycles for a team new to the domain). OPTIONAL anchor if a second
+%     citation is affordable - it is probably not:
+%       \parencite[p.~7]{scrumguide2020} "fixed length events of one month or
+%       less", or \parencite[p.~51]{pmi2017} on two-week iterations.
+%     CAUTION: do NOT cite Cohn for sprint length - his book says thirty days.
+%   - Time frame, budget, people. Needed because Resources is a graded criterion
+%     (10 %) and the task PDF names time, budget and people explicitly.
+%   - State that the figures are assumptions. Cheap Documentation marks.
+%
+% Number of users, platform and commercial model belong to 2.1 - do not state
+% them twice.
+
+
+% --- P5: Structure of the report ------------------------------------------
+% NO CITATION.
+% One short paragraph walking through chapters 2 to 5. Creates the "common
+% thread" the task PDF asks for and is a cheap Documentation point.

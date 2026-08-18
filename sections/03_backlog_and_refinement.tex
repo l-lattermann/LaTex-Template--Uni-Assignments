@@ -1,0 +1,1353 @@
+% =============================================================================
+% 3 PRODUCT OWNER, INITIAL BACKLOG, REFINEMENT            budget: 2.50 pages
+% Answers TASK QUESTION 2, verbatim:
+%   "Put yourself in the role of the product owner and describe how the initial
+%    backlog is created based on the defined user stories and how it is refined
+%    with the Scrum team."
+%
+% THIS IS THE CORE CHAPTER. "This bit of the task probably will take a couple
+% of pages" [G-Jan26]. The wording "refined with the Scrum team" is what
+% distinguishes Task 2 from Task 1 - it must be visibly answered.
+%
+% WHAT TASK 2 ACTUALLY WANTS - his framing has settled:
+%   "The difference between task one and task two is negligible... the only
+%    difference is that the last sub question is, how is the product backlog
+%    refined with the scrum team? Really, the only thing that you need to look
+%    at here is describe how sprint planning happens" [G-Jan26]
+%   "The main way in which this product backlog changes is through a process
+%    called product backlog refinement... and mostly it's done through a
+%    ceremony called sprint planning, or during an activity called backlog
+%    refinement. So you need to research what these are and describe what these
+%    are" [G-Jun26]
+%   => COVER BOTH EVENTS: backlog refinement AND sprint planning, refinement
+%      first. That also satisfies the older "refinement is the emphasis"
+%      reading [G-Mar25, G-Nov25, S4].
+%
+% SECTION PLAN he gave himself [G-Dec25]: (a) the role as PO, (b) how
+% requirements are gathered, (c) what the backlog is and how it changes,
+% (d) prioritisation, (e) refinement - plus (f) sprint planning. The four
+% subsections below cover all six.
+%
+% PERSPECTIVE: argue from the product owner's point of view - "it doesn't
+% matter if you use the first person... but do think from the perspective of
+% product owner" [G-Feb25]. Since [GL] forbids first person, write it in the
+% third person while keeping the PO's viewpoint.
+%
+% THE #1 SCORING RULE APPLIES HERE MOST OF ALL: "don't just give a general
+% description of what a product owner does, for example, but what he or she
+% did in your specific project" [SCH, 01.10.23]. Every theoretical statement
+% needs a recipe-app consequence in the same or the next sentence.
+%
+% TOOLS (Jira, Trello, Miro, Kanban board) may be mentioned IN TEXT ONLY, never
+% as a figure. The reason to cite is transparency: "everything is very
+% transparent in the world of agile development... everybody should know what's
+% going on at any time... and then avoid miscommunication" [G-Feb25].
+% =============================================================================
+
+\section{Product Owner: Initiales Backlog und Refinement}
+
+% =============================================================================
+% 3.1 THE ROLE OF THE PRODUCT OWNER
+% -----------------------------------------------------------------------------
+% LITERATURE: HEAVY  ->  the second citation-dense passage. The PO is a defined
+%                        role in a published framework, so every
+%                        accountability claimed must be traceable.
+%   Cite here:
+%     - the Scrum Guide for the accountabilities (product goal, creating and
+%       ordering PBIs, backlog transparency) - one page-numbered citation
+%       covering the list is enough, do not cite it five times
+%     - Kelly (2019) for the business-facing, negotiating side of the role;
+%       this is the book the task list names for exactly this purpose
+%     - the Agile Practice Guide for how the role sits between business and
+%       team
+%     - Schwaber's Scrum book, if the "no project manager in Scrum" sentence
+%       needs backing (it already sits in literature/)
+%   Research, best case: one source on the authority question - who may change
+%   the backlog and why a single accountable person beats a committee. If none
+%   is found, argue it from the Scrum Guide's wording instead of asserting it.
+%   NOT cited: the "most important word is no" framing and the concrete
+%   decisions your PO made in this project - those are your own voice.
+%
+% WHAT YOU WANT TO SAY HERE, IN SHORT
+%   - "The PO is a single accountable person, the voice of the customer, and
+%      these are the accountabilities the framework assigns." [cite]
+%   - "It is a senior business role, not a technical one, and its core work is
+%      negotiation, because demand always exceeds what the project can fund."
+%      [cite Kelly]
+%   - "The characteristic move is not refusal but pricing: here is the impact
+%      if you want this in." [own voice]
+%   - "Only the PO changes the backlog; anyone may propose changes." [cite]
+%   - "There is no project manager in Scrum." [one sentence, cite]
+%   - Throughout: what THIS PO decided for the recipe app, not what a PO does
+%     in general.
+% -----------------------------------------------------------------------------
+% MATERIAL, in rough order of value:
+%   - Voice of the customer [G-Mar25, G-Nov25].
+%   - ONE PERSON, never a committee [S2].
+%   - The Scrum Guide accountabilities as the backbone [S2, S4]: developing and
+%     communicating the product goal, creating and clearly communicating PBIs,
+%     ordering them, ensuring the backlog is transparent, visible and
+%     understood. Cite the Scrum Guide with a page number.
+%   - A senior business person with negotiating skills, often not a
+%     technologist, who must make constraints plain because "there are going to
+%     be many, many more requirements than the project can afford"
+%     [G-Jan25, G-Feb25].
+%   - THE KEY TRAIT, and the strongest single line available for the Resources
+%     criterion: "the most important word in systems development is no" - with
+%     the agile refinement "In fact, Agile doesn't say no. It says, well,
+%     here's the impact, if you want this in" [G-Feb25].
+%   - ONLY THE PO MAY CHANGE THE BACKLOG. Anyone may suggest additions, changes
+%     or reprioritisation, "but only the product owner has the authority to
+%     make the changes. So it isn't a random free for all" [G-Jan25].
+%   - ONE SENTENCE: there is no project manager in Scrum - "There is project
+%     management activity, but it's done on a kind of collective basis"
+%     [G-Jun26]. Cheap Transfer point, do not expand it.
+%
+% SHAPE: do not let this become a role portrait. Two thirds role, one third
+% what that role decided in THIS project.
+% =============================================================================
+% #############################################################################
+% WRITING PLAN - 3.1, PARAGRAPH BY PARAGRAPH
+% Budget: 0.60 pages = ~420 WORDS across 6 paragraphs => ~70 WORDS EACH.
+% HEAVY - about 11 citations, but SHORT. That density is only affordable
+% because most citations are a clause, not a block quote.
+% Shape: two thirds what the role is, one third what THIS PO decided.
+%
+% Sources that own this subsection: scrumguide2020 (normative backbone),
+% kelly2019 (the business and negotiating side), pmi2017 (the role between
+% business and team), suryaatmaja2020 (what happens when the role is undefined).
+%
+% !! THREE SOURCES MUST BE KEPT OUT OF THIS SUBSECTION:
+%    - cohn2004: he writes "A ScrumMaster fills the project manager role".
+%    - schwaber2004: p. 1 calls the ScrumMaster "the Scrum project manager".
+%    - racheva2008: its Table 2 has the "Scrum master (or Agile PM)" advising on
+%      technical feasibility.
+%    The literature review rejects two other sources for exactly this error, so
+%    citing any of these next to "there is no project manager in Scrum" would be
+%    inconsistent with the report's own screening.
+% #############################################################################
+\subsection{Die Rolle des Product Owners}
+
+% --- P1: a single accountable person, and the four accountabilities -------
+% THREE CITATIONS.
+%
+%   \parencite[p.~5]{scrumguide2020}
+%   "The Product Owner is accountable for maximizing the value of the product
+%    resulting from the work of the Scrum Team."
+%
+%   \parencite[p.~6]{scrumguide2020}
+%   The four accountabilities, as a list: developing and explicitly
+%   communicating the Product Goal; creating and clearly communicating Product
+%   Backlog items; ordering Product Backlog items; ensuring the Product Backlog
+%   is transparent, visible and understood.
+%   -> ONE page-numbered citation covering the whole list. Do not cite p. 6 four
+%      times. !! If quoted verbatim, strip the trailing "; and," from "Ordering
+%      Product Backlog items; and,".
+%   -> ** THE STRUCTURAL SPINE OF THIS SUBSECTION **: map each of the four onto
+%      a concrete recipe-app action in the same or the next sentence. That
+%      discharges the module's most repeated scoring rule ("not what a product
+%      owner does in general, but what he or she did in your project").
+%
+%   \parencite[p.~6]{scrumguide2020}
+%   "The Product Owner is one person, not a committee."
+%   -> The strongest one-line quote available for 3.1.
+%   -> A second, independent source exists if reinforcement is wanted:
+%      \parencite[p.~153]{pmi2017} defines the PO as "A person responsible for
+%      maximizing the value of the product and who is ultimately responsible and
+%      accountable for the end product that is built." (Note: the literature
+%      review's first pass wrongly listed PMI as silent on this.)
+Der Product Owner ist \enquote{accountable for maximizing the value of the
+product resulting from the work of the Scrum Team} \parencite[p.~5]{scrumguide2020}
+und ist \enquote{one person, not a committee} \parencite[p.~6]{scrumguide2020}.
+Daneben nennt der Guide eine zweite Rechenschaftspflicht, das wirksame Management
+des Product Backlogs, das er in vier Teile gliedert: das Produktziel zu
+entwickeln und zu vermitteln, Product-Backlog-Einträge zu erstellen und zu
+vermitteln, sie zu ordnen und das Backlog transparent, sichtbar und verstanden zu
+halten \parencite[p.~6]{scrumguide2020}. Der Product Owner darf diese Arbeit
+delegieren, bleibt aber dafür rechenschaftspflichtig. Für Cookbox sind diese vier Punkte: das Ziel, dass
+eine kochende Person ein Rezept in die App bekommt, es wiederfindet und ihm beim
+Kochen folgt; die zehn Stories aus Tabelle~\ref{tab:user-stories}; ihre
+Reihenfolge in Abschnitt~\ref{subsec:backlog}; und ein Backlog, das im gesamten
+Studio einsehbar ist.
+
+Diese Person gehört auf die Geschäftsseite. In der Regel gilt: Product Owner
+\enquote{have a business background and bring deep subject matter expertise to
+the decisions} \parencite[p.~41]{pmi2017}, und um wirksam zu sein, müssen sie
+\enquote{step away from the keyboard and stop writing code} \parencite[ch.~11, pp.~79--84]{kelly2019};
+der Product Owner von Cookbox ist eine leitende Geschäftsrolle im Studio und
+schreibt keine Zeile der App. Accountability \enquote{is not shared}, während
+responsibility \enquote{can be shared} \parencite[The Standard for Project Management,
+Section~3.2]{pmbok2021}: Für die Reihenfolge der zehn Stories ist allein der
+Product Owner rechenschaftspflichtig, während ihre Formulierung und ihre Größe
+gemeinsam mit den Entwicklern erarbeitet werden.
+
+Ein großer Teil dieser Arbeit ist Verhandlung: Sechs Monate und feste
+240.000~EUR kaufen sehr viel weniger, als das Studio gern ausliefern würde.
+\textcite[ch.~2, pp.~11--20]{kelly2019}
+benennt diese Einschränkung unumwunden: \enquote{every work item which is done comes at
+the cost of not doing something else.} Das wichtigste Wort dieser Rolle ist
+deshalb \enquote{no}; agil wird jedoch nicht rundheraus abgelehnt, sondern
+bepreist, indem die Auswirkung benannt wird, die eine Aufnahme hätte. Der Import
+von Webseiten (US-10) wurde wiederholt eingefordert und wurde bepreist statt
+abgelehnt, wobei der Preis am Releasetermin bemessen wurde. Eine einzige
+ordnende Stimme hält das Backlog außerdem frei von \enquote{decibel management},
+also jenem Zustand, in dem sich der lauteste Stakeholder durchsetzt
+\parencite[ch.~2, pp.~11--20]{kelly2019}.
+
+Vorschläge darf jeder machen, aber nur mit Argumenten: Wer das Product Backlog
+verändern will, \enquote{can do so by trying to convince the Product Owner}
+\parencite[p.~6]{scrumguide2020}. Diese Befugnis schließt das Streichen ein, denn
+der Product Owner entscheidet auch \enquote{what should not be developed into product}
+\parencite[ch.~8, pp.~57--62]{kelly2019}. Genau das hält das Won't-have-Band in
+Tabelle~\ref{tab:initial-backlog} fest: US-10 steht dort als Entscheidung und
+nicht als Versäumnis.
+
+Innerhalb des Scrum Teams benennt das Framework nur drei Rechenschaftspflichten
+--- Developers, Product Owner und Scrum Master --- \parencite[p.~5]{scrumguide2020}.
+Ein Projektmanager gehört nicht dazu, und für Cookbox wurde auch keiner
+eingesetzt; die Planung, die dieses Kapitel dokumentiert, haben diese drei
+gemeinsam geleistet.
+
+Der Zuschnitt der Rolle wurde deshalb vor dem ersten Sprint schriftlich
+festgehalten: Der Product Owner ordnet das Backlog allein, nimmt an beiden
+Refinement-Sitzungen jedes Sprints teil und verteidigt das Produktziel. Eine
+aktionsforschende Studie zu einer gescheiterten Agil-Einführung hält fest, dass
+\enquote{the team has learned that there were no clear
+rules/guidelines for PO to follow} \parencite[p.~15]{suryaatmaja2020}. Eine
+Rolle zu benennen und festzulegen, worüber sie entscheidet, sind zwei
+verschiedene Handlungen, und dieses Projekt brauchte die zweite.
+
+
+% --- P2: a business role, and the accountability/responsibility split -----
+% THREE CITATIONS.
+%
+%   \parencite[p.~41]{pmi2017}
+%   "Typically, product owners have a business background and bring deep subject
+%    matter expertise to the decisions."
+%   and, same page, "Product owners rank the work based on its business value."
+%   -> Seven words that give both the act and the criterion. Use the second as
+%      the hinge into 3.2.
+%
+%   \parencite[ch.~11, pp.~79--84]{kelly2019}
+%   "But to be an effective Product Owner, they need to step away from the
+%    keyboard and stop writing code."
+%   -> The business-not-technologist point in the words of the book the task
+%      sheet names for exactly this purpose.
+%
+%   \parencite[The Standard for Project Management, Section~3.2]{pmbok2021}
+%   "Accountability. The condition of being answerable for an outcome.
+%    Accountability is not shared." / "Responsibility. The condition of being
+%    obligated to do or fulfill something. Responsibility can be shared."
+%   -> ** USE THESE TWO TOGETHER **: the PO is ACCOUNTABLE for the product,
+%      while the responsibility for refining the backlog is SHARED with the
+%      Scrum team. That single distinction sets up 3.3 and is exactly the
+%      reflection depth Process and Quality reward.
+%   !! THE PART NAME IS MANDATORY IN THIS LOCATOR. The volume binds two
+%      separately numbered documents and both have a Section 3.2; without the
+%      prefix an examiner checking it lands on "Why Tailor?" and concludes the
+%      quote is fabricated.
+
+
+% --- P3: negotiation, and the characteristic move -------------------------
+% TWO CITATIONS plus the report's own framing.
+%
+%   \parencite[ch.~2, pp.~11--20]{kelly2019}
+%   "But every work item which is done comes at the cost of not doing something
+%    else."
+%   -> ** THE BEST AVAILABLE BACKING for the tutor's "here is the impact if you
+%      want this in" framing. ** It states the PO's move as PRICING - every yes
+%      is priced in foregone work - rather than as refusal. Preferred over
+%      Kelly's "resources are limited... decide what is not being done"
+%      (ch. 9, pp. 63-74), which frames it as refusal.
+%
+%   \parencite[ch.~2, pp.~11--20]{kelly2019}
+%   "Having a 'single voice' creates clarity and forces prioritization. Many a
+%    project has been waylaid by diverse stakeholders pulling the team in
+%    different directions. Too often 'decibel management' has ruled."
+%   -> "Decibel management" is the most quotable phrase in the book and the best
+%      justification for why the backlog is ordered by one person rather than by
+%      whoever shouts loudest. Also a Creativity point.
+%
+% OWN VOICE, UNCITED: the sentence that the most important word is "no", and
+% its agile correction - agile does not refuse, it prices ("here is the impact
+% if you want this in"). This is the tutor's own framing and must NOT be
+% attributed to a source. It is the strongest single line for the Resources
+% criterion (10 %).
+% Then, concretely: name one request this PO priced rather than refused.
+
+
+% --- P4: who may change the backlog ---------------------------------------
+% TWO CITATIONS.
+%
+%   \parencite[p.~6]{scrumguide2020}
+%   "Those wanting to change the Product Backlog can do so by trying to convince
+%    the Product Owner."
+%   -> Anyone may propose; only the PO decides. Contrast this in chapter 4 with
+%      formal change control - do not do the contrast here.
+%
+%   \parencite[ch.~8, pp.~57--62]{kelly2019}
+%   "At its most basic level, the Product Owner is the backlog gatekeeper... More
+%    importantly the Product Owners should get to decide what is taken OUT of the
+%    backlog, that is, what should not be developed into product."
+%   -> The removal authority is the one thing the Scrum Guide does NOT state, so
+%      this citation is not redundant. It also sets up the "Won't have" band in
+%      3.2.
+
+
+% --- P5: no project manager in Scrum (ONE sentence) -----------------------
+% ONE CITATION. Do not expand this beyond a sentence - it is a cheap Transfer
+% point that becomes expensive if it turns into a paragraph.
+%
+%   \parencite[p.~5]{scrumguide2020}
+%   "Scrum defines three specific accountabilities within the Scrum Team: the
+%    Developers, the Product Owner, and the Scrum Master."
+%   -> Cite the list, then note the ABSENCE in your own words: a project-manager
+%      role is not among them. Phrase it as an observation about the framework,
+%      not as a quotation - the Guide never says "there is no project manager".
+%      (Verified: "project manager" occurs 0 times in the Guide.)
+%   -> Kelly's nearest sentence ("the Project Manager role steps back") is a
+%      claim about EMPHASIS, not composition - do not use it for this.
+% OPTIONAL half-sentence of balance, if space allows:
+%   \parencite[p.~37]{pmi2017} notes that project managers "can add significant
+%   value in many situations" but that their role looks different. That nuance
+%   is a Quality point, but it costs a citation the budget may not have.
+
+
+% --- P6: what THIS PO did, and the risk the role carries ------------------
+% ONE CITATION. Close the subsection on the project, not on theory.
+%
+% OWN VOICE: two or three sentences on decisions this PO actually took for the
+% recipe app - which stakeholder group was pushed back, which request was
+% priced, what the product goal was.
+%
+%   \parencite[p.~15]{suryaatmaja2020}
+%   "The team has learned that there were no clear rules/guidelines for PO to
+%    follow"
+%   -> ** WHY THIS SOURCE EARNS ITS PLACE HERE **: normative sources structurally
+%      CANNOT report a failed adoption. This is documented evidence of what
+%      happens when the role exists on paper but is undefined in practice, and
+%      it justifies why this project defined the PO's remit explicitly rather
+%      than just naming the role.
+%   !! This source was originally planned for chapter 5 only. It was moved here
+%      because chapter 5 admits no new sources - a source used only in the
+%      conclusion is a new source in the conclusion by construction. Using it
+%      here makes the chapter-5 back-reference legitimate.
+%   !! EVIDENTIAL STATUS: the p. 15 statements are validated learning outcomes;
+%      the p. 9 statements are pre-analysis interview perceptions. Use p. 15.
+%      Never write "the study found that..." from a p. 9 quote.
+
+
+% =============================================================================
+% 3.2 THE INITIAL PRODUCT BACKLOG AND ITS PRIORITISATION
+% -----------------------------------------------------------------------------
+% LITERATURE: MIXED  ->  cite the METHOD, never the DECISIONS
+%   The rule for this subsection: every concept that has a name gets a source;
+%   every judgement about the recipe app is your own and stays uncited.
+%   Cite here:
+%     - what a product backlog is and what "ordered" means (Scrum Guide)
+%     - MoSCoW - it comes from DSDM; find the original or a solid secondary
+%       source rather than a blog. The Agile Practice Guide and the SBOK also
+%       describe prioritisation techniques
+%     - value-based prioritisation, if that route is chosen instead
+%     - WSJF, when rejecting it: name what it is with a source, THEN reject it.
+%       Rejecting an uncited method looks like ignorance; rejecting a cited one
+%       looks like judgement, and that is the Transfer point
+%     - non-functional requirements as backlog items, if the optional NFR items
+%       are added
+%   Research, best case: one academic paper on requirements prioritisation or
+%   backlog management in agile projects - it lifts the chapter above textbook
+%   level and is exactly the "own research" he expects. The "backlog__*" PDFs
+%   in literature/ are that kind of source.
+%   NOT cited: the ten priorities themselves, the justification column, the
+%   dependencies between your stories.
+%
+% WHAT YOU WANT TO SAY HERE, IN SHORT
+%   - "The items came from user conversations; the initial backlog is exactly
+%      the ten stories from section 2.3." [own, one sentence]
+%   - "A product backlog is an ordered list of everything known to be needed."
+%      [cite]
+%   - "MoSCoW was chosen because it is simple and communicates priority to
+%      non-technical stakeholders." [cite the method, own the reason]
+%   - "WSJF was considered and rejected, because a ten-item backlog does not
+%      justify a scoring formula whose inputs are themselves guesses."
+%      [cite the method, own the rejection]
+%   - "Priority follows business value - not what is technically interesting -
+%      and must-haves are ordered among themselves; these dependencies force
+%      this order." [own]
+%   - "Priority is independent of how well an item is already understood."
+%      [own, sets up 3.3]
+% -----------------------------------------------------------------------------
+% WHERE THE ITEMS COME FROM: one sentence (user conversations, market
+% observation). His section plan foresees "how you gather requirements"
+% [G-Dec25], but a long origin narrative wastes the page budget.
+%
+% THE BACKLOG IS EXACTLY THE TEN STORIES. Answering a student who asked how
+% many items to include: "There's only one initial backlog that you need. Just
+% take the ten user stories that you've come up with and use those as the basis
+% for your initial backlog" [G-Jun26]. Asked about epics or "removing noise",
+% he described only: build the backlog from the ten stories in priority order
+% using a technique such as MoSCoW. => No epic hierarchy, no invented extra
+% items. Big page saver.
+%   OPTIONAL EXTRA, cheap Transfer point [G-Feb25]: the backlog also holds
+%   non-functional requirements "which maybe the engineers will come up with" -
+%   one or two NFR items (e.g. scalability, data protection) is a legitimate
+%   addition.
+%
+% YOU NEED NOT WALK ALL TEN THROUGH THE PROSE: "describing a few user stories
+% to illustrate how you create the backlog is fine" [T-25.02.2025]. List all
+% ten in the table, discuss three or four in the text.
+%
+% TABLE PLACEMENT: the prioritisation table may go in the appendix
+% [T-20.05.2026] - but appendix content counts toward the page limit anyway,
+% so it stays in the body.
+%
+% PRIORITISATION METHOD - ANY STRUCTURED METHOD IS ACCEPTED. Asked "Is it
+% possible that we use value benefits approach instead of MoSCoW?" he answered
+% "Yeah, you can", adding "any other structured prioritisation approach. The
+% easiest one is MoSCoW. That's why I put this down" [G-Jan26]. MoSCoW is a
+% convenience default, not a preference. It is separately sanctioned in
+% writing: "you can introduce MoSCoW, and indicate how you use it to prioritize
+% your backlog" [T-25.02.2025].
+%   - MoSCoW's W: he has called it "would have" [G-Mar25], said the distinction
+%     "doesn't really matter" [G-Feb25], and glossed it as won't-have
+%     [G-Jun26]. Do NOT write a paragraph about it.
+%   - Useful justification wording for low priority [G-Jun26]: not in this
+%     release because "they're not necessary... too expensive, or too
+%     ambitious". His own recipe-app examples of near-zero priority: an East
+%     Timor recipes section [G-Sep25] and multi-currency support [G-Jan25].
+%   - VALUE MEANS BUSINESS VALUE, not what the engineers find interesting -
+%     "a nice little AI widget that the tech guys want to include. Well, if it
+%     doesn't offer business value... then it does not get to the top"
+%     [G-Jan25].
+%   - Prioritise WITHIN the must-haves as well [G-Nov25].
+%   - Mention dependencies and constraints as an ordering factor [S4].
+%   - Inventing own category criteria (e.g. basic features, personalisation,
+%     engagement) was asked in the channel and never answered - neither
+%     confirmed nor forbidden. Safe if the criteria are justified.
+%   - WSJF: mention it ONLY as a considered-and-rejected alternative, using his
+%     own reasoning - "I inherited this slide... I've never seen the weighted
+%     shortest job first equation used... it looks too scientific" [G-Feb25];
+%     "it's pseudo scientific, so I won't even attempt to explain it and you
+%     don't even need to consider it" [G-Jan25]. A rejected alternative with a
+%     stated reason is exactly what the Transfer criterion rewards.
+%   - PRIORITY AND READINESS ARE INDEPENDENT: "you can have a requirement that
+%     is clearly understood, that is estimated, but that is given a really low
+%     priority" [G-Jan25]. Useful when annotating the table, and it sets up 3.3.
+% =============================================================================
+% #############################################################################
+% WRITING PLAN - 3.2, PARAGRAPH BY PARAGRAPH
+% Budget: 0.80 pages, of which the table takes 0.17 => ~440 WORDS of prose
+% across 6 paragraphs => ~70 WORDS EACH. MIXED - about 10 citations.
+% THE RULE FOR THIS SUBSECTION: cite the METHOD, own the DECISION. Every concept
+% with a name gets a page-numbered source; every judgement about the recipe app
+% stays uncited. Citing your own priorities would be wrong, not diligent.
+% #############################################################################
+\subsection{Das initiale Product Backlog und seine Priorisierung}
+\label{subsec:backlog}
+
+% --- P1: provenance (ONE sentence) and what a backlog is ------------------
+% TWO CITATIONS.
+%
+% OWN VOICE, one sentence only: the items came from the user conversations
+% named in chapter 1. The tutor's section plan foresees "how you gather
+% requirements", but a long origin narrative wastes the page budget.
+%
+%   \parencite[p.~10]{scrumguide2020}
+%   "The Product Backlog is an emergent, ordered list of what is needed to
+%    improve the product."
+%   -> "Emergent" carries the never-complete argument; "ordered" carries the
+%      single-sequence argument. Both are needed later, so quote the whole
+%      sentence.
+%
+%   \parencite[p.~167]{cohn2004}
+%   "When a project is initiated there is no comprehensive effort to write down
+%    all foreseeable features. Typically, the product owner and team write down
+%    everything obvious, which is almost always more than enough for a first
+%    sprint."
+%   -> Directly licenses a ten-story starting backlog. This is the sentence that
+%      pre-empts "why only ten items?".
+Die Einträge stammen aus den in Kapitel~1 beschriebenen Nutzergesprächen. Ein
+Product Backlog ist \enquote{an emergent, ordered list of what is needed to improve the
+product} \parencite[p.~10]{scrumguide2020}. Emergent bedeutet, dass es nie
+fertig ist, und ordered bedeutet eine einzige Reihenfolge statt einer Menge von
+Kategorien, weshalb die zehn Cookbox-Einträge einen Rang tragen und kein Thema.
+Klein anzufangen ist legitim, denn zu Beginn gibt es
+\enquote{no comprehensive effort to write down all foreseeable features}, und was
+offensichtlich ist, ist \enquote{almost always more than enough for a first sprint}
+\parencite[p.~167]{cohn2004}.
+
+Das initiale Backlog von Cookbox besteht damit aus genau den zehn Stories aus
+Tabelle~\ref{tab:user-stories} und aus nichts sonst. \textcite[p.~173]{cohn2004} hält
+fest, dass \enquote{Scrum has no prescribed, or even recommended, approach to initially
+stocking the product backlog}, schließt die Lücke, indem er zuerst die
+Nutzerrollen bestimmt --- das Vorgehen aus Abschnitt~\ref{subsec:stories} ---, und
+beschränkt das Backlog \enquote{to only user stories}, statt darin auch Fehler und
+Untersuchungen zu führen. Diese Einschränkung ist Cohns eigene Abwandlung des reinen Scrum und wird
+hier bewusst übernommen.
+
+Als Ordnungsschema diente MoSCoW, die \enquote{must have, should have, could have,
+and won't have} method \parencite[PMBOK Guide, Section~4.4.4]{pmbok2021}.
+\textcite[p.~98]{cohn2004} übernimmt die MoSCoW-Regeln aus DSDM und füllt die
+Bänder inhaltlich: \enquote{Could-have features are ones that can be left out of the
+release if time runs out}. US-08 und US-09 stehen in diesem Band und bilden damit
+den Puffer dieses Releases gegen einen festen Termin. Vier Kategorien lassen sich
+außerdem einem nichttechnischen Stakeholder in einem Satz erklären. Die Schwäche
+des Verfahrens wird eingeräumt statt verschwiegen: Eine Übersicht über fünfzehn
+Priorisierungsverfahren stellt fest, dass \enquote{most of
+the methods are informal and subjective} \parencite[p.~53]{racheva2008}.%
+\footnote{Die für diesen Bericht verfügbare Fassung von \textcite{racheva2008}
+ist das Autorenmanuskript der Camera-ready-Version, das keine gedruckten
+Seitenzahlen trägt. Die hier angegebenen Seitenzahlen sind aus dem
+veröffentlichten Bereich 49--58 und den neun fortlaufenden Seiten des
+Manuskripts abgeleitet; sie sind als Näherung zu lesen.}
+
+Als Alternative wurde eine Bewertungsformel geprüft. Der Agile Practice Guide
+beschreibt eine Rangbildung \enquote{with value including cost of delay divided by duration
+(CD3) and other value models} \parencite[p.~59]{pmi2017}, also die Rechnung hinter
+Weighted Shortest Job First. Verworfen wurde sie wegen mangelnder Passung, nicht
+aus grundsätzlichen Erwägungen. Dieselbe Übersicht
+nennt vier Kriterien für die Wahl eines Verfahrens, darunter die Zahl der
+Einträge und die verfügbaren Informationsquellen \parencite[p.~56]{racheva2008};
+ein Backlog aus zehn Einträgen und eine fehlende gemessene Velocity scheitern an
+beiden.
+
+Dieselben zehn Stories erscheinen in Tabelle~\ref{tab:initial-backlog} erneut,
+diesmal in Prioritätsreihenfolge und jeweils mit Band und Begründung.
+
+
+% --- P2: the backlog IS the ten stories, and that is a modification -------
+% TWO CITATIONS. This paragraph carries a Transfer point - do not skip it.
+%
+%   \parencite[p.~173]{cohn2004}
+%   "Scrum has no prescribed, or even recommended, approach to initially
+%    stocking the product backlog... However, I've found that by first
+%    identifying user roles and then focusing on the stories for each user role,
+%    Scrum is combined with a powerful requirements identification technique."
+%   -> The strongest procedural quote available: it names the exact method used
+%      in chapter 2 and ties chapter 2 to chapter 3.
+%
+%   \parencite[p.~173]{cohn2004}
+%   "Rather than allowing product backlog items to describe new features, issues
+%    to investigate, defects to be fixed, and so on, the product backlog is
+%    constrained to only user stories."
+%   -> ** THE TRANSFER POINT **: Cohn presents this as HIS OWN modification to
+%      plain Scrum, not as Scrum. Say so explicitly - the report adopts a
+%      documented adaptation and names it as such. That is precisely what the
+%      15 % Transfer criterion asks for.
+%
+% OPTIONAL, if a third citation is affordable:
+%   \parencite[p.~70]{schwaber2004}
+%   "The rest could emerge as we proceeded; we had enough to start with."
+%   -> Quote this CLAUSE ONLY, not the flip-chart sentence around it. It
+%      justifies a proportionate, deliberately non-exhaustive sprint zero.
+%
+% OWN VOICE: state that the initial backlog is exactly the ten stories of
+% Table~\ref{tab:user-stories} - no epics, no invented extra items.
+% OPTIONAL, uncited: one or two non-functional items (e.g. search results under
+% one second, offline access to saved recipes). Keep them UNCITED - the sources
+% that would support them were dropped, and Cohn actually argues the OPPOSITE
+% (he wants constraints on separate cards, not as backlog items).
+
+
+% --- P3: the prioritisation method ----------------------------------------
+% THREE CITATIONS.
+%
+%   \parencite[PMBOK Guide, Section~4.4.4]{pmbok2021}
+%   "Prioritization schema are methods used to prioritize portfolio, program, or
+%    project components, as well as requirements, risks, features, or other
+%    product information. Examples include a multicriteria weighted analysis and
+%    the MoSCoW (must have, should have, could have, and won't have) method."
+%   -> ** THE MoSCoW CITATION. ** All four categories, from a PMI standard. This
+%      is why the vendor-published SBOK is not needed and why Racheva's version
+%      is not used (hers traces to an Oracle white paper).
+%
+%   \parencite[p.~98]{cohn2004}
+%   The substance of the four bands: must-haves are fundamental; should-haves
+%   are important but have a short-term workaround; "Could-have features are ones
+%   that can be left out of the release if time runs out"; won't-haves are
+%   desired but deferred to a later release.
+%   !! ATTRIBUTE IT PROPERLY: Cohn borrows MoSCoW from DSDM and footnotes
+%      Stapleton (2003). Phrase it "Cohn adopts DSDM's MoSCoW rules".
+%   -> Note the "could" band explicitly - "left out if time runs out" is the
+%      direct link to the inverted iron triangle in chapter 4. Plant it here.
+%
+%   \parencite[p.~53]{racheva2008}
+%   "The analysis of the methods in the literature indicates that most of the
+%    methods are informal and subjective."
+%   OPTIONAL companion, the paper's own topic sentence, if 3.2 P3 has room:
+%   \parencite[p.~52]{racheva2008} "While in a traditional project the
+%   prioritization is usually performed once and before the implementation
+%   phase, in agile context it is an ongoing process, performed in the beginning
+%   of each iteration, or even during the iteration".
+%   -> Lets the report CONCEDE MoSCoW's subjectivity in a cited sentence rather
+%      than pretending to rigour. That concession is the honest half of the
+%      WSJF rejection in P4.
+%   !! Introduce Racheva et al. as a review of fifteen prioritisation methods,
+%      never as an empirical study - the paper is explicit work-in-progress.
+%
+% OWN VOICE: why MoSCoW for THIS project - it is simple, it communicates
+% priority to non-technical stakeholders, and the labels are a discussion device
+% rather than a score.
+
+
+% --- P4: WSJF, examined and rejected --------------------------------------
+% ONE CITATION. This paragraph is short and scores well above its length.
+% Rejecting an UNCITED method looks like ignorance; rejecting a CITED one looks
+% like judgement, and that is the Transfer point.
+%
+%   \parencite[p.~59]{pmi2017}
+%   "Rank with value including cost of delay divided by duration (CD3) and other
+%    value models"
+%   -> CD3 IS the cost-of-delay-divided-by-duration formula behind WSJF. This
+%      names the method from a task-mandated source - far safer than citing a
+%      SAFe web page for a method you then dismiss.
+%
+%   \parencite[p.~56]{racheva2008}
+%   The four criteria for choosing a prioritisation approach: number of items to
+%   be prioritised, number of stakeholders involved, level of requirements
+%   volatility, sources of information available.
+%   -> ** REST THE REJECTION ON THESE **: a ten-item backlog with one PO and high
+%      volatility does not justify a scoring formula whose inputs are themselves
+%      guesses. The rejection then follows from stated criteria instead of taste.
+%
+% !! DO NOT REJECT WSJF ON "value cannot be quantified". Racheva et al.'s own
+%    Solution 4 proposes a business-value function; an examiner reading the same
+%    paper would find the authors doing what the report says cannot be done.
+%    Reject on FIT TO A TEN-ITEM BACKLOG, not on principle.
+
+
+% --- P5: sentence pointing at the table, then the table -------------------
+% NO CITATION.
+% One sentence: the ten stories of Table~\ref{tab:user-stories} reappear here in
+% priority order as Table~\ref{tab:initial-backlog}. Say out loud that these are
+% the SAME ten items - that is the visible difference between question 1 and
+% question 2.
+
+% [!ht] rather than [htbp]: the table must stay in the running text of 3.2.
+\begin{table}[H]
+  \centering
+  \caption{Initiales Product Backlog der Rezept-App, priorisiert mit MoSCoW}
+  \label{tab:initial-backlog}
+  \tablefontsize
+  \begin{tabular}{@{}p{1.2cm}p{2.6cm}p{10.5cm}@{}}
+    \toprule
+    \textbf{ID} & \textbf{Priorität} & \textbf{Begründung} \\
+    \midrule
+    % ALL TEN stories from Table~\ref{tab:user-stories} and nothing else - the
+    % initial backlog is exactly those ten items. Rows are in priority order,
+    % and the must-haves are ordered among themselves.
+    % Distribution is 4/3/2/1, not the 3/3/3/1 of the original placeholder.
+    % Full rationale: PROJECT_FACTS.md, section 5.
+    %
+    % THREE ROWS DO DOUBLE DUTY - do not reword them without checking 3.3 and
+    % chapter 4:
+    %   US-07 plants the cost-feedback trigger (3.3 P5)
+    %   US-08 plants the legal-obligation trigger (3.3 P5)
+    %   US-09 plants the feature that gets dropped in chapter 4, axis 5
+    %
+    % KEEP EACH JUSTIFICATION TO ONE LINE. This table shares 0.80 pages with six
+    % paragraphs of prose, and tables count toward the page limit.
+    US-01 & Must have   & Fundament: Sechs der zehn Stories lesen, verändern oder
+                          löschen ein Rezept, das diese Story anlegt. \\
+    US-02 & Must have   & Das Wiederfinden, nicht das Speichern, ist das Problem,
+                          für das es das Produkt gibt. \\
+    US-03 & Must have   & Der Einsatzort ist die Küche; ohne brauchbare
+                          Kochansicht wird die App einmal probiert und
+                          aufgegeben. \\
+    US-04 & Must have   & Eine verlorene, von Hand eingegebene Sammlung wird
+                          nicht erneut eingegeben; die Bindung hängt daran. \\
+    US-05 & Should have & Wertvoll, aber die Wochenplanung ist Komfort und nicht
+                          der Kern des Produkts. \\
+    US-06 & Should have & Wertvollster Eintrag nach den Must-haves, aber durch
+                          US-05 und US-01 blockiert. \\
+    US-07 & Should have & Häufig gewünscht; innerhalb des Bandes zurückgestellt,
+                          nachdem die Entwickler die Einheitenumrechnung deutlich
+                          höher schätzten als zunächst angenommen. \\
+    US-08 & Could have  & Zunächst hier eingeordnet; während des Refinements zum
+                          Must-have hochgestuft
+                          (Abschnitt~\ref{subsec:refinement}). \\
+    US-09 & Could have  & Moderation ist bei den Startvolumina manuell
+                          bezahlbar; das Werkzeug lohnt sich erst bei Skalierung. \\
+    US-10 & Won't have  & Wiederholt gewünscht, aber das Parsen beliebiger
+                          Rezeptseiten ist für ein erstes Release
+                          unverhältnismäßig teuer. \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% --- P6: interpreting the ordering ----------------------------------------
+% THREE CITATIONS. The priorities themselves and the justification column stay
+% UNCITED - they are your judgements.
+%
+% (a) business value, not technical interest:
+%   \parencite[p.~41]{pmi2017} "Product owners rank the work based on its
+%   business value." - if already used in 3.1, do not repeat it; instead make
+%   the point in your own words and name a feature the engineers would have
+%   found interesting but that does not reach the top.
+%
+% (b) dependencies as an ordering factor - TWO citations, one rule and one
+%     concrete instance:
+%   \parencite[p.~87]{schwaber2004}
+%   "Dependencies between requirements are resolved by placing dependent
+%    requirements at a position in the list lower than the requirements on which
+%    they depend."
+%   -> The operational ordering RULE. Trim to this second sentence.
+%   \parencite[p.~389]{lucassen2016}
+%   "For example, US14 is dependent on US13, because it is impossible to view a
+%    person's profile without first laying the foundation for creating a person."
+%   -> Transfers directly and concretely: no story about scaling or sharing a
+%      recipe can be built before a recipe can be created. Name the two real
+%      story IDs from your own table.
+%   !! DO NOT use Cohn (2004, p. 17) here. His sentence - "care should be taken
+%      to AVOID introducing dependencies" - is the INVEST "Independent"
+%      attribute and argues for eliminating dependencies, not for ordering by
+%      them. Citing it here would overstate the source.
+%
+% (c) why deferred items are deferred rather than dropped: own voice. Useful
+%     tutor wording to paraphrase - not in this release because they are not
+%     necessary, too expensive, or too ambitious.
+%
+% (d) prioritise WITHIN the must-haves: own voice, one clause.
+%
+% (e) ** the sentence that sets up 3.3 **: priority says nothing about how well
+%     an item is already understood. Own voice, half a sentence, no citation -
+%     the empirical backing for it lives in 3.3.
+Zwei Überlegungen haben diese Reihenfolge geprägt. Wert bedeutet
+Geschäftsnutzen und nicht technisches Interesse: US-10 steht an letzter Stelle,
+weil das Parsen beliebiger Rezeptseiten der technisch reizvollste und zugleich
+am wenigsten bezahlbare Eintrag der Menge ist. Abhängigkeiten überwiegen dann den
+Wert. Abhängige Anforderungen gehören \enquote{at a
+position in the list lower than the requirements on which they depend}
+\parencite[p.~87]{schwaber2004}. \textcite[p.~389]{lucassen2016} nähern sich
+derselben Lage von der anderen Seite: Stories sollen \enquote{schedulable and
+implementable in any order} sein, und eine Abhängigkeit, die sich nicht
+wegentwerfen lässt --- etwa ein Profil, das sich nicht ansehen lässt
+\enquote{without first laying the foundation for creating a person} ---, soll
+zumindest ausdrücklich benannt werden. US-01 ist genau
+dieser unvermeidbare Fall. Die Story steht aus diesem Grund an der Spitze und
+nicht wegen ihres Werts, den US-02 wohl eher trägt: US-02, US-03, US-04, US-06,
+US-07 und US-08 lesen, verändern oder löschen alle ein Rezept, das US-01 anlegt.
+Auch die Must-haves sind untereinander geordnet und nicht als Block belassen.
+US-10 ist zurückgestellt, nicht aufgegeben. Die Priorität sagt zudem nichts
+darüber aus, wie gut ein Eintrag bereits verstanden ist, was
+Abschnitt~\ref{subsec:refinement} aufgreift.
+
+
+% =============================================================================
+% 3.3 BACKLOG REFINEMENT WITH THE SCRUM TEAM
+% This subsection carries the literal wording of the task question and is,
+% together with 3.4, the emphasis of Task 2. Refinement comes first.
+% -----------------------------------------------------------------------------
+% LITERATURE: MIXED, leaning literature  ->  define with sources, illustrate
+%                                            with your own project
+%   This subsection answers the sentence that makes Task 2 different from
+%   Task 1, so the underlying concept must be visibly researched. He said it
+%   outright: "you need to research what these are and describe what these
+%   are" [G-Jun26].
+%   Cite here:
+%     - refinement as an ongoing activity, and what it does to backlog items
+%       (Scrum Guide; note the 2020 edition treats it as an activity, not an
+%       event - a precise, page-numbered citation is worth having)
+%     - progressive elaboration as a concept (PMBOK 7 uses the term; it lets
+%       you connect the agile practice to a classical PM model, which is
+%       exactly what "Transfer" rewards)
+%     - the claim that there is no fixed cadence - if a source can be found,
+%       cite it; otherwise present it as a reasoned choice, not as a fact
+%     - Kelly (2019) for the PO's side of the negotiation
+%   Research, best case: one empirical paper on how backlogs actually evolve,
+%   or on requirements churn in agile projects, to back the statement that a
+%   backlog changes continuously. Avoid the DoR/DoD literature - Gannon never
+%   uses the term and it eats space.
+%   NOT cited: the nutritional-value example as applied to your app, your
+%   chosen cadence, your triggers.
+%
+% WHAT YOU WANT TO SAY HERE, IN SHORT
+%   - "Refinement, also called grooming, is the continuous activity of adding,
+%      removing, splitting, re-estimating and re-ordering backlog items."
+%      [cite]
+%   - "It is joint work: the PO knows the business priority, the developers
+%      know their capacity, and the two are negotiated." [own, cite Kelly]
+%   - "Worked example: a coarse request enters the backlog as a block, and is
+%      progressively broken down until it is small, clear and estimable enough
+%      to be pulled into a sprint." [own example, cite the concept]
+%   - "Readiness is not a document - it means small enough, clear enough,
+%      estimated enough." [own]
+%   - "These events trigger refinement in this project: the sprint review, a
+%      new legal requirement, user feedback that demotes a must-have." [own]
+%   - "The cadence chosen here is X, because the team is new to the domain;
+%      there is no universal rule." [own, cite if possible]
+% -----------------------------------------------------------------------------
+% WHAT REFINEMENT IS - his own definitions, usable almost verbatim as a basis:
+%   "repeated conversations between the product owner, the development team,
+%    and users to ask: is this the right priority? ... Are we happy with the
+%    estimates?" [G-Mar25]
+%   "the continuous changing of the backlog to account for new changes, new
+%    business requirements, or different prioritisation" [G-Nov25]
+%   compact version: "introducing new requirements, picking out redundant
+%    requirements, and reprioritization... and identifying what needs to go
+%    into the sprint" [G-Feb25]
+% Say that refinement is also called GROOMING [G-Nov25]. Stress that it is an
+% ongoing activity, not a single scheduled meeting.
+%
+% WHY IT IS JOINT - the negotiation logic, and the reason the task says "with
+% the Scrum team" [G-Feb25]: "the product owner knows what is of priority to
+% the business... The technologists know what their capacity is... there's a
+% kind of negotiation that goes on."
+%
+% PROGRESSIVE ELABORATION - his best recipe-app example, worth reproducing in
+% own words [G-Jan25]: a user asks for "categorising nutritional value of
+% food"; that "might require ten different user stories"; it enters the backlog
+% as a high-level block, is refined over time and the resulting items "move up
+% the stack... until they get to a point where they're clearly defined and
+% estimated".
+%
+% READINESS TEST IN PLAIN WORDS, not DoR jargon - [G] never uses DoR/DoD;
+% they are [S]-only. Keep any mention very tight. His plain formulation
+% [G-Feb25]: small enough, clearly defined enough, estimated enough.
+%
+% OTHER TRIGGERS TO NAME:
+%   - the SPRINT REVIEW as the recurring trigger - "one key trigger for
+%     refinement... at the end of every sprint" [G-Sep25]
+%   - a new LAW mid-project pushing an item to the top [G-Mar25]
+%   - a must-have DOWNGRADED after user feedback [G-Nov25]
+%   - stories added and removed [G-Mar25]
+%   Pick recipe-app instances for each - generic trigger lists score nothing.
+%
+% CADENCE - present it as a deliberate decision and state that there is no
+% fixed rule ("no consensus how long the refinement should be" [S3]). Options
+% [S3, S4]: just-in-time; a time-boxed session of about an hour midway through
+% the sprint; several sessions when the team is new to the domain - the
+% defensible pick for a fresh recipe app. Justify the choice.
+%
+% Priority and maturity are independent of each other - refer back to 3.2 in
+% half a sentence, do not restate the point.
+% =============================================================================
+% #############################################################################
+% WRITING PLAN - 3.3, PARAGRAPH BY PARAGRAPH
+% Budget: 0.70 pages = ~490 WORDS across 7 paragraphs => ~70 WORDS EACH.
+% MIXED, leaning cited - about 11 citations.
+%
+% ** THIS SUBSECTION CARRIES THE LITERAL WORDING OF THE TASK QUESTION. ** It is
+% what makes this Task 2 rather than Task 1, and the tutor said outright: "you
+% need to research what these are and describe what these are."
+%
+% Sources that own it: scrumguide2020 (the definition), pmi2017 pp. 52-53 (the
+% most concrete refinement passage in the whole corpus - cadence AND a time
+% budget), heikkila2017 (one empirical figure), schoen2017, racheva2008.
+%
+% !! DO NOT reach for schwaber2004 or cohn2004 for the DEFINITION - neither book
+%    contains "backlog refinement" at all. Cohn's word "refinement" always means
+%    successive refinement of a system or a role list. Use Cohn for the
+%    SUBSTANCE (sizing, splitting, deferring detail) only.
+% #############################################################################
+\subsection{Backlog Refinement mit dem Scrum Team}
+\label{subsec:refinement}
+
+% --- P1: what refinement is ------------------------------------------------
+% THREE CITATIONS plus one footnote.
+%
+%   \parencite[p.~10]{scrumguide2020}
+%   "Product Backlog refinement is the act of breaking down and further defining
+%    Product Backlog items into smaller more precise items. This is an ongoing
+%    activity to add details, such as a description, order, and size."
+%   -> THE definition sentence. Note the Guide's word is "ongoing" - do not
+%      write "continuous" inside the quotation marks (0 hits in the Guide).
+%
+%   \parencite[p.~150]{pmi2017}
+%   "Backlog Refinement. The progressive elaboration of project requirements
+%    and/or the ongoing activity in which the team collaboratively reviews,
+%    updates, and writes requirements to satisfy the need of the customer
+%    request."
+%   -> Every clause is usable: progressive elaboration, ongoing ACTIVITY,
+%      collaboratively, and three distinct actions. This is also the citation
+%      that answers "with the Scrum team" head-on.
+%
+%   \parencite[p.~7]{scrumguide2020}
+%   "Events are used in Scrum to create regularity and to minimize the need for
+%    meetings not defined in Scrum."
+%   -> ** POSITIVE evidence that refinement is not a ceremony **, rather than an
+%      argument from silence. The Guide defines no refinement meeting, timebox
+%      or attendee list, and this sentence explains why. It also licenses
+%      choosing your own cadence, which is the Transfer move in P6.
+%
+%   FOOTNOTE on terminology - cheap Documentation point:
+%   \parencite[ch.~8, pp.~57--62]{kelly2019}
+%   "In some circles this exercise has been called grooming. However, in
+%    England, this term has taken on negative connotations with the general
+%    public in recent years and is better avoided."
+%   -> Use this to explain in a footnote why the report says "refinement" and
+%      not "grooming".
+%   !! DO NOT attribute the refinement = grooming equivalence to the Scrum
+%      Guide - "grooming" occurs 0 times in it.
+Product Backlog Refinement ist \enquote{the act of breaking down and further
+defining Product Backlog items into smaller more precise items}
+\parencite[p.~10]{scrumguide2020}.\footnote{\textcite[ch.~8,
+pp.~57--62]{kelly2019} hält fest, dass die ältere Bezeichnung Grooming in England
+\enquote{has taken on negative connotations with the general public} und
+\enquote{is better avoided}.} Der Guide bezeichnet es als fortlaufend und sieht
+dafür kein Event vor; Events existieren \enquote{to create regularity and to
+minimize the need for meetings not defined in Scrum} \parencite[p.~7]{scrumguide2020}. Die Taktung bei Cookbox ist
+deshalb eine Entscheidung und keine übernommene Regel.
+
+Das Verfeinern der zehn Stories ist gemeinsame Arbeit. In agilen Vorhaben gilt:
+\enquote{the product owners create the backlog for and with the team}
+\parencite[p.~41]{pmi2017}. Die Entwickler, die die Arbeit ausführen werden,
+\enquote{are responsible for the sizing}, und der Product Owner hilft ihnen,
+\enquote{understand and select trade-offs}
+\parencite[p.~11]{scrumguide2020}. Die zeitliche Abhängigkeit aus Kundensicht
+\enquote{could be different from chronological dependency from developers'
+perspective} \parencite[p.~55]{racheva2008}. US-06 ist hier der Fall: Die Nutzer
+wollten die Einkaufsliste früh, die Entwickler ordneten sie zunächst hinter
+US-05 und US-01 ein.
+
+Refinement macht grobe Wünsche bearbeitbar, was PMI progressive elaboration
+nennt: \enquote{the iterative process of increasing the level of detail}, sobald
+genauere Schätzungen verfügbar werden \parencite[p.~153]{pmi2017}. Einträge nahe
+der Spitze werden so geschnitten, dass sie in eine Iteration passen,
+\enquote{while more distant stories
+could be much larger and less precise} \parencite[p.~78]{cohn2004}. Eine
+Teilnehmerin bat um Unterstützung dabei, das aufzubrauchen, was in ihrem
+Kühlschrank bald verdirbt. Der Wunsch lässt sich nicht schätzen und enthält
+plausibel acht bis zehn Stories, weshalb er als einzelner Block unterhalb der
+zehn ins Backlog aufgenommen wurde.
+
+Die Reife war ein einfacher Test und kein Dokument. Eine Sitzung verfeinert so
+viele Stories, dass das Team versteht, \enquote{what the stories are and how large the stories
+are in relation to each other} \parencite[p.~52]{pmi2017}, und hält sie
+\enquote{small enough so the team can produce a steady flow of completed work}
+\parencite[p.~53]{pmi2017}. Klar genug, geschätzt genug, klein genug: Der
+Kühlschrank-Block scheiterte an allen dreien, US-01 und US-02 bestanden.
+
+Vier Anlässe haben das Backlog verändert. Eine datenschutzrechtliche Prüfung
+stellte fest, dass die Kontolöschung eine gesetzliche Pflicht ist und kein
+Komfortmerkmal, weshalb US-08 von Could have auf Must have stieg, oberhalb von
+drei höher eingestuften Einträgen. Die Schätzung von US-07 zeigte, dass die
+Einheitenumrechnung über Gramm, Milliliter, Tassen und ganze Eier hinweg ihre
+einzeilige Beschreibung weit übersteigt, weshalb sie an das Ende des
+Should-have-Bandes rückte --- eine Kostenrückmeldung, die eine Priorität
+verändert, wie \textcite[p.~100]{cohn2004} sie beschreibt. Nachfolgende Gespräche zeigten, dass die
+meisten Teilnehmer ohnehin auf Papier planen, weshalb US-06 so umformuliert
+wurde, dass die Liste aus ausgewählten Rezepten entsteht; damit rutschte US-05
+in der Reihenfolge darunter und die Abhängigkeit von US-05 entfiel. Der
+Kühlschrank-Block wurde über zwei Sitzungen aufgeteilt.
+
+Die Taktung wurde entschieden und nicht nachgeschlagen. PMI berichtet von
+\enquote{no consensus on how
+long the refinement should be}, hält fest, dass viele iterationsbasierte Teams
+\enquote{a timeboxed 1-hour discussion midway through a 2-week iteration} nutzen,
+und billigt mehrere Gespräche für Teams, die \enquote{new to the product, the product
+area, or the problem domain} sind \parencite[p.~52]{pmi2017}; die genannte
+Obergrenze lautet \enquote{not more than 1 hour per week} \parencite[p.~53]{pmi2017}. Dieses Team
+ist mit allen dreien neu, weshalb zwei einstündige Sitzungen je zweiwöchigem
+Sprint angesetzt wurden: das Doppelte der gängigen Praxis und genau auf der
+Obergrenze.
+
+Priorität und Reife sind verschiedene Urteile. In einer Expertenbefragung wird
+\enquote{discussing the maturity level of a requirement with the team} als
+eigenständige Technik vorgeschlagen, neben dem fortlaufenden Priorisieren des
+Backlogs \parencite[p.~46]{schoen2017}, was auf zwei unabhängige Dimensionen
+hindeutet. US-08 zeigt, warum: Die rechtliche Prüfung hob die Priorität, aber
+der Eintrag war deshalb nicht besser verstanden und musste vor der Auswahl
+weiterhin verfeinert werden. Die in Abschnitt~\ref{subsec:backlog} festgelegte
+Reihenfolge ist damit noch kein Plan.
+
+
+% --- P2: why refinement is JOINT -------------------------------------------
+% THREE CITATIONS. This paragraph is the direct answer to "refined WITH the
+% Scrum team" and must not be thin.
+%
+%   \parencite[p.~41]{pmi2017}
+%   "In agile, the product owners create the backlog for and with the team."
+%   -> Quote it verbatim; the two prepositions ARE the point.
+%
+%   \parencite[p.~11]{scrumguide2020}
+%   "The Developers who will be doing the work are responsible for the sizing.
+%    The Product Owner may influence the Developers by helping them understand
+%    and select trade-offs."
+%   -> This IS the priority-versus-capacity negotiation, stated as a division of
+%      labour. The PO knows what the business needs; the developers know what
+%      they can carry.
+%   !! ***** DECIDED: the Scrum Guide p. 11 sizing sentence is spent HERE, not
+%      in 3.4. ***** This subsection carries the literal task wording ("refined
+%      with the Scrum team") and is the graded difference between Task 1 and
+%      Task 2, so the sentence that states the division of labour belongs here.
+%      3.4 makes the same point in its own words and does not re-cite it.
+%
+%   \parencite[p.~55]{racheva2008}
+%   "A chronological dependency from clients' point of view could be different
+%    from chronological dependency from developers' perspective, as the first one
+%    is based on business reasons... while the second one has technical reasons
+%    and might require completely different sequence of implementing features."
+%   -> ** THE MECHANISM **: the two sides hold two different orderings of the
+%      same items, so the ordering cannot be settled by either alone. This is
+%      the strongest available answer to "why joint?" and it goes beyond the
+%      normative sources, which only say that it IS joint.
+%
+% NOTE: the Agile Manifesto's principle 4 ("Business people and developers must
+% work together daily") was considered here and REJECTED. The first pass called
+% it irreplaceable; it is not - the three citations above cover the same ground
+% with page numbers, and the Manifesto's three citations are committed to
+% chapters 4 and 5.
+
+
+% --- P3: progressive elaboration, with a worked recipe-app example --------
+% TWO CITATIONS for the concept; the EXAMPLE is your own and stays uncited.
+%
+%   \parencite[p.~153]{pmi2017}
+%   "Progressive Elaboration. The iterative process of increasing the level of
+%    detail in a project management plan as greater amounts of information and
+%    more accurate estimates become available."
+%   -> Naming the classical PM term and then showing the agile practice doing it
+%      is a Transfer point: it connects the two paradigms rather than treating
+%      them as unrelated.
+%
+%   \parencite[p.~78]{cohn2004}
+%   "This means, for example, that stories for the next few iterations would be
+%    written at sizes that can be planned into those iterations, while more
+%    distant stories could be much larger and less precise."
+%   -> The single best quote for "top of the backlog small and clear, bottom
+%      coarse".
+%
+% OWN VOICE - the worked example. Take a coarse request from a real user
+% conversation (the tutor's own recipe-app instance is "categorising nutritional
+% value of food", which might require ten separate stories). Show it entering
+% the backlog as one high-level block, being broken down over successive
+% refinement sessions, and the resulting items rising until they are small,
+% clear and estimable enough to be pulled into a sprint.
+% !! Pick a request that is NOT already one of the ten stories, and make sure it
+%    does not collide with the out-of-scope list in 2.1 (nutrition may be
+%    excluded there - if so, choose another coarse request, e.g. "help me plan a
+%    week of meals").
+
+
+% --- P4: readiness, in plain words ----------------------------------------
+% TWO CITATIONS. Keep DoR jargon out - the tutor never uses the term.
+%
+%   \parencite[p.~52]{pmi2017}
+%   "The purpose of these meetings is to refine enough stories so the team
+%    understands what the stories are and how large the stories are in relation
+%    to each other."
+%   -> Gives "clear enough" and "estimated enough" in PMI's own words.
+%
+%   \parencite[p.~53]{pmi2017}
+%   "...making sure all of the stories are small enough so the team can produce a
+%    steady flow of completed work."
+%   -> Gives "small enough".
+%
+%   OPTIONAL exit criterion, if a third is affordable:
+%   \parencite[p.~10]{scrumguide2020}
+%   "Product Backlog items that can be Done by the Scrum Team within one Sprint
+%    are deemed ready for selection in a Sprint Planning event."
+%   (Note the capital D on "Done" in the original.)
+%
+% !! The literature review's first pass proposed PMI's Definition of Ready
+%    (2017, p. 151) here. It has been CUT: the outline wants the plain-words
+%    formulation, and the three quotes above already deliver small enough /
+%    clear enough / estimated enough without importing the acronym.
+
+
+% --- P5: what triggers refinement ------------------------------------------
+% TWO CITATIONS; the recipe-app INSTANCES are your own. A generic trigger list
+% scores nothing - each trigger needs a named consequence for a named story.
+%
+%   \parencite[p.~9]{scrumguide2020}
+%   "Based on this information, attendees collaborate on what to do next. The
+%    Product Backlog may also be adjusted to meet new opportunities."
+%   -> The Sprint Review as the recurring trigger, and the cleanest evidence
+%      that planning is rolling rather than fixed.
+%
+%   \parencite[p.~100]{cohn2004}
+%   "It was a high priority to her when she thought it was a few hours; when it
+%    was a week, there were many other things she decided she would rather have."
+%   -> Cost feedback from the team changes the PO's priority - a concrete,
+%      mechanism-level trigger rather than a category label.
+%
+%   OPTIONAL, for the "requirements are not fixed at the start" claim:
+%   \parencite[p.~44]{schoen2017} challenge C4 - continuous requirements
+%   management is a challenge because not all requirements are fixed at the
+%   beginning and may change over the project. Report the denominator honestly:
+%   16 of the 22 experts who answered.
+%
+% OWN INSTANCES to name (pick two or three, each tied to a story ID):
+%   - a new legal obligation arriving mid-project and pushing an item to the top
+%   - a must-have demoted after user feedback
+%   - a story added, and one removed as redundant
+
+
+% --- P6: cadence as a deliberate decision ---------------------------------
+% THREE CITATIONS. ** THIS IS THE HIGHEST-VALUE TRANSFER MOVE IN CHAPTER 3. **
+%
+% The argument to build, in this order:
+%
+% (a) there is no rule:
+%   \parencite[p.~52]{pmi2017} "There is no consensus on how long the refinement
+%   should be."
+%   -> Because PMI says there is no consensus, the report MUST justify its own
+%      choice. That is the licence for everything that follows.
+%
+% (b) the common practice:
+%   \parencite[p.~52]{pmi2017} "Many iteration-based agile teams use a timeboxed
+%   1-hour discussion midway through a 2-week iteration."
+%
+% (c) the budget ceiling:
+%   \parencite[p.~53]{pmi2017} "Teams often have a goal of spending not more than
+%   1 hour per week refining stories for the next batch of work."
+%
+% (d) the warrant for MORE than one session:
+%   \parencite[p.~52]{pmi2017} "Multiple refinement discussions for
+%   iteration-based agile teams. Teams can use this when they are new to the
+%   product, the product area, or the problem domain."
+%
+% ** THE MOVE **: (b) and (c) look contradictory but reconcile as common practice
+% versus budget ceiling - up to two hours per two-week sprint. A team new to the
+% recipe domain qualifies under (d) for multiple sessions, and two one-hour
+% sessions per two-week sprint sits EXACTLY on PMI's own ceiling. Argue it that
+% way and the cadence is DERIVED, not asserted.
+% !! Quote (b) and (c) together or neither - quoting only one of the two looks
+%    like a misreading if the examiner opens the other page.
+%
+% (e) OPTIONAL - the empirical target state, if a fifth citation is affordable:
+%   \parencite[p.~2912]{heikkila2017}
+%   "The goal is to have at least two sprints worth of work for each team in
+%    their team backlog at all times."
+%   -> The only OBSERVED target stock of refined work in the corpus; PMI stops
+%      at "sufficient items for the next iteration", i.e. one. The mild tension
+%      between one and two is itself a Transfer point.
+%   !! Say "two sprints' worth of WORK", not "of READY work" - the source does
+%      not make the readiness claim.
+%   !! Pre-empt the scale objection in one clause, using the paper's own words:
+%      the case organisation's process was "inspired by the single-team Scrum
+%      process" \parencite[p.~2917]{heikkila2017}. Citing that alongside turns a
+%      weakness into evidence of source-critical reading.
+%
+% (f) OPTIONAL - cadence really is a choice, not a standard:
+%   \parencite[p.~46]{schoen2017} practitioners report both "refining and
+%   prioritizing continuously the product backlog" and "grooming on demand".
+%   -> The empirical counterweight to Heikkila's fixed fortnightly rhythm.
+
+
+% --- P7: priority and maturity are independent (half a sentence) ----------
+% ONE CITATION. Refer back to 3.2 - do not restate the point at length.
+%
+%   \parencite[p.~46]{schoen2017}
+%   "discussing the maturity level of a requirement with the team"
+%   -> Practitioners report this as a distinct activity ALONGSIDE continuous
+%      prioritisation, which is the empirical backing for treating priority and
+%      readiness as independent dimensions - and it shows maturity is negotiated
+%      with the team rather than decreed by the PO.
+%   !! HEDGE IT CORRECTLY. The paper never asserts that priority and maturity are
+%      independent. Write: "practitioners report discussing the maturity level of
+%      a requirement with the team as a distinct activity alongside continuous
+%      prioritisation (Schoen et al., 2017, p. 46)", and let the independence
+%      claim be the report's own inference. Overstating this into "the literature
+%      shows priority and readiness are independent" is the one place in this
+%      subsection where an attribution error is catchable.
+
+
+% =============================================================================
+% 3.4 SPRINT PLANNING
+% -----------------------------------------------------------------------------
+% LITERATURE: MIXED  ->  the event is defined by the framework, the sprint is
+%                        yours
+%   Cite here:
+%     - the three sprint planning questions and the composition of the sprint
+%       backlog, goal + PBIs + plan (Scrum Guide, with page number - this is
+%       the single most quotable passage of the whole report)
+%     - the one-day task granularity, if stated
+%     - estimation as an activity of the team rather than of a manager - a
+%       short citation is enough; do not open an estimation chapter
+%   Research, best case, and only if space allows: one paper on why new teams
+%   estimate their own capacity poorly early on. That would turn the
+%   "deliberately conservative first sprint" from an assertion into an
+%   evidence-based decision - a strong Process point. The "estimation__*" PDFs
+%   in literature/ are that kind of source. If space is tight, argue it
+%   yourself in one sentence and move on.
+%   Do NOT: build a planning-poker section with citations. It belongs to
+%   Task 3 [G-Jun26].
+%
+% WHAT YOU WANT TO SAY HERE, IN SHORT
+%   - "Sprint planning answers three questions: why is this sprint valuable,
+%      what can be delivered, and how will it be built." [cite]
+%   - "For this project the sprint goal is X, and these items were selected
+%      from the top of the backlog to serve it." [own - name real story IDs]
+%   - "The selected items were decomposed into tasks of a day or less; the
+%      sprint backlog is the goal, the items and the plan, not just a list."
+%      [cite the definition, own the content]
+%   - "The team estimated the selected items itself, and the first sprint was
+%      deliberately underloaded because a new team cannot yet judge its
+%      capacity." [own reasoning, optional citation]
+%   - Close the chapter here: the project stops at the end of sprint zero.
+% -----------------------------------------------------------------------------
+% STRUCTURE IT ON THE THREE SCRUM GUIDE QUESTIONS [S3]:
+%   1. Why is this sprint valuable? The PO proposes the value, which becomes
+%      the SPRINT GOAL.
+%   2. What can be done this sprint? The developers select PBIs from the
+%      backlog.
+%   3. How will the chosen work get done? Decomposition into tasks of one day
+%      or less - "we are not talking about user stories any longer".
+% SPRINT BACKLOG = sprint goal + selected PBIs + the plan for delivering them,
+% "not just a list" [S3].
+%
+% ESTIMATION IS LICENSED HERE, briefly: "how does the scrum team work to refine
+% and estimate what goes into the sprint backlog?" [G-Jan26]. A few sentences,
+% located inside sprint planning.
+%
+% PLANNING POKER: A PASSING MENTION AT MOST, never a section of its own - the
+% ruling hardened over time:
+% "you can talk about planning poker if you want, if you've got space"
+% [G-Sep25] -> "planning poker is not an element of task one and task two. So
+% it's unique to Task three" [G-Jun26]. A passing mention at most.
+%   IF it is mentioned, one short CONCRETE paragraph beats a vague long one
+%   [SCH: name the number range, the reference stories, and how the team
+%   reached agreement]. Material: story points are abstract, relative to a
+%   reference story and measure complexity rather than time - "23 does not mean
+%   23 days of effort" [G-Mar25]; simultaneous reveal draws on the wisdom of
+%   crowds so "it doesn't allow the bias of a very strong voice to dominate"
+%   [G-Jan26]; the infinity card means the story is too vague and must be
+%   rewritten or split [G-Jan25] - the one clean link back to refinement;
+%   critical nuance if depth is wanted: it is "prone to group dynamic
+%   processes, such as group think" [S3].
+%
+% NEW TEAMS ESTIMATE CAPACITY BADLY AT FIRST and improve [G-Jan25] - use this
+% to justify a deliberately conservative first sprint. This is a Process point:
+% it shows the plan accounts for its own uncertainty.
+%
+% The report ENDS HERE, at the initial sprint. No sprint 2, no release plan.
+% =============================================================================
+% #############################################################################
+% WRITING PLAN - 3.4, PARAGRAPH BY PARAGRAPH
+% Budget: 0.40 pages = ~280 WORDS across 4 paragraphs => ~70 WORDS EACH.
+% The shortest subsection in chapter 3. About 6 citations,
+% five of them the Scrum Guide, because the event is defined by the framework
+% and the sprint is yours.
+%
+% !! PMI's glossary must NOT be used for the sprint backlog: it calls it "A list
+%    of work items" (2017, p. 154), which contradicts the goal + PBIs + plan
+%    definition this subsection needs. Scrum Guide only.
+% !! PMBOK 7 has no sprint-planning model at all - one synonym sentence and
+%    nothing on the three topics. Do not reach for it here.
+% #############################################################################
+\subsection{Sprint Planning}
+
+% --- P1: the three topics, and the sprint goal ----------------------------
+% TWO CITATIONS.
+%
+%   \parencite[p.~8]{scrumguide2020}
+%   "Topic One: Why is this Sprint valuable?" / "Topic Two: What can be Done
+%    this Sprint?" / "Topic Three: How will the chosen work get done?"
+%   -> Structure the whole subsection on these three. Note the capital D on
+%      "Done" in Topic Two if quoting verbatim.
+%
+%   \parencite[p.~8]{scrumguide2020}
+%   "The Product Owner proposes how the product could increase its value and
+%    utility in the current Sprint. The whole Scrum Team then collaborates to
+%    define a Sprint Goal that communicates why the Sprint is valuable to
+%    stakeholders."
+%
+% OWN VOICE: state the actual sprint goal for this project in one sentence.
+Das Sprint Planning eröffnet den Sprint und ist um drei Themen herum angelegt:
+warum der Sprint wertvoll ist, was in ihm getan werden kann und wie die
+ausgewählte Arbeit erledigt wird \parencite[p.~8]{scrumguide2020}. Der Product
+Owner schlägt vor, wie das Produkt seinen Wert steigern könnte, und das gesamte
+Scrum Team legt anschließend ein Sprintziel fest, das den Stakeholdern vermittelt,
+warum der Sprint wertvoll ist \parencite[p.~8]{scrumguide2020}. Als Ziel des ersten Sprints wurde gesetzt,
+dass eine kochende Person ein Rezept in Cookbox ablegen und wiederfinden kann.
+
+Welche Einträge diesem Ziel dienen, entscheidet nicht der Product Owner. Der
+Guide ist darin ausdrücklich: \enquote{Through discussion with the Product Owner, the Developers
+select items from the Product Backlog to include in the current Sprint}
+\parencite[p.~8]{scrumguide2020}. Die vier Entwickler nahmen US-01 und US-02 von
+der Spitze der Tabelle~\ref{tab:initial-backlog} und schätzten sie selbst, gemäß
+der in Abschnitt~\ref{subsec:refinement} dargelegten Arbeitsteilung. Ein Rezept
+einzugeben und es wiederzufinden ist der kürzeste Weg zu einem vorführbaren
+Ziel.
+
+Das dritte Thema ist der Plan. Die beiden Einträge wurden in Arbeitspakete von
+höchstens einem Tag zerlegt, was der Guide als übliche Praxis und nicht als Regel
+darstellt \parencite[p.~8]{scrumguide2020}. Daraus entsteht das Sprint Backlog,
+\enquote{composed of the Sprint Goal (why), the set of Product Backlog items
+selected for the Sprint (what), as well as an actionable plan for delivering the
+Increment (how)} \parencite[p.~11]{scrumguide2020}. Bei Cookbox enthält es das
+Ziel, US-01 und US-02 sowie die Aufgaben, in die die Entwickler sie zerlegt
+haben: einen Plan und nicht bloß eine Liste.
+
+Zwei der vier Must-haves blieben im zweiwöchigen Sprint außen vor. US-03 und
+US-04 rangieren über jedem Should-have, aber das Team hat nie zuvor zusammen
+gearbeitet und verfügt über keine Velocity, gegen die es planen könnte, und
+Teams, die mit Scrum beginnen, übernehmen sich im ersten Sprint häufig
+\parencite[p.~107]{schwaber2004}. Bewusstes Unterladen ist billiger, als das
+Ziel zu verfehlen. Hier endet die Planung: Das Projekt hört bei einem geplanten
+ersten Sprint auf, ohne dass bereits ein Increment gebaut wäre.
+
+
+% --- P2: what can be done - the developers select -------------------------
+% ONE CITATION, plus one conditional.
+%
+%   \parencite[p.~8]{scrumguide2020}
+%   "Through discussion with the Product Owner, the Developers select items from
+%    the Product Backlog to include in the current Sprint. The Scrum Team may
+%    refine these items during this process, which increases understanding and
+%    confidence."
+%   -> Two things at once: the DEVELOPERS select (not the PO), and refinement
+%      continues inside sprint planning - which is the clean link back to 3.3.
+%   !! DO NOT cite Schwaber (2004, p. 134) here. It says the opposite - that the
+%      decision of what constitutes the sprint is the PO's responsibility - and
+%      citing both would be a visible self-contradiction.
+%
+%   ESTIMATION - ***** DECIDED: the citation was spent in 3.3 P2. *****
+%   Do NOT cite \parencite[p.~11]{scrumguide2020} again here. Make the point in
+%   the report's own words - the four developers sized the two selected items
+%   themselves - and refer back to 3.3 in half a clause.
+%   -> Note the Guide's word is "sizing"; it never uses "estimate" or
+%      "estimation" (0 hits). Do not open an estimation section - effort
+%      estimation and planning poker belong to Task 3.
+%
+% OWN VOICE: name the actual story IDs pulled from the top of
+% Table~\ref{tab:initial-backlog}, and say why those serve the sprint goal.
+
+
+% --- P3: how it gets done, and what the sprint backlog is -----------------
+% TWO CITATIONS.
+%
+%   \parencite[p.~8]{scrumguide2020}
+%   "This is often done by decomposing Product Backlog items into smaller work
+%    items of one day or less."
+%   -> Note "often done", not mandated - do not harden it into a rule.
+%
+%   \parencite[p.~11]{scrumguide2020}
+%   "The Sprint Backlog is composed of the Sprint Goal (why), the set of Product
+%    Backlog items selected for the Sprint (what), as well as an actionable plan
+%    for delivering the Increment (how)."
+%   -> The better of the Guide's two sprint-backlog definitions, because it
+%      labels why/what/how explicitly and maps straight onto the three topics.
+%      Make the point that the sprint backlog is NOT just a list.
+%   !! There is a second, weaker definition on p. 9. Cite ONE; citing both with
+%      different pages looks like a slip.
+
+
+% --- P4: the deliberately conservative first sprint -----------------------
+% TWO CITATIONS, and this is where the subsection earns its Process marks: it
+% shows the plan accounting for its own uncertainty.
+%
+%   \parencite[p.~8]{scrumguide2020}
+%   "Selecting how much can be completed within a Sprint may be challenging."
+%
+%   \parencite[p.~107]{schwaber2004}
+%   "As happens in most organizations starting to use Scrum, many of Service1st's
+%    teams overcommitted themselves for the first Sprint."
+%   -> The only page in the corpus stating over-commitment as a GENERAL
+%      observation across organisations rather than as one anecdote.
+%   !! DO NOT use Schwaber (2004, p. 19) for this claim. Read in full, he
+%      minimised first-sprint functionality because of architecture and
+%      infrastructure work, not because capacity was unknown - a different
+%      argument, and a catchable misreading.
+%
+%   OPTIONAL, if a third citation is affordable - the only quantified statement
+%   available, which turns the decision into an inference from evidence:
+%   \parencite[p.~64]{pmi2017}
+%   "Teams might discover it can take four to eight iterations to achieve a
+%    stable velocity."
+%
+% OWN VOICE: the first sprint was deliberately underloaded, and by roughly how
+% much. Then CLOSE THE CHAPTER - the project stops at the end of sprint zero.
+% No sprint 2, no release plan, no burndown.

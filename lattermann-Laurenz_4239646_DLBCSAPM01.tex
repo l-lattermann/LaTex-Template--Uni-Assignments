@@ -1,0 +1,581 @@
+% =============================================================================
+% IU PROJECT REPORT - DLBCSAPM01 Agile Project Management
+% Task 2: Planning a recipe app
+%
+% This header and the blocks at the top of every sections/*.tex file are a
+% working checklist. They are LaTeX comments, so they never reach the PDF.
+% Keep them until the final revision, then delete or leave them - either way
+% the submitted document is unaffected.
+%
+% =============================================================================
+% MEASURED WRITING BUDGET - calibrated, not estimated
+%
+% Section 2.2 was drafted first as a pilot and measured in the compiled PDF:
+% 536 words of prose occupied 0.77 pages against a 0.75-page budget. That gives
+% the only number that matters here:
+%
+%              *****  ~700 WORDS PER PAGE  *****
+%
+% (An earlier estimate of ~500 words/page was wrong by 40 %. Do not use it.)
+%
+%   SLOT   PAGES   WORDS    CITATIONS   NOTE
+%   1      1.00    ~700     3           hard ceiling of 3
+%   2.1    0.75    ~525     1           the scope-definition pair only
+%   2.2    0.75    ~525     10-12       WRITTEN - measured 536 w / 0.77 p
+%   2.3    0.75    ~40      0           lead-in + table; table = 0.26 p
+%                                       => ~0.45 PAGES OF SLACK live here
+%   3.1    0.60    ~420     ~11         ~70 words per paragraph
+%   3.2    0.80    ~440     ~10         plus the table (0.17 p)
+%   3.3    0.70    ~490     ~11         ~70 words per paragraph
+%   3.4    0.40    ~280     ~6          ~70 words per paragraph
+%   4      1.25    ~875     ~12         ~125 words per axis block
+%   5      1.00    ~700     2           ~117 words per paragraph
+%
+%   TOTAL  ~5,000 words of prose + 0.43 p of tables ~= 7.6 pages.
+%   That sits inside the 7-10 limit with the 2.3 slack still in hand.
+%
+% CITATION CEILINGS ARE CEILINGS. The scaffold below names about 123 \parencite
+% commands, but the report should carry roughly 60. The difference is rejected
+% alternatives, decision blocks that repeat a citation, and optional items. Use
+% the per-slot figure above, not the number of commands you can find.
+%
+% ***** THE ONE WRITING RULE THE PILOT REVEALED *****
+% 2.2 carries one citation per 45 words and still reads as prose rather than as
+% a parade. The reason is that CITATIONS CLUSTER BY SOURCE: its first paragraph
+% is three consecutive Cohn p. 4 calls, its second is four consecutive Lucassen
+% calls. The same density with the source alternating sentence by sentence would
+% read as a literature parade. So: finish with one source before moving to the
+% next, and let each paragraph be carried by one or two sources, not five.
+% =============================================================================
+%
+% -----------------------------------------------------------------------------
+% READ THESE THREE FILES BEFORE WRITING A SINGLE SENTENCE
+%   PROJECT_FACTS.md    the invented substrate - the ten stories and their IDs,
+%                       personas, scope, team, budget, MoSCoW bands, dependency
+%                       chains, refinement triggers, the sprint goal, and the
+%                       named feature for each chapter-4 axis. NOTHING in it may
+%                       be cited. Chapters 2 to 5 must agree with it and with
+%                       each other; that is what it is for.
+%   references.bib      the 14 sources, with the four non-standard locator
+%                       schemes documented in its header.
+%   REFERENCES.md       the reference list, plus a per-source citation budget.
+%
+% Every \subsection below opens with a WRITING PLAN block giving the paragraph
+% structure, the exact citation for each claim with its page number, and the
+% reason that source rather than another. Where the plan offered alternatives,
+% the choice has been made and is marked "***** DECIDED".
+% -----------------------------------------------------------------------------
+%
+% SOURCE TAGS USED THROUGHOUT
+%   [GL]   Guidelines Project Report.pdf (binding formal rules)
+%   [TASK] task_project_report_dlbcsapm01_2.pdf
+%   [G-*]  Prof. Brian Gannon, live sessions (Jan25 ... Jun26). CURRENT tutor.
+%   [T-*]  Teams channel posts. Gannon 20.05.2026 = most binding of all.
+%   [S1-4] Learning Sprint tutor - academic, citation-heavy, not the grader.
+%   [SCH]  Prof. Schlömer, tutor until Nov 2024 - procedural advice still valid.
+%   WHEN THEY CONFLICT, THE NEWER SESSION WINS: T-20.05.2026 > Jun26 > Jan26 >
+%   2025 > [S]. Where [S] and [G] disagree on content, follow [G].
+%   BUT WRITE FOR A GENERIC EXAMINER: he does not mark every report - "I don't
+%   mark all of them, but it might be some of them will land on my desk"
+%   [G-Feb25]. Follow his rulings, but hang nothing on a personal quirk.
+%
+% -----------------------------------------------------------------------------
+% GRADE WEIGHTS [GL] - write towards these, not towards description
+%   Process 25 %   coherence and suitability of the approach
+%   Quality 25 %   depth of reflection, coherent argumentation, applied theory
+%   Transfer 15 %  transfer of theories/models, conclusions in the final remarks
+%   Creativity 15 % creativity in approach, methodology, and conclusions drawn
+%                  from experiences/results
+%   Documentation 10 % quality of the written work, adherence to formal
+%                  criteria, accurate spelling and punctuation, good linguistic
+%                  expression
+%   Resources 10 % appropriate tools, efficient use of resources - [TASK]
+%                  specifies this as time, budget and people, and as compliance
+%                  with the page limit itself
+%   => Process + Quality = half the grade. Invest in the reasoning and the
+%      reflection, not in describing the app.
+%
+% WHAT IS ACTUALLY BEING ASSESSED [G-Jan25], verbatim: "do you understand the
+% agile method? And do you understand where it differs from sequential
+% waterfall methods? And do you understand what some of the core concepts
+% are... namely user stories, product backlog, estimation, product owner."
+% Plus: "we're looking to you to present your ideas in a structured and
+% logical and coherent way."
+%
+% -----------------------------------------------------------------------------
+% HARD FORMAL RULES
+%   - 7-10 pages of TEXT [GL], hard: "part of the assignment is staying within
+%     that limit" [G-Nov25]. Overlength reads as ignorance, not effort: "if you
+%     submit a report that's 20 pages long, I will be inclined to think that
+%     you don't really know the topic" [G-Jan25]. A student reported ~8 pages
+%     and was not corrected [T-20.05.2026]. A student who submitted 19 pages
+%     and cut to 12 was still told "The number of pages must please be
+%     respected" [SCH, 06.12.22].
+%   - CHECK WHICH GUIDELINES DOCUMENT IS CURRENT. [GL] here is
+%     "Guidelines Project Report.pdf" from the project folder, but the Teams
+%     channel names "Guidelines_Written Assignment.pdf" [17.12.2025] as the
+%     binding formal rules. Verify they are the same before trusting the
+%     layout. [GL] itself defers the details elsewhere: formatting to the
+%     "Guidelines for Structuring and Formatting Academic Papers" and citation
+%     and reference-list rules to the citation guidelines, both in myCampus.
+%     The margins, spacing and heading depth set in this preamble rest on that
+%     formatting guideline, not on [GL] - check them against it.
+%   - Page count = CONTENT ONLY. Title page, TOC, lists and bibliography are
+%     excluded [G-Nov25/Dec25/Jan26]. Tables DO count [SCH, 06.04.22].
+%     Essential appendix
+%     content DOES count: "If you include essential info in the appendix, it
+%     will count to the page limit!" [T-20.05.2026] => no appendix is used.
+%   - Proportions [GL]: introduction 10-15 %, main body 70-80 %,
+%     conclusion 10-15 %.
+%   - ANSWER ALL THREE TASK QUESTIONS AND BALANCE THEM. This is the named
+%     mark-loser: "some students are doing a very good job in answering one
+%     question, but then they leave out the other two and they fail to gain
+%     full marks" [G-Feb25]. Budget pages across the three deliberately.
+%   - THIRD PERSON [GL]. Gannon says first person is tolerated [G-Feb25], but
+%     the guidelines forbid it; third person satisfies both.
+%   - ONE TENSE, consistently. Present is preferred and past tense is
+%     explicitly acceptable for a documented project; what is penalised is
+%     jumping between them [SCH].
+%     ***** DECIDED: PRESENT TENSE THROUGHOUT. *****
+%     The one systematic exception, and it must be applied consistently: events
+%     that the report narrates as having already happened in the project - the
+%     user conversations, the developers' sizing, the data-protection review,
+%     the three refinement decisions - take the past. Everything else, including
+%     every description of what Scrum, a user story or the backlog IS, takes the
+%     present. Do not let a paragraph drift between the two.
+%   - CONTINUOUS PROSE with (sub)headings - [GL] settles this itself: the
+%     report "is then largely created by answering these key questions in
+%     continuous text with (sub)headings". (Bullets-vs-prose was also asked
+%     twice in the channel and never answered.) In the body, the only tables
+%     are the two story tables.
+%   - Register [GL]: "a factual and precise style with exact wording and
+%     scientific terms"; "Experiential style, colloquial language,
+%     embellishments and long, convoluted sentences must be avoided". The ban
+%     on EXPERIENTIAL style is the one most easily tripped here, because the
+%     report narrates a project as carried out. But do not overshoot: "don't try
+%     to be too academic in your report... think practically and use common
+%     sense" [G-Jan25]; "It doesn't matter if it's not purely scientific, as
+%     long as it's logical" [G-Feb25]. Weak English is forgiven - "I make
+%     allowances for that" [G-Dec25].
+%   - NO FIGURES OR VISUALS IN THE BODY (the title-page logo and the
+%     front-matter tabulars are outside the counted text and are exempt):
+%     "it is best to avoid visuals/figures in a
+%     case study like this (it's about project management, not design). Keep
+%     things text based if you can" [T-20.05.2026]. No mockups, Jira
+%     screenshots, Kanban boards, burndown charts. A plain table is the
+%     ceiling. This overrides [S3/S4], who encouraged a Jira figure.
+%   - APA with PAGE NUMBERS on every citation - the only explicitly named
+%     point-loser [S1]. In-text citations and marked direct quotes are
+%     mandatory; a reference list alone has failed a student for plagiarism,
+%     and plagiarism means zero [SCH]. "We check every project report with
+%     software and personally."
+%   - Non-English DIRECT quotations are reproduced as-is with a translated
+%     footnote; indirect quotations are exempt [G, 15.04.25]. A self-translated
+%     quote counts as indirect - cite normally, do not mark it as a quotation
+%     [SCH, 18.10.22].
+%   - "et al." from three authors upwards [SCH].
+%   - AI: research yes, WRITING NO. "It will possibly be failed" [G-Mar25];
+%     Turnitin AI detection is in use, and Grammarly's REWRITE feature can
+%     trigger it. Plain grammar checking is fine.
+%   - Anti-Plagiarism Pledge must be submitted electronically FIRST, otherwise
+%     Turnitin blocks the upload [GL, SCH]. There is no deadline [SCH].
+%   - Capitalising "Product Owner", "Sprint Backlog" etc. as proper names is
+%     acceptable if done consistently [SCH].
+%   - Title page: "IU, International University of Applied Sciences", not
+%     "Bad Honnef" [SCH]. Tutor field may name the course-feed professor or the
+%     on-campus teacher - "Either one is fine!" [G, 30.04.25].
+%   - No abstract is required [SCH].
+%
+% -----------------------------------------------------------------------------
+% GLOBAL CONTENT RULES
+%   - WRITE IT AS AN EXECUTED PROJECT, not as a proposal: "you should document
+%     the project implementation in as much detail as if the project had
+%     actually been carried out" [SCH]; "The project does not have to be real,
+%     but realistic."
+%   - BE SPECIFIC, NEVER GENERIC. The single most repeated scoring rule of the
+%     module: "don't just give a general description of what a product owner
+%     does, for example, but what he or she did in your specific project"
+%     [SCH, 01.10.23]. Same warning for chapter 4.
+%   - The project ENDS AT PLANNING - "it's a sprint zero" [S1]; the focus is
+%     "the initial sprint with the initial backlog" [S4]. No multi-sprint
+%     history.
+%   - Think as PO / project management only: "Don't put yourself in the shoes
+%     of the developer or the scrum master. That's not your job here" [G-Jan25].
+%   - NOT TECHNICAL: "don't worry about the technical environment at all"
+%     [G-Mar25]; "there is no need at all for app-specific descriptions"
+%     [T-20.05.2026]. Domain content stays short so the actual task has room.
+%   - NO SEPARATE THEORY CHAPTER: "It is sufficient if you go into Scrum very
+%     briefly... as an introduction of a chapter before you apply it
+%     concretely" [SCH]. Theory is the doorway to each applied section.
+%   - IGNORE the generic components the IU guideline lists as possible building
+%     blocks: no stakeholder analysis, no risk analysis, no resource/cost
+%     planning, and no WBS/project structure plan or market analysis
+%     [SCH, 06.04.23]. [GL] licenses this itself: "Deviations from this
+%     structure are possible... it is not necessary to strictly adhere to this
+%     structure."
+%   - THE OUT-OF-SCOPE RULE HAS TWO HALVES. Brief coverage of adjacent topics
+%     is safe: "You can describe them... at a high level. You don't have to
+%     exclude things that aren't the emphasis... as long as you're still
+%     answering the main question" [G-Jan25]. Whole invented sections are not:
+%     "I can't give you marks for stuff outside the scope" [G-Jan26].
+%   - STATE ASSUMPTIONS EXPLICITLY: "If you make assumptions, make sure that
+%     you put the assumptions down on the report" [G-Jan25]. Cheap
+%     Documentation marks.
+%   - [GL] expects the main part to record "milestones and any difficulties
+%     that may have arisen" and "all development steps... including interim
+%     results". The scaffold plans no separate progress section, so cover it in
+%     passing: one sentence in chapter 3 on what refinement changed and what
+%     was difficult, one in chapter 5. Cheap insurance for Process (25 %).
+%   - RESEARCH BEYOND THE SLIDES IS EXPECTED: "you do need to do some more
+%     detailed research about all of these topics before you write your
+%     assignment" [G-Jan26]. There is no coursebook for this module. Prefer
+%     academic sources; web sources are allowed but "should not make up the
+%     majority" [SCH]; do not use commercial websites as the research basis.
+%   - Do not reuse an already documented case study - own team and own stories
+%     are the Creativity criterion [SCH, 21.08.23]. Scrum roles need no
+%     invented personal names; role labels suffice [SCH].
+%   - Structure the report on the three subtasks [SCH, 17.01.23]; the structure
+%     is otherwise free [G-Jun26], and [GL] explicitly recommends organising
+%     around key questions.
+%   - Revise repeatedly [S1]. Binding answers come from written questions sent
+%     before an ILSE - that is how the 20.05.2026 rulings were obtained.
+%     Tutors refuse content feedback pre-submission, but Schlömer offered
+%     feedback on the TABLE OF CONTENTS - worth asking Gannon the same.
+% =============================================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% =================================================
+% Font: Arial 11 pt or comparable sans-serif
+% =================================================
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% =================================================
+% Page Layout: DIN A4, single-sided, 2 cm margins
+% =================================================
+\usepackage[
+  a4paper,
+  top=2cm,
+  bottom=2cm,
+  left=2cm,
+  right=2cm,
+  footskip=1cm
+]{geometry}
+
+% =================================================
+% Language, Hyphenation, Justification
+% American English, because APA is an American standard and
+% biblatex-apa expects the american language mapping below.
+% =================================================
+\usepackage[american]{babel}
+\usepackage{microtype}
+\usepackage{ragged2e}
+\justifying
+\hyphenpenalty=1000
+\tolerance=2000
+\emergencystretch=2em
+
+% =================================================
+% Line and Paragraph Spacing
+% NOTE: 1.5 spacing plus a 6 pt paragraph gap was once criticized as
+% "too much" in IU grading feedback; 4 pt is the conservative compromise.
+% =================================================
+\usepackage{setspace}
+\onehalfspacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+% =================================================
+% Packages
+% =================================================
+\usepackage{graphicx}
+\usepackage{float}   % provides [H]: pin a table exactly where it is written.
+                     % Both tables use it. With the default [!ht] LaTeX floated
+                     % Table 1 past section 2.3 and past the start of chapter 3,
+                     % so the sentence introducing it appeared a page before the
+                     % table itself. [H] keeps each table inside the section that
+                     % introduces it, which is also what the tutor's ruling
+                     % requires (the stories belong in the body, in place).
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage[table]{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+\usepackage{csquotes}
+
+% =================================================
+% APA Citation Setup
+% Requires: biber
+% =================================================
+\usepackage[
+  backend=biber,
+  style=apa,
+  sorting=nyt
+]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{references.bib}
+\setlength{\bibhang}{1.27cm}
+
+% Reminder: every citation needs a page number, e.g.
+%   \parencite[p.~12]{schwaber2020}
+%   \textcite[p.~12]{kelly2019}
+
+% =================================================
+% Captions and Tables
+% =================================================
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  justification=justified,
+  singlelinecheck=false
+}
+
+\renewcommand{\arraystretch}{1.1}
+\setlength{\tabcolsep}{8pt}
+\newcommand{\tablefontsize}{\fontsize{9}{11}\selectfont}
+
+% =================================================
+% Heading Depth: max. three levels
+% =================================================
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% =================================================
+% Headings
+% =================================================
+\titleformat{\section}
+  {\normalfont\fontsize{15}{17}\bfseries}
+  {\thesection}{0.75em}{}
+
+\titleformat{\subsection}
+  {\normalfont\fontsize{13}{15}\bfseries}
+  {\thesubsection}{0.75em}{}
+
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{11}{13}\bfseries}
+  {\thesubsubsection}{0.75em}{}
+
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+\titlespacing*{\subsection}{0pt}{6pt}{3pt}
+\titlespacing*{\subsubsection}{0pt}{4pt}{2pt}
+
+% =================================================
+% Unnumbered section style
+% =================================================
+\titleformat{name=\section,numberless}
+  {\normalfont\fontsize{16}{19}\bfseries}
+  {}{0pt}{}
+
+% =================================================
+% Footnotes: Arial/sans-serif 10 pt
+% =================================================
+\renewcommand{\footnotesize}{\fontsize{10}{12}\selectfont}
+
+% =================================================
+% Lists
+% =================================================
+\setlist{
+  itemsep=2pt,
+  topsep=6pt,
+  partopsep=0pt
+}
+
+% =================================================
+% Table of Contents
+% Only level 1 bold
+% =================================================
+% Make the "Contents" and "List of Tables" titles match the unnumbered
+% \section* format used by "List of Abbreviations". Without this, tocloft sets
+% them at its own default size and the three front-matter headings print at two
+% different sizes on the same page.
+\renewcommand{\cfttoctitlefont}{\normalfont\fontsize{16}{19}\bfseries}
+\renewcommand{\cftlottitlefont}{\normalfont\fontsize{16}{19}\bfseries}
+
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\bfseries}
+\renewcommand{\cftsubsecfont}{\normalfont}
+\renewcommand{\cftsubsecpagefont}{\normalfont}
+\renewcommand{\cftsubsubsecfont}{\normalfont}
+\renewcommand{\cftsubsubsecpagefont}{\normalfont}
+
+\renewcommand{\cftdotsep}{1.5}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
+
+% =================================================
+% Footer: centered page number, no header
+% =================================================
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% =================================================
+% Hyperlinks: black throughout, so the printed paper stays neutral
+% =================================================
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black,
+  pdfborder={0 0 0}
+}
+
+% =================================================
+% Document
+% =================================================
+\begin{document}
+
+% =================================================
+% Title Page: Roman I, hidden
+% =================================================
+\pagenumbering{Roman}
+\setcounter{page}{1}
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+
+  \vspace*{3cm}
+
+  {\fontsize{34}{38}\selectfont\bfseries Agile Project Planning for a Recipe App\par}
+  \vspace{1cm}
+
+  {\Large\textit{Product scope, user stories, and the initial product backlog}\par}
+
+  \vspace{3cm}
+
+  \includegraphics[height=2.5cm]{images/doc_images/iu-logo.jpg}
+
+  % The university name is NOT repeated as a text line here: the logo already
+  % reads "IU INTERNATIONAL UNIVERSITY OF APPLIED SCIENCES", and printing it
+  % again immediately below duplicated it. The name still appears as machine-
+  % readable text in the details block at the foot of this page, which is what
+  % matters for the formal requirement to name the university (and for any text
+  % extraction, which cannot read the logo).
+  \vspace{0.5cm}
+  {\large Degree Programme: Applied Artificial Intelligence\par}
+
+  \vfill
+
+  {\fontsize{8pt}{10pt}\selectfont
+  \begin{center}
+  \begin{tabular}{@{}p{4cm}p{7cm}}
+  \textbf{University:} & IU, International University of Applied Sciences \\
+  \textbf{Course/Module:} & DLBCSAPM01 -- Agile Project Management \\
+  \textbf{Assignment:} & Project Report, Task 2: Planning a recipe app \\
+  \textbf{Name:} & Laurenz Lattermann \\
+  \textbf{Matriculation Number:} & 4239646 \\
+  % Either the course-feed professor or the on-campus teacher is acceptable -
+  % "Either one is fine!" [G, 30.04.25]. Set to the course-feed professor;
+  % change it if you would rather name your on-campus tutor.
+  \textbf{Tutor:} & Prof.\ Brian Gannon
+  \\
+  \textbf{Submission Date:} & \today \\
+  \end{tabular}
+  \end{center}
+  }
+
+\end{titlepage}
+\newpage
+
+% =================================================
+% Front Matter: Roman numbering continues
+% =================================================
+\setcounter{page}{2}
+
+\tableofcontents
+\newpage
+
+% No list of figures: the report contains no figures on purpose
+% (tutor ruling of 20.05.2026 - avoid visuals entirely).
+
+% Mandatory, because the report uses tables:
+\listoftables
+\addcontentsline{toc}{section}{List of Tables}
+
+% No \newpage here on purpose. The list of tables is two lines and the list of
+% abbreviations is one; on separate pages they were two almost-empty sheets.
+% They now share a page.
+\vspace{1.5cm}
+
+% Trimmed to the abbreviations the planned text actually uses.
+% APM was removed - the report never abbreviates "agile project management".
+% GDPR is needed because 3.3's legal-obligation refinement trigger names it.
+% RE-CHECK THIS LIST AFTER THE FIRST FULL DRAFT: an entry for an abbreviation
+% that does not occur is as much a defect as a missing one.
+\section*{List of Abbreviations}
+\addcontentsline{toc}{section}{List of Abbreviations}
+% Trimmed against the finished text: GDPR, PBI and PO were each removed because
+% the written report never uses the abbreviation - it writes "a data-protection
+% review", "Product Backlog items" and "Product Owner" in full throughout.
+% MoSCoW is the only abbreviation that actually occurs (3.2 and chapter 5), and
+% it is what keeps this list required at all.
+\begin{tabular}{ll}
+MoSCoW & Must have, Should have, Could have, Won't have\\
+\end{tabular}
+\newpage
+
+% =================================================
+% Main Text: Arabic numbering starts at the Introduction
+%
+% PAGE BUDGET AND LITERATURE DENSITY (target 8.0 pages of text, tables incl.)
+% Each section file opens with a detailed brief; this is the map.
+%
+%   CH   SECTION                                 PAGES   LITERATURE
+%   1    Introduction                             1.00   light mix (1-3 cites)
+%   2.1  Scope of the recipe app                  0.75   none (0-1 cites)
+%   2.2  User stories as requirements             0.75   HEAVY - densest part
+%   2.3  The ten user stories                     0.75   NONE - creativity only
+%   3.1  Role of the product owner                0.60   HEAVY
+%   3.2  Initial backlog and prioritisation       0.80   mixed - cite methods
+%   3.3  Backlog refinement                       0.70   mixed, leans cited
+%   3.4  Sprint planning                          0.40   mixed
+%   4    Sequential vs. agile planning            1.25   mixed - best place to
+%                                                        show own research
+%   5    Reflection and conclusion                1.00   almost none (0-2)
+%
+% BALANCE WARNING: chapter 4 gets half of chapter 3. That follows the outline
+% and [S4] ("this third sub sub task can definitely be shorter"), but the named
+% mark-loser is imbalance across the three questions [G-Feb25], which outranks
+% [S]. 1.25 pages works only if chapter 4 stays dense. If it thins out, take
+% the space from 3.2, not from 3.3/3.4 - refinement is what makes this Task 2.
+%
+% RULE OF THUMB FOR THE WHOLE REPORT: cite the CONCEPT, own the DECISION.
+% Anything with a name in the literature (user story, product backlog, MoSCoW,
+% refinement, sprint planning, the iron triangle) gets a page-numbered source.
+% Anything invented for this project (personas, priorities, sprint goal, team,
+% budget, what gets cut before the deadline) stays uncited - citing it would be
+% wrong, not diligent.
+% =================================================
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\input{sections/01_introduction}
+\input{sections/02_scope_and_user_stories}
+\input{sections/03_backlog_and_refinement}
+\input{sections/04_sequential_vs_agile}
+\input{sections/05_reflection_and_conclusion}
+
+% =================================================
+% Reference List
+% =================================================
+\newpage
+\printbibliography[heading=bibintoc,title={References}]
+
+% =================================================
+% No appendix.
+% Rationale: essential appendix content counts toward the 7-10 page limit
+% (Gannon, 20.05.2026), and both tables belong in the body anyway.
+% =================================================
+
+\end{document}
