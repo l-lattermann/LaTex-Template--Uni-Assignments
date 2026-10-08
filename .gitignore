@@ -1,0 +1,48 @@
+# This repository holds the LaTeX template only.
+# Everything belonging to an actual assignment stays out of version control.
+
+# --- Copyrighted source material ---
+literature/
+sources/
+*.epub
+*.mobi
+*.djvu
+
+# --- Per-assignment content ---
+sections/
+*.bib
+code/
+*.md
+!README.md
+
+# Main documents of an assignment; template.tex is the tracked one
+*.tex
+!template.tex
+
+# --- Compiled output ---
+*.pdf
+!images/**/*.pdf
+
+# --- LaTeX build artefacts ---
+build/
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex
+*.synctex.gz
+*.toc
+*.xdv
+
+# --- Environment ---
+.venv
+venv/
+__pycache__/
+.DS_Store

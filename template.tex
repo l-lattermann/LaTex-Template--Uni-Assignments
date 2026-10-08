@@ -1,0 +1,420 @@
+% =============================================================================
+% IU UNIVERSITY PAPER TEMPLATE
+%
+% Preconfigured for IU written assignments and project reports, following the
+% IU formatting guidelines (Appendix A): Arial 11 pt, DIN A4 with 2 cm margins,
+% 1.5 line spacing, justified text, APA references via biblatex + biber, three
+% heading levels at 16/14/11 pt, centred page numbers in the footer.
+%
+% USAGE
+%   1. Copy this file and rename it to the submission file name, e.g.
+%      YYYYMMDD_firstname_surname_matriculationnumber_coursecode.tex
+%   2. Fill in the <PLACEHOLDERS> on the title page.
+%   3. Put the chapters in sections/ and \input them where marked.
+%   4. Put the sources in references.bib.
+%   5. Build with:  latexmk -pdf <yourfile>.tex
+%      (.latexmkrc sends intermediates to build/; latexmk -C cleans up.)
+%   6. Switch \reviewtrue to \reviewfalse before submitting.
+%
+% sections/, references.bib and every *.tex other than this file are
+% gitignored on purpose: this repository holds the template, not the papers.
+% =============================================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% =================================================
+% Font: Arial 11 pt or comparable sans-serif.
+% helvet is loaded WITHOUT the scaled option on purpose. [scaled] defaults to
+% 0.95 and would render every size at 95 % of its declared value: body 10.4 pt
+% instead of 11, footnotes and captions 9.5 instead of 10.
+% =================================================
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{sfmath}   % one font throughout, maths included
+
+% =================================================
+% Page Layout: DIN A4, single-sided, 2 cm margins
+% =================================================
+\usepackage[
+  a4paper,
+  top=2cm,
+  bottom=2cm,
+  left=2cm,
+  right=2cm,
+  footskip=1cm
+]{geometry}
+
+% =================================================
+% Language, Hyphenation, Justification
+% American English, because APA is an American standard and
+% biblatex-apa expects the american language mapping below.
+% =================================================
+\usepackage[american]{babel}
+\addto\captionsamerican{\renewcommand{\contentsname}{Table of Contents}}
+\usepackage{microtype}
+\usepackage{ragged2e}
+\justifying
+\hyphenpenalty=50   % hyphenation on, as the formatting guidelines require
+\tolerance=2000
+\emergencystretch=2em
+
+% =================================================
+% Line and Paragraph Spacing
+% =================================================
+\usepackage{setspace}
+\onehalfspacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% =================================================
+% Page breaking
+% No orphans and no widows; 10000 is TeX's "never". \clubpenalty also keeps a
+% heading from being followed by a single line before the page turns.
+% \raggedbottom lets a page end short instead of stretching the gaps.
+% =================================================
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\brokenpenalty=10000        % no page break right after a hyphenated line
+\raggedbottom
+
+% =================================================
+% Packages
+% =================================================
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,fit}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\fontsize{7}{8.4}\selectfont,
+  numbers=left, numberstyle=\ttfamily\fontsize{6}{7}\selectfont\color{black!45},
+  numbersep=6pt,
+  frame=single, rulecolor=\color{black!35}, framesep=4pt,
+  breaklines=true, breakatwhitespace=true, breakindent=12pt,
+  showstringspaces=false, tabsize=4,
+  keywordstyle=\bfseries, commentstyle=\color{black!55}, stringstyle=\color{black!70},
+  captionpos=b, xleftmargin=16pt
+}
+\usepackage{float}    % [H]: pin a float exactly where it is written
+\usepackage{placeins} % \FloatBarrier: keep a float inside the section that cites it
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage[table]{xcolor}
+\usepackage{arydshln} % dashed rules in a tabular, loaded after array and colortbl
+\usepackage{enumitem}
+\usepackage[hang,flushmargin]{footmisc}
+\usepackage{hyperref}
+\usepackage{xurl}     % long URLs break at any character instead of running into the margin
+\usepackage{caption}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+\usepackage{csquotes}
+
+% three hues that stay apart for the common colour vision deficiencies; pair
+% each with its own marker and dash pattern so a plot also reads in print
+\definecolor{seriesA}{HTML}{2A78D6}
+\definecolor{seriesB}{HTML}{EB6834}
+\definecolor{seriesC}{HTML}{1BAF7A}
+
+% =================================================
+% REVIEW MARKS
+% \rev{text}         highlights a span in yellow, e.g. a number not yet measured
+% \revn{text}{note}  highlight plus a visible bracketed note
+% \revcite{key}      a citation still to be checked; stays when review is off
+% \revsug{text}      a suggested reformulation; disappears when review is off
+% \revbad{note}      red mark for a statement no source supports
+% SET \reviewfalse BEFORE SUBMITTING: it turns every mark off in one place and
+% leaves the text itself untouched.
+% =================================================
+\usepackage{soul}
+\newif\ifreview
+\reviewtrue                       % <-- change to \reviewfalse for the final PDF
+\sethlcolor{yellow}
+\newcommand{\rev}[1]{\ifreview\hl{#1}\else#1\fi}
+\newcommand{\revn}[2]{\ifreview\hl{#1}\,\textcolor{red}{\footnotesize[#2]}\else#1\fi}
+\newcommand{\revcite}[1]{\ifreview\hl{\mbox{\parencite{#1}}}\else\parencite{#1}\fi}
+\newcommand{\revsug}[1]{\ifreview\hl{[Suggestion: #1]}\else\fi}
+\newcommand{\revbad}[1]{\ifreview{\sethlcolor{red!40}\hl{[! #1]}\sethlcolor{yellow}}\else\fi}
+
+% \anchor{id}    a jump destination with no width and no height
+% \gl{key}{text} links a term in the body to its glossary or abbreviation entry
+\newcommand{\anchor}[1]{\raisebox{0pt}[0pt][0pt]{\hypertarget{#1}{}}}
+\newcommand{\gl}[2]{\hyperlink{gl:#1}{#2}}
+
+% =================================================
+% APA Citation Setup
+% Requires: biber
+% =================================================
+\usepackage[
+  backend=biber,
+  style=apa,
+  sorting=nyt,
+  sortcites=true
+]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{references.bib}
+\setlength{\bibhang}{1.27cm}
+
+% Reminder: IU expects a locator on every citation, e.g.
+%   \parencite[p.~12]{key}
+%   \textcite[pp.~12--14]{key}
+%   \parencite[Section~4.4.4]{key}   % non-numeric postnotes print verbatim
+
+% =================================================
+% Captions and Tables
+% IU labels floats "Fig." and "Tab."; refer to them by number in the text,
+% before they appear.
+% =================================================
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  labelsep=space,
+  justification=justified,
+  singlelinecheck=false
+}
+\captionsetup[table]{name=Tab.}
+\captionsetup[figure]{name=Fig.}
+
+% Every float needs a source line in 10 pt, own work included:
+%   \srcnote{Own representation.}
+% \srcline{...} runs the source into a caption that already sits below.
+\newcommand{\srcline}[1]{\emph{Source: #1}}
+\newcommand{\srcnote}[2][\linewidth]{%
+  {\setlength{\parskip}{0pt}\par\nobreak\vspace{6pt}%
+   \noindent\parbox{#1}{\raggedright\itshape\fontsize{10}{12}\selectfont Source: #2}\par}}
+
+\renewcommand{\arraystretch}{1.1}
+\setlength{\tabcolsep}{8pt}
+% inside a float: 9 pt type, tighter rows, less column padding
+\newcommand{\tablefontsize}{\fontsize{9}{10.5}\selectfont
+  \renewcommand{\arraystretch}{1.0}\setlength{\tabcolsep}{6pt}}
+
+% =================================================
+% Heading Depth: max. three levels
+% =================================================
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% =================================================
+% Headings: bold 16/14/11 pt, 12 pt before and 12/6/6 pt after
+% =================================================
+\titleformat{\section}
+  {\normalfont\fontsize{16}{19}\bfseries}
+  {\thesection}{0.75em}{}
+
+\titleformat{\subsection}
+  {\normalfont\fontsize{14}{17}\bfseries}
+  {\thesubsection}{0.75em}{}
+
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{11}{13}\bfseries}
+  {\thesubsubsection}{0.75em}{}
+
+\titlespacing*{\section}{0pt}{12pt}{12pt}
+\titlespacing*{\subsection}{0pt}{12pt}{6pt}
+\titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
+
+% A heading only starts where enough room is left below it for a few lines of
+% text; otherwise it moves to the next page.
+\usepackage{needspace}
+\pretocmd{\section}{\Needspace{10\baselineskip}}{}{}
+\pretocmd{\subsection}{\Needspace{6\baselineskip}}{}{}
+
+% Floats sit closer to the text around them; the defaults leave visible gaps.
+\setlength{\textfloatsep}{12pt plus 2pt minus 2pt}
+\setlength{\intextsep}{12pt plus 2pt minus 2pt}
+\setlength{\floatsep}{12pt plus 2pt minus 2pt}
+
+% =================================================
+% Unnumbered section style
+% =================================================
+\titleformat{name=\section,numberless}
+  {\normalfont\fontsize{16}{19}\bfseries}
+  {}{0pt}{}
+
+% =================================================
+% Footnotes: sans-serif 10 pt
+% =================================================
+\renewcommand{\footnotesize}{\fontsize{10}{12}\selectfont}
+\setlength{\skip\footins}{20pt plus 4pt minus 2pt}
+\setlength{\footnotesep}{10pt}
+
+% =================================================
+% Lists
+% =================================================
+\setlist{
+  itemsep=2pt,
+  topsep=6pt,
+  partopsep=0pt
+}
+
+% =================================================
+% Table of Contents
+% Only level 1 bold. The contents and list titles are forced to the size of an
+% unnumbered \section*, so all front-matter headings match.
+% =================================================
+\renewcommand{\cfttoctitlefont}{\normalfont\fontsize{16}{19}\bfseries}
+\renewcommand{\cftloftitlefont}{\normalfont\fontsize{16}{19}\bfseries}
+\renewcommand{\cftlottitlefont}{\normalfont\fontsize{16}{19}\bfseries}
+
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\bfseries}
+\renewcommand{\cftsubsecfont}{\normalfont}
+\renewcommand{\cftsubsecpagefont}{\normalfont}
+\renewcommand{\cftsubsubsecfont}{\normalfont}
+\renewcommand{\cftsubsubsecpagefont}{\normalfont}
+
+\renewcommand{\cftdotsep}{1.5}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
+
+% =================================================
+% Footer: centred page number, no header
+% =================================================
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% =================================================
+% Hyperlinks: black throughout, so the printed paper stays neutral
+% =================================================
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black,
+  pdfborder={0 0 0}
+}
+
+% =================================================
+% Document
+% =================================================
+\begin{document}
+
+% =================================================
+% Title Page: Roman I, not printed and not in the ToC
+% =================================================
+\pagenumbering{Roman}
+\setcounter{page}{1}
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  \vspace*{1.8cm}
+  {\fontsize{28}{32}\selectfont\bfseries <TITLE>\par}
+  \vspace{1cm}
+  {\Large\textit{<SUBTITLE>}\par}
+  \vspace{3cm}
+  \includegraphics[height=2.5cm]{images/doc_images/iu-logo.jpg}\par
+  \vspace{0.8cm}
+  {\large Degree Programme: <PROGRAMME>\par}
+  % optional link to the code, in light blue so it reads as a link:
+  % \vspace{0.3cm}
+  % {\normalsize GitHub: \href{https://github.com/<USER>/<REPO>}{\textcolor[RGB]{51,153,255}{github.com/<USER>/<REPO>}}\par}
+  \vfill
+  {\fontsize{8pt}{10pt}\selectfont
+  \begin{center}
+  \begin{tabular}{@{}p{4cm}p{7cm}}
+  \textbf{University:} & IU International University of Applied Sciences \\
+  \textbf{Course/Module:} & <MODULE CODE> -- <MODULE NAME> \\
+  \textbf{Type of Assessment:} & <ASSESSMENT> \\
+  \textbf{Name:} & <NAME> \\
+  \textbf{Matriculation Number:} & <MATRICULATION NUMBER> \\
+  \textbf{Tutor:} & <TUTOR WITH ACADEMIC TITLE> \\
+  \textbf{Submission Date:} & \today \\
+  \end{tabular}
+  \end{center}
+  }
+\end{titlepage}
+
+% =================================================
+% Front Matter: Roman numbering continues
+% Order: contents, list of figures, list of tables, list of abbreviations.
+% IU requires a list of figures from three figures on and a list of tables
+% from three tables on. Uncomment only what the paper needs.
+% =================================================
+\newpage
+\setcounter{page}{2}
+\tableofcontents
+
+% \newpage
+% \listoffigures
+% \addcontentsline{toc}{section}{List of Figures}
+
+% \newpage
+% \listoftables
+% \addcontentsline{toc}{section}{List of Tables}
+
+% Alphabetical, common abbreviations only. \anchor{gl:key} makes an entry a
+% target for \gl{key}{text} in the body.
+% \newpage
+% \section*{List of Abbreviations}
+% \addcontentsline{toc}{section}{List of Abbreviations}
+% {\fontsize{10}{13}\selectfont
+% \begin{longtable}{@{}p{2.6cm}p{11.4cm}@{}}
+%   \anchor{gl:abc}ABC & Abbreviation Spelled Out \\
+% \end{longtable}}
+
+% \newpage
+% \section*{Glossary}
+% \addcontentsline{toc}{section}{Glossary}
+% {\fontsize{10}{11}\selectfont\setlength{\LTleft}{0pt}\setlength{\LTpre}{0pt}
+% \begin{longtable}{@{}p{4.0cm}p{12.4cm}@{}}
+%   \multicolumn{2}{@{}l}{\textbf{<Group>}}\\[1pt]
+%   \anchor{gl:term}Term & One-line definition. \\
+% \end{longtable}}
+
+% =================================================
+% Main Text: Arabic numbering starts at the Introduction
+% =================================================
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+% the front matter longtables step the table counter
+\setcounter{table}{0}
+\setcounter{figure}{0}
+
+% \input{sections/01_introduction}
+% \input{sections/02_...}
+% \input{sections/03_...}
+
+% A table with caption above and source line below:
+% \begin{table}[H]
+%   \centering
+%   \caption{What the reader should take from the table.}
+%   \label{tab:example}
+%   {\tablefontsize
+%   \begin{tabular}{@{}lr@{}}
+%     \toprule
+%     Item & Value \\
+%     \midrule
+%     A & 1 \\
+%     \bottomrule
+%   \end{tabular}}
+%   \srcnote{Own representation.}
+% \end{table}
+
+% =================================================
+% Reference List
+% =================================================
+\newpage
+\printbibliography[heading=bibintoc,title={References}]
+
+% =================================================
+% Appendix, if the assignment allows one. Label each part "Appendix A",
+% "Appendix B" and refer to each one at least once in the text.
+% =================================================
+% \newpage
+% \section*{Appendix}
+% \addcontentsline{toc}{section}{Appendix}
+
+\end{document}
