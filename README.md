@@ -7,6 +7,35 @@ formal requirements already met.
 The template is built for my own use and grows with every assignment. It is public, so feel free
 to clone, reuse or adapt it.
 
+## Preview
+
+Pages from a mock report built with the template. Topic, text and numbers are invented; the
+references are real books on typesetting and writing. The source is in
+[`example/`](example/example.tex).
+
+<table>
+  <tr>
+    <td width="33%"><img src="docs/preview/01_title_page.png" alt="Title page"></td>
+    <td width="33%"><img src="docs/preview/02_table_of_contents.png" alt="Table of contents"></td>
+    <td width="33%"><img src="docs/preview/03_text_and_table.png" alt="Headings, body text and a table"></td>
+  </tr>
+  <tr>
+    <td align="center">Title page</td>
+    <td align="center">Table of contents</td>
+    <td align="center">Headings, body text, table</td>
+  </tr>
+  <tr>
+    <td width="33%"><img src="docs/preview/04_tables_and_plot.png" alt="Table and plot"></td>
+    <td width="33%"><img src="docs/preview/05_table_and_conclusion.png" alt="Table and conclusion"></td>
+    <td width="33%"><img src="docs/preview/06_references.png" alt="APA reference list"></td>
+  </tr>
+  <tr>
+    <td align="center">Table and plot</td>
+    <td align="center">Table with grouped columns</td>
+    <td align="center">APA reference list</td>
+  </tr>
+</table>
+
 ## What is set up
 
 **Layout**
@@ -77,4 +106,4 @@ On Apple Silicon, `biber` can fail to unpack itself. `.latexmkrc` then uses a th
 
 The `.gitignore` keeps out everything that belongs to a specific assignment: `sections/`,
 `references.bib`, literature, compiled PDFs and submission files. This repository holds the
-template, not the papers written with it.
+template, not the papers written with it. The only exception is the mock report in `example/`.

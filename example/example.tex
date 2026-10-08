@@ -1,0 +1,542 @@
+% =============================================================================
+% EXAMPLE DOCUMENT
+%
+% A mock report built on template.tex, used for the preview in the README.
+% Topic, text and numbers are invented; the references are real books.
+% The preamble is a copy of the template's, with review marks switched off.
+%
+% Build from this folder:  latexmk -pdf example.tex
+% =============================================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% =================================================
+% Font: Arial 11 pt or comparable sans-serif.
+% helvet is loaded WITHOUT the scaled option on purpose. [scaled] defaults to
+% 0.95 and would render every size at 95 % of its declared value: body 10.4 pt
+% instead of 11, footnotes and captions 9.5 instead of 10.
+% =================================================
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{sfmath}   % one font throughout, maths included
+
+% =================================================
+% Page Layout: DIN A4, single-sided, 2 cm margins
+% =================================================
+\usepackage[
+  a4paper,
+  top=2cm,
+  bottom=2cm,
+  left=2cm,
+  right=2cm,
+  footskip=1cm
+]{geometry}
+
+% =================================================
+% Language, Hyphenation, Justification
+% American English, because APA is an American standard and
+% biblatex-apa expects the american language mapping below.
+% =================================================
+\usepackage[american]{babel}
+\addto\captionsamerican{\renewcommand{\contentsname}{Table of Contents}}
+\usepackage{microtype}
+\usepackage{ragged2e}
+\justifying
+\hyphenpenalty=50   % hyphenation on, as the formatting guidelines require
+\tolerance=2000
+\emergencystretch=2em
+
+% =================================================
+% Line and Paragraph Spacing
+% =================================================
+\usepackage{setspace}
+\onehalfspacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% =================================================
+% Page breaking
+% No orphans and no widows; 10000 is TeX's "never". \clubpenalty also keeps a
+% heading from being followed by a single line before the page turns.
+% \raggedbottom lets a page end short instead of stretching the gaps.
+% =================================================
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\brokenpenalty=10000        % no page break right after a hyphenated line
+\raggedbottom
+
+% =================================================
+% Packages
+% =================================================
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,fit}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\fontsize{7}{8.4}\selectfont,
+  numbers=left, numberstyle=\ttfamily\fontsize{6}{7}\selectfont\color{black!45},
+  numbersep=6pt,
+  frame=single, rulecolor=\color{black!35}, framesep=4pt,
+  breaklines=true, breakatwhitespace=true, breakindent=12pt,
+  showstringspaces=false, tabsize=4,
+  keywordstyle=\bfseries, commentstyle=\color{black!55}, stringstyle=\color{black!70},
+  captionpos=b, xleftmargin=16pt
+}
+\usepackage{float}    % [H]: pin a float exactly where it is written
+\usepackage{placeins} % \FloatBarrier: keep a float inside the section that cites it
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage[table]{xcolor}
+\usepackage{arydshln} % dashed rules in a tabular, loaded after array and colortbl
+\usepackage{enumitem}
+\usepackage[hang,flushmargin]{footmisc}
+\usepackage{hyperref}
+\usepackage{xurl}     % long URLs break at any character instead of running into the margin
+\usepackage{caption}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+\usepackage{csquotes}
+
+% three hues that stay apart for the common colour vision deficiencies; pair
+% each with its own marker and dash pattern so a plot also reads in print
+\definecolor{seriesA}{HTML}{2A78D6}
+\definecolor{seriesB}{HTML}{EB6834}
+\definecolor{seriesC}{HTML}{1BAF7A}
+
+% =================================================
+% REVIEW MARKS
+% \rev{text}         highlights a span in yellow, e.g. a number not yet measured
+% \revn{text}{note}  highlight plus a visible bracketed note
+% \revcite{key}      a citation still to be checked; stays when review is off
+% \revsug{text}      a suggested reformulation; disappears when review is off
+% \revbad{note}      red mark for a statement no source supports
+% SET \reviewfalse BEFORE SUBMITTING: it turns every mark off in one place and
+% leaves the text itself untouched.
+% =================================================
+\usepackage{soul}
+\newif\ifreview
+\reviewfalse                      % off, so the preview shows the final look
+\sethlcolor{yellow}
+\newcommand{\rev}[1]{\ifreview\hl{#1}\else#1\fi}
+\newcommand{\revn}[2]{\ifreview\hl{#1}\,\textcolor{red}{\footnotesize[#2]}\else#1\fi}
+\newcommand{\revcite}[1]{\ifreview\hl{\mbox{\parencite{#1}}}\else\parencite{#1}\fi}
+\newcommand{\revsug}[1]{\ifreview\hl{[Suggestion: #1]}\else\fi}
+\newcommand{\revbad}[1]{\ifreview{\sethlcolor{red!40}\hl{[! #1]}\sethlcolor{yellow}}\else\fi}
+
+% \anchor{id}    a jump destination with no width and no height
+% \gl{key}{text} links a term in the body to its glossary or abbreviation entry
+\newcommand{\anchor}[1]{\raisebox{0pt}[0pt][0pt]{\hypertarget{#1}{}}}
+\newcommand{\gl}[2]{\hyperlink{gl:#1}{#2}}
+
+% =================================================
+% APA Citation Setup
+% Requires: biber
+% =================================================
+\usepackage[
+  backend=biber,
+  style=apa,
+  sorting=nyt,
+  sortcites=true
+]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{references.bib}
+\setlength{\bibhang}{1.27cm}
+
+% Reminder: IU expects a locator on every citation, e.g.
+%   \parencite[p.~12]{key}
+%   \textcite[pp.~12--14]{key}
+%   \parencite[Section~4.4.4]{key}   % non-numeric postnotes print verbatim
+
+% =================================================
+% Captions and Tables
+% IU labels floats "Fig." and "Tab."; refer to them by number in the text,
+% before they appear.
+% =================================================
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  labelsep=space,
+  justification=justified,
+  singlelinecheck=false
+}
+\captionsetup[table]{name=Tab.}
+\captionsetup[figure]{name=Fig.}
+
+% Every float needs a source line in 10 pt, own work included:
+%   \srcnote{Own representation.}
+% \srcline{...} runs the source into a caption that already sits below.
+\newcommand{\srcline}[1]{\emph{Source: #1}}
+\newcommand{\srcnote}[2][\linewidth]{%
+  {\setlength{\parskip}{0pt}\par\nobreak\vspace{6pt}%
+   \noindent\parbox{#1}{\raggedright\itshape\fontsize{10}{12}\selectfont Source: #2}\par}}
+
+\renewcommand{\arraystretch}{1.1}
+\setlength{\tabcolsep}{8pt}
+% inside a float: 9 pt type, tighter rows, less column padding
+\newcommand{\tablefontsize}{\fontsize{9}{10.5}\selectfont
+  \renewcommand{\arraystretch}{1.0}\setlength{\tabcolsep}{6pt}}
+
+% =================================================
+% Heading Depth: max. three levels
+% =================================================
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% =================================================
+% Headings: bold 16/14/11 pt, 12 pt before and 12/6/6 pt after
+% =================================================
+\titleformat{\section}
+  {\normalfont\fontsize{16}{19}\bfseries}
+  {\thesection}{0.75em}{}
+
+\titleformat{\subsection}
+  {\normalfont\fontsize{14}{17}\bfseries}
+  {\thesubsection}{0.75em}{}
+
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{11}{13}\bfseries}
+  {\thesubsubsection}{0.75em}{}
+
+\titlespacing*{\section}{0pt}{12pt}{12pt}
+\titlespacing*{\subsection}{0pt}{12pt}{6pt}
+\titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
+
+% A heading only starts where enough room is left below it for a few lines of
+% text; otherwise it moves to the next page.
+\usepackage{needspace}
+\pretocmd{\section}{\Needspace{10\baselineskip}}{}{}
+\pretocmd{\subsection}{\Needspace{6\baselineskip}}{}{}
+
+% Floats sit closer to the text around them; the defaults leave visible gaps.
+\setlength{\textfloatsep}{12pt plus 2pt minus 2pt}
+\setlength{\intextsep}{12pt plus 2pt minus 2pt}
+\setlength{\floatsep}{12pt plus 2pt minus 2pt}
+
+% =================================================
+% Unnumbered section style
+% =================================================
+\titleformat{name=\section,numberless}
+  {\normalfont\fontsize{16}{19}\bfseries}
+  {}{0pt}{}
+
+% =================================================
+% Footnotes: sans-serif 10 pt
+% =================================================
+\renewcommand{\footnotesize}{\fontsize{10}{12}\selectfont}
+\setlength{\skip\footins}{20pt plus 4pt minus 2pt}
+\setlength{\footnotesep}{10pt}
+
+% =================================================
+% Lists
+% =================================================
+\setlist{
+  itemsep=2pt,
+  topsep=6pt,
+  partopsep=0pt
+}
+
+% =================================================
+% Table of Contents
+% Only level 1 bold. The contents and list titles are forced to the size of an
+% unnumbered \section*, so all front-matter headings match.
+% =================================================
+\renewcommand{\cfttoctitlefont}{\normalfont\fontsize{16}{19}\bfseries}
+\renewcommand{\cftloftitlefont}{\normalfont\fontsize{16}{19}\bfseries}
+\renewcommand{\cftlottitlefont}{\normalfont\fontsize{16}{19}\bfseries}
+
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\bfseries}
+\renewcommand{\cftsubsecfont}{\normalfont}
+\renewcommand{\cftsubsecpagefont}{\normalfont}
+\renewcommand{\cftsubsubsecfont}{\normalfont}
+\renewcommand{\cftsubsubsecpagefont}{\normalfont}
+
+\renewcommand{\cftdotsep}{1.5}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
+
+% =================================================
+% Footer: centred page number, no header
+% =================================================
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% =================================================
+% Hyperlinks: black throughout, so the printed paper stays neutral
+% =================================================
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black,
+  pdfborder={0 0 0}
+}
+
+% =================================================
+% Document
+% =================================================
+% =================================================
+% Document
+% =================================================
+\begin{document}
+
+\pagenumbering{Roman}
+\setcounter{page}{1}
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  \vspace*{1.8cm}
+  {\fontsize{28}{32}\selectfont\bfseries Sample Report Title\par}
+  \vspace{1cm}
+  {\Large\textit{A mock document that shows the layout of the template}\par}
+  \vspace{3cm}
+  \includegraphics[height=2.5cm]{../images/doc_images/iu-logo.jpg}\par
+  \vspace{0.8cm}
+  {\large Degree Programme: <PROGRAMME>\par}
+  \vspace{0.3cm}
+  {\normalsize GitHub: \href{https://github.com}{\textcolor[RGB]{51,153,255}{github.com/<USER>/<REPO>}}\par}
+  \vfill
+  {\fontsize{8pt}{10pt}\selectfont
+  \begin{center}
+  \begin{tabular}{@{}p{4cm}p{7cm}}
+  \textbf{University:} & IU International University of Applied Sciences \\
+  \textbf{Course/Module:} & <MODULE CODE> -- <MODULE NAME> \\
+  \textbf{Type of Assessment:} & <ASSESSMENT> \\
+  \textbf{Name:} & <NAME> \\
+  \textbf{Matriculation Number:} & <MATRICULATION NUMBER> \\
+  \textbf{Tutor:} & <TUTOR WITH ACADEMIC TITLE> \\
+  \textbf{Submission Date:} & <DATE> \\
+  \end{tabular}
+  \end{center}
+  }
+\end{titlepage}
+
+\newpage
+\setcounter{page}{2}
+\tableofcontents
+
+\newpage
+\listoftables
+\addcontentsline{toc}{section}{List of Tables}
+
+\newpage
+\section*{List of Abbreviations}
+\addcontentsline{toc}{section}{List of Abbreviations}
+{\fontsize{10}{13}\selectfont
+\begin{longtable}{@{}p{2.6cm}p{11.4cm}@{}}
+  \anchor{gl:apa}APA & American Psychological Association \\
+  \anchor{gl:pdf}PDF & Portable Document Format \\
+  \anchor{gl:toc}ToC & Table of Contents \\
+\end{longtable}}
+
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+
+% -------------------------------------------------
+\section{Introduction}
+
+This document is a mock report. It exists only to show how a paper built with
+the template looks. Its topic, its numbers and its results are invented. The
+references, in contrast, are real books on typesetting and academic writing,
+so that the reference list shows how the American Psychological Association
+(\gl{apa}{APA}) style renders actual entries \parencite{apa2020}.
+
+The report follows the structure IU expects from a project report: an
+introduction, a main body and a conclusion. The main body describes a
+fictional comparison of three layout variants, called A, B and C. Each
+variant is a set of typographic settings, applied to the same sample text.
+The comparison asks one question: which variant reads best at a fixed page
+budget?
+
+Good typography serves the reader, not the writer \parencite[p.~1]{knuth1984}.
+The template therefore fixes the formal settings in one place. A writer can
+concentrate on the content, while font, spacing and headings already follow
+the guidelines \parencite{lamport1994}.
+
+% -------------------------------------------------
+\section{Method}
+
+\subsection{Layout Variants}
+
+The three variants differ in line spacing, paragraph gap and the size of the
+body text. Tab.~\ref{tab:variants} lists the settings of each variant. Variant
+A matches the template. Variants B and C each change one group of settings,
+so that every difference between the results can be traced back to a single
+cause.
+
+\begin{table}[H]
+  \centering
+  \caption{Settings of the three layout variants. Variant A is the template
+  itself; B and C each change one group of settings.}
+  \label{tab:variants}
+  {\tablefontsize
+  \begin{tabular}{@{}lccc@{}}
+    \toprule
+    Setting & Variant A & Variant B & Variant C \\
+    \midrule
+    Body text (pt)        & 11  & 11  & 12  \\
+    Line spacing          & 1.5 & 1.2 & 1.5 \\
+    Paragraph gap (pt)    & 6   & 6   & 6   \\
+    Heading sizes (pt)    & 16/14/11 & 16/14/11 & 18/15/12 \\
+    \bottomrule
+  \end{tabular}}
+  \srcnote{Own representation.}
+\end{table}
+
+\subsection{Procedure}
+
+Each variant typesets the same sample text of ten pages. A fictional panel of
+readers rates every variant on a scale from 1 to 5. The panel also records
+the reading time per page. Long lines and tight spacing are known to slow
+readers down \parencite[p.~92]{mittelbach2004}, so the reading time serves as
+a second, independent measure next to the rating.
+
+All values in this report are invented for illustration. They follow no
+experiment and support no claim.
+
+% -------------------------------------------------
+\section{Results}
+
+\subsection{Ratings}
+
+Tab.~\ref{tab:ratings} summarises the invented ratings. Variant A receives
+the highest mean rating. Variant B fits the most text on a page, but its
+tighter lines lower the rating. Variant C reads comfortably but needs the
+most pages for the same text.
+
+\begin{table}[H]
+  \centering
+  \caption{Mean rating and pages needed for the sample text. Variant A
+  balances readability and length best; all values are invented.}
+  \label{tab:ratings}
+  {\tablefontsize
+  \begin{tabular}{@{}lrrr@{}}
+    \toprule
+    Variant & Mean rating & Std.\ dev. & Pages \\
+    \midrule
+    \rowcolor{black!8}
+    A (template) & 4.2 & 0.6 & 10.0 \\
+    B            & 3.4 & 0.9 &  8.6 \\
+    C            & 3.9 & 0.7 & 11.8 \\
+    \bottomrule
+  \end{tabular}}
+  \srcnote{Own representation, invented values.}
+\end{table}
+
+\subsection{Reading Time}
+
+Fig.~\ref{fig:time} plots the invented reading time over the ten pages of
+the sample text. All three variants slow down slightly towards the end.
+Variant B stays the slowest throughout. A plot like this one should show the
+data and little else \parencite[p.~93]{tufte2001}: no fill, thin rules and a
+legend that names every line.
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=0.72\linewidth, height=5.2cm,
+      xlabel={Page of the sample text}, ylabel={Reading time (s)},
+      xmin=1, xmax=10, ymin=50, ymax=110,
+      xtick={1,...,10},
+      tick label style={font=\footnotesize}, label style={font=\footnotesize},
+      legend style={font=\footnotesize, draw=none, at={(0.02,0.98)}, anchor=north west},
+      axis line style={black!60}, tick style={black!60},
+    ]
+      \addplot[seriesA, thick, mark=*, mark size=1.5pt]
+        coordinates {(1,62)(2,63)(3,63)(4,65)(5,66)(6,66)(7,68)(8,69)(9,70)(10,71)};
+      \addplot[seriesB, thick, dashed, mark=square*, mark size=1.5pt]
+        coordinates {(1,78)(2,80)(3,82)(4,83)(5,85)(6,88)(7,90)(8,92)(9,95)(10,97)};
+      \addplot[seriesC, thick, dotted, mark=triangle*, mark size=2pt]
+        coordinates {(1,58)(2,59)(3,61)(4,61)(5,62)(6,64)(7,65)(8,65)(9,67)(10,68)};
+      \legend{Variant A, Variant B, Variant C}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Invented reading time per page for the three variants. Variant B,
+  with the tightest line spacing, is the slowest on every page.}
+  \label{fig:time}
+  \srcnote{Own representation, invented values.}
+\end{figure}
+
+\subsection{Summary of Results}
+
+Tab.~\ref{tab:summary} brings both measures together. It ranks the variants
+by rating and by reading time. Both rankings agree on the last place.
+
+\begin{table}[H]
+  \centering
+  \caption{Ranking of the variants by rating and by mean reading time. Both
+  measures place variant B last; all values are invented.}
+  \label{tab:summary}
+  {\tablefontsize
+  \begin{tabular}{@{}lrrrr@{}}
+    \toprule
+    & \multicolumn{2}{c}{Rating} & \multicolumn{2}{c}{Reading time} \\
+    \cmidrule(lr){2-3}\cmidrule(l){4-5}
+    Variant & Mean & Rank & Mean (s) & Rank \\
+    \midrule
+    A & 4.2 & 1 & 66.3 & 2 \\
+    B & 3.4 & 3 & 87.0 & 3 \\
+    C & 3.9 & 2 & 63.0 & 1 \\
+    \bottomrule
+  \end{tabular}}
+  \srcnote{Own representation, invented values.}
+\end{table}
+
+% -------------------------------------------------
+\section{Conclusion}
+
+The mock comparison favours variant A, the template itself. It reaches the
+best rating at a moderate length. Variant C reads slightly faster but costs
+almost two extra pages. Under a fixed page budget, that cost decides against
+it.
+
+Since every value in this document is invented, the result only demonstrates
+the layout. A real report would state its data source, the sample size and
+the uncertainty of every number \parencite{strunk2000}. Appendix~A shows how
+an extra table looks outside the page budget.
+
+\newpage
+\printbibliography[heading=bibintoc,title={References}]
+
+\newpage
+\section*{Appendix}
+\addcontentsline{toc}{section}{Appendix}
+
+\subsection*{Appendix A: Per-Page Values}\label{app:a}
+
+The table below lists the invented reading times behind Fig.~\ref{fig:time}.
+
+\begin{table}[H]
+  \centering
+  \caption{Invented reading time per page and variant, in seconds.}
+  \label{tab:appendix}
+  {\tablefontsize
+  \begin{tabular}{@{}lrrrrrrrrrr@{}}
+    \toprule
+    Page & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+    \midrule
+    Variant A & 62 & 63 & 63 & 65 & 66 & 66 & 68 & 69 & 70 & 71 \\
+    Variant B & 78 & 80 & 82 & 83 & 85 & 88 & 90 & 92 & 95 & 97 \\
+    Variant C & 58 & 59 & 61 & 61 & 62 & 64 & 65 & 65 & 67 & 68 \\
+    \bottomrule
+  \end{tabular}}
+  \srcnote{Own representation, invented values.}
+\end{table}
+
+\end{document}

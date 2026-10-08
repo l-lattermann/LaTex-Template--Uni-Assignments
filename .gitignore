@@ -19,6 +19,10 @@ code/
 *.tex
 !template.tex
 
+# The mock example behind the README preview
+!example/example.tex
+!example/references.bib
+
 # --- Compiled output ---
 *.pdf
 !images/**/*.pdf
